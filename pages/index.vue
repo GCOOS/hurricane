@@ -47,14 +47,12 @@
             <b-col>
               <b-card footer='Wind forecast &nbsp;<a href="http://seawater.tamu.edu/tglo/wind_animation_wg.gif" target="_blank"><i class="fas fa-search-plus"></i></a>' img-src='http://seawater.tamu.edu/tglo/wind_animation_wg.gif'>
               </b-card>
-              
- 
           </b-col>
         </b-row>
         <br/><br/>
       </section>
     </b-container>
-<script src="js/hurricane_map.js"></script>
+  <script src="js/hurricane_map.js"></script>
   </div>
 </template>
 
@@ -62,9 +60,8 @@
 import Header from "~/components/Header.vue";
 
 if (process.browser) {
-  window.globalVar = "global variable";
+  window.globalVar = "global variable loaded...";
 }
-
 export default {
   components: {
     Header
@@ -87,8 +84,4 @@ export default {
 </script>
 
 <style scoped>
-a {
-  text-decoration: none;
-  color: black;
-}
 </style>

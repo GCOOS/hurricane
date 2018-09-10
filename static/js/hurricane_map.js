@@ -60,8 +60,8 @@
     }
   }).addTo(map);
 
-  var hfr6km = L.tileLayer.wms("http://hfrnet.ucsd.edu/thredds/wms/HFRNet/USEGC/6km/hourly/GNOME", {
-    layers: 'surface_sea_water_velocity',
+  var hfr6km = L.tileLayer.wms("http://hfrnet-tds.ucsd.edu/thredds/wms", {
+    layers: 'surface_sea_water_velocity&PALETTE=rainbow',
     format: 'image/png',
     transparent: true
   });
@@ -110,7 +110,7 @@
     opacity: 0.7
   });
 
-  var hycom = L.tileLayer.wms("http://ecowatch.ncddc.noaa.gov/thredds/wms/hycom/hycom_reg1_agg/HYCOM_Region_1_Aggregation_best.ncd", {
+  var hycom = L.tileLayer.wms("http://ecowatch.ncddc.noaa.gov/thredds/wms", {
     layers: 'sea_water_velocity',
     format: 'image/png',
     transparent: true,

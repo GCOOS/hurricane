@@ -68,6 +68,13 @@ module.exports = {
       }
     ],
     script: [{
+        /* For bootstrap */
+        src: "https://code.jquery.com/jquery-3.3.1.min.js",
+        type: "text/javascript",
+        integrity: "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=",
+        crossorigin: "anonymous"
+      },
+      {
         /* Leaflet */
         src: "https://unpkg.com/leaflet@1.3.4/dist/leaflet.js",
         integrity: "sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==",

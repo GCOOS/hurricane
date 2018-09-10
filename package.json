@@ -7,18 +7,19 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "HOST=0.0.0.0 PORT=8020 nuxt start",
+    "start": "HOST=0.0.0.0 PORT=3000 nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/pwa":"^2.0.5",
-    "node-fetch":"^2.0.0",
+    "@nuxtjs/pwa": "^2.0.5",
     "ajv": "^6.5.3",
     "bootstrap-vue": "^2.0.0-rc.11",
+    "jquery": "^3.3.1",
+    "node-fetch": "^2.0.0",
     "nuxt": "^1.0.0",
-    "nuxt-cluster":"^1.0.0"
+    "nuxt-cluster": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

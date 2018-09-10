@@ -4,11 +4,11 @@ FROM node:alpine
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY . /usr/src/app/
-RUN npm install
+ONBUILD COPY . /usr/src/app/
+ONBUILD RUN npm install
 
 # Build app
-RUN npm run build
+ONBUILD RUN npm run build
 
 ENV HOST 0.0.0.0
 EXPOSE 8020

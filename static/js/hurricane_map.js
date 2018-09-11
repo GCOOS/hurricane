@@ -60,11 +60,11 @@
     }
   }).addTo(map);
 
-  var hfr6km = L.tileLayer.wms("http://hfrnet-tds.ucsd.edu/thredds/wms", {
-    layers: 'surface_sea_water_velocity&PALETTE=rainbow',
-    format: 'image/png',
-    transparent: true
-  });
+  //  var hfr6km = L.tileLayer.wms("http://hfrnet-tds.ucsd.edu/thredds/wms", {
+  //    layers: 'surface_sea_water_velocity&PALETTE=rainbow',
+  //    format: 'image/png',
+  //    transparent: true
+  //  });
 
   var nexrad = L.tileLayer.wms(
     "http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
@@ -110,12 +110,12 @@
     opacity: 0.7
   });
 
-  var hycom = L.tileLayer.wms("http://ecowatch.ncddc.noaa.gov/thredds/wms", {
-    layers: 'sea_water_velocity',
-    format: 'image/png',
-    transparent: true,
-    elevation: '0'
-  });
+  // var hycom = L.tileLayer.wms("http://ecowatch.ncddc.noaa.gov/thredds/wms", {
+  //   layers: 'sea_water_velocity',
+  //    format: 'image/png',
+  //    transparent: true,
+  //    elevation: '0'
+  //  });
 
   var ssh = L.tileLayer.wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {
     layers: 'EDDY_SSH/ssh',
@@ -143,9 +143,9 @@
     "NRL Mean Seawater Velocity": nrlVelocity,
     "NRL Mean Seawater Temperature": nrlWaterTemp,
     "NRL Mean Seasurface Elevation": nrlSurfEl,
-    "Ocean Current Model": currentsNOAA,
-    "HF Radar 6km": hfr6km,
-    "HYCOM Region 1": hycom,
+    "NOAA Ocean Current Model": currentsNOAA,
+    //    "HF Radar 6km": hfr6km,
+    //    "HYCOM Region 1": hycom,
     "Sea Surface Height": ssh
   };
   L.control

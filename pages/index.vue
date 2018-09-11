@@ -5,13 +5,13 @@
       <section>
         <br/>
         <b-row>
-          <b-col md="4">
+<!--          <b-col md="4">
             <div class="tweet" style="height:min-height:450px;">
               <a class="twitter-timeline" href="https://twitter.com/search?q=from%3Anhc_atlantic%20OR%20from%3Anwsnhc%20OR%20from%3AHeatwaveKGNS%20OR%20from%3AABC31Weather%20OR%20from%3Aaverytomascowx%20OR%20from%3AWadeHamptonKPLC%20OR%20from%3ANWSkeyWest%20OR%20from%3A1stHandWeather%20OR%20from%3AJyovianStorm%20OR%20from%3AEricBlake12%20OR%20from%3Aweatherchannel%20OR%20from%3AHurricanewx%20OR%20from%3AReadyHarris%20OR%20from%3AFEMARegion6%20OR%20from%3ANWSHouston%20OR%20from%3AReadygov%20OR%20from%3AUnitedWayHouston%20OR%20from%3ACNNWeather%20OR%20from%3ASpuraSecurity%20OR%20from%3ANOAADigCoast%20OR%20from%3ARyanMaue%20OR%20%23HurricaneHarvey%20OR%20%23HurricaneIrma%20OR%20%23HurricaneNate"
                 data-widget-id="916395096378970115">Tweets about Hurricane</a>
             </div>
-          </b-col>
-          <b-col md="8">
+         </b-col>
+-->           <b-col>
             <div id="map" style="min-height:600px;"></div>
           </b-col>
         </b-row>

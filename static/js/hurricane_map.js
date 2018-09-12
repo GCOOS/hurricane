@@ -3,7 +3,8 @@
     zoomControl: true,
     scrollWheelZoom: false,
     zoom: 5,
-    center: [25.7, -85.8],
+    center: [25.7, -80.8],
+    tap: false,
     attributionControl: true //should be true for goecoding
   });
   // ================================================================

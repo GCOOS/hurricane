@@ -104,9 +104,7 @@ module.exports = {
   },
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    'bootstrap-vue/nuxt', ['bootstrap-vue/nuxt', {
-      css: false
-    }]
+    'bootstrap-vue/nuxt'
   ],
   plugins: [{
     src: '~plugins/ga.js',

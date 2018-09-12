@@ -1,12 +1,11 @@
 <template>
     <div>
-        <Header />
         <b-container fluid>
             <div class="centered">
-                <h1>Emergency Operation Center/Counties Evacuation and Shelter Information</h1>
+                <h2>Emergency Operation Center/Counties Evacuation and Shelter Information</h2>
             </div>
             <b-row>
-                <b-col cols='2'>
+                <b-col md='4' lg='3' xl="2" >
                     <b-card header="State Emergency Centers" header-text-variant="white" header-tag="header" header-bg-variant="dark" img-src="~assets/images/disaster-response-center-building_356.jpg" img-alt="Image" img-top tag="article" class="mb-2">
                             <ul>
                                 <li><big><a href="http://floridadisaster.org/eoc/Update/Home.asp" target="_blank"><b><span style="font-size: 14.0pt; color: #333333;">Florida</span></b></a></big></li>
@@ -16,8 +15,9 @@
                                 <li><big><a href="https://www.dps.texas.gov/dem/index.htm" target="_blank"><b><span style="font-size: 14.0pt; color: #333333;">Texas</span></b></a></big></li>
                             </ul>
                     </b-card>
+                    <br>
                 </b-col>
-                <b-col cols="2">
+                <b-col md='4' lg='3' xl="2">
                     <b-card border-variant="primary" header="Texas" header-bg-variant="primary" sub-title="Coastal counties">
                         <ul>
                             <li><a href="http://www.cityofportaransas.org/emergency.cfm" target="_blank" class="card-link"><b><span style="font-size: 10.0pt; color: #333333;">Aransas County</span></b></a></li>
@@ -31,8 +31,9 @@
                             <li><a href="http://www.nuecesco.com/public-services/emergency-management/content-page" target="_blank"><b><span style="font-size: 10.0pt; color: #333333;">Nueces County</span></b></a></li>
                         </ul>
                     </b-card>
+                    <br>
                 </b-col>
-                <b-col cols="2">
+                <b-col md='4' lg='3' xl="2">
                     <b-card header="Louisiana" header-bg-variant="primary" sub-title="Coastal counties">
                         <ul>
                             <li><a href="http://www.parishofcameron.net/PageDisplay.asp?p1=3567" target="_blank"><b><span style="font-size: 10.0pt; color: #333333;">Cameron Parish </span></b></a></li>
@@ -50,8 +51,9 @@
                             <li><a href="http://vermilionparishpolicejury.com/2012DEPTsecurity.html" target="_blank"><b><span style="font-size: 10.0pt; color: #333333;">Vermillion Parish </span></b></a></li>
                         </ul>
                     </b-card>
+                    <br>
                 </b-col>
-                <b-col cols="2">
+                <b-col md='4' lg='3' xl="2">
                     <b-card header="Mississippi" header-bg-variant="primary" sub-title="Coastal counties">
                         <ul>
                             <li><a href="https://www.co.jackson.ms.us/departments/public-safety/hurricane-evac.php" target="_blank"><b><span style="font-size: 10.0pt; color: #333333;">Jackson County </span></b></a></li>
@@ -59,16 +61,18 @@
                             <li><a href="http://co.harrison.ms.us/departments/ema/whattodo.asp" target="_blank"><b><span style="font-size: 10.0pt; color: #333333;">Harrison County </span></b></a></li>
                         </ul>
                     </b-card>
+                    <br>
                 </b-col>
-                <b-col cols="2">
+                <b-col md='4' lg='3' xl="2">
                     <b-card header="Alabama" header-bg-variant="primary" sub-title="Coastal counties">
                         <ul>
                             <li><a href="http://baldwincountyal.gov/departments/ema" target="_blank"><b><span style="font-size: 10.0pt; color: #333333;">Baldwin County </span></b></a></li>
                             <li><a href="http://www.mcema.net/" target="_blank"><b><span style="font-size: 10.0pt; color: #333333;">Mobile County </span></b></a></li>
                         </ul>
                     </b-card>
+                    <br>
                 </b-col>
-                <b-col cols="2">
+                <b-col md='4' lg='3' xl="2">
                     <b-card header="Florida" header-bg-variant="primary" sub-title="Coastal counties">
                         <ul>
                             <li><a href="http://co.bay.fl.us/emergency/management.php" target="_blank"><b><span style="font-size: 10.0pt; color: #333333;">Bay County </span></b></a></li>
@@ -99,15 +103,6 @@
         </b-container>
     </div>
 </template>
-
-<script>
-import Header from "~/components/Header.vue";
-export default {
-  components: {
-    Header
-  }
-};
-</script>
 
 <style lang="css" scoped>
 .centered {

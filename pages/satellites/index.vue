@@ -1,9 +1,8 @@
 <template>
     <div class="canvas">
-        <Header />
         <b-container fluid>
-            <div class="title">
-                <h1>Satellites</h1>
+            <div class="centered">
+                <h2>Satellites</h2>
             </div>
             <b-row>
                 <b-col>
@@ -30,18 +29,8 @@
 </template>
 
 
-<script>
-import Header from "~/components/Header.vue";
-export default {
-  components: {
-    Header
-  }
-};
-</script>
-
 <style scoped>
 .centered {
   text-align: center;
 }
 </style>
-

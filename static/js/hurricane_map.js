@@ -4,9 +4,10 @@
     scrollWheelZoom: false,
     zoom: 5,
     center: [25.7, -80.8],
-    tap: false,
     attributionControl: true //should be true for goecoding
   });
+  // disable smartphone zoom when scrolloing down
+  map.scrollWheelZoom.disable();
   // ================================================================
   // Basemap Layers
   // ================================================================

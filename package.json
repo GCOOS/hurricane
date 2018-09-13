@@ -5,7 +5,7 @@
   "author": "Shin Kobara <shin.kobara@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "PORT=3020 nuxt",
     "build": "nuxt build",
     "start": "HOST=0.0.0.0 PORT=8020 nuxt start",
     "generate": "nuxt generate",

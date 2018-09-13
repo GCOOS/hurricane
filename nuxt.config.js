@@ -13,8 +13,8 @@ module.exports = {
       },
       {
         hid: 'description',
-        name: 'description',
-        content: 'Hurricane'
+        name: 'GCOOS Hurricane Information Dashboard',
+        content: 'GCOOS Hurricane Information Dashboard. It provides information of hurricane track, sattelite images, preparation resources and state/county emergency operation centers and shelters'
       }
     ],
     link: [{
@@ -67,13 +67,7 @@ module.exports = {
         href: "https://unpkg.com/leaflet.markercluster@1.4.0/dist/MarkerCluster.css"
       }
     ],
-    script: [{
-        /* For bootstrap */
-        src: "https://code.jquery.com/jquery-3.3.1.min.js",
-        type: "text/javascript",
-        integrity: "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=",
-        crossorigin: "anonymous"
-      },
+    script: [
       {
         /* Leaflet */
         src: "https://unpkg.com/leaflet@1.3.4/dist/leaflet.js",

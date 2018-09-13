@@ -1,12 +1,12 @@
 <template>
 <div>
-  <header class="header">
+  <div class="header">
     <div class="centered">
       Hurricane
     </div>
-  </header>
+  </div>
 
-  <b-navbar toggleable='md' type="dark" variant="black">
+  <b-navbar toggleable='md' type="dark" variant="dark">
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
@@ -34,7 +34,7 @@ export default {};
   align-items: center;
   background-color: #000000;
   background-image: url(~assets/images/gulf_header_1900x90.png);
-  background-size: 100% 70px;
+  background-size: 100% 72px;
   background-repeat: no-repeat;
 }
 /* Centered text */
@@ -45,13 +45,13 @@ export default {};
   font-size: 3em;
   font-weight: bold;
 }
+
+/* Navbar setting */
 .navbar {
-  height: 35px;
-  background-color: #000000;
+  padding: 1px 12px !important
 }
-.navbar-collapse.collapse.show {
-  background-color: #000000;
-  z-index: 2000;
-  padding: 10px;
+.bg-dark{
+  background-color: #000000 !important;
 }
+
 </style>

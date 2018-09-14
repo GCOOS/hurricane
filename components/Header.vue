@@ -44,14 +44,14 @@ export default {};
   color: #ffffff;
   font-size: 3em;
   font-weight: bold;
+  text-shadow: 4px 4px 10px black;
 }
 
 /* Navbar setting */
 .navbar {
-  padding: 1px 12px !important
+  padding: 1px 12px !important;
 }
-.bg-dark{
+.bg-dark {
   background-color: #000000 !important;
 }
-
 </style>

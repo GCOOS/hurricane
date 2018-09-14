@@ -97,9 +97,16 @@ module.exports = {
     color: '#3B8070'
   },
   modules: [
+//    '@nuxtjs/redirect-module',
     // Doc: https://github.com/nuxt-community/axios-module#usage
     'bootstrap-vue/nuxt'
   ],
+  router: {
+    base: '/hurricane/'
+  },
+//  redirect: [
+//    { from: '^/(.*)$', to: '/hurricane/'}
+//  ],
   plugins: [{
     src: '~plugins/ga.js',
     ssr: false

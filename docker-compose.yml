@@ -3,6 +3,6 @@ services:
   web:
     image: skobara/hurricane
     ports:
-      - 8020:8020
+      - 8020:8000
     volumes:
       - ./:/usr/src/app/

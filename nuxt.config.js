@@ -103,6 +103,7 @@ module.exports = {
   ],
   router: {
     base: '/hurricane/'
+    //base: '/'
   },
 //  redirect: [
 //    { from: '^/(.*)$', to: '/hurricane/'}

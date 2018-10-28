@@ -11,6 +11,6 @@ ONBUILD RUN npm install
 ONBUILD RUN npm run build
 
 ENV HOST 0.0.0.0
-EXPOSE 8000
+EXPOSE 8020
 
-CMD ["npm", "start"]
+CMD ["npm","run","start"]

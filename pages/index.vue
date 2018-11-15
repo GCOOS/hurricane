@@ -59,7 +59,7 @@
 
       </section>
   </b-container>
-  <script src="hurricane/js/hurricane_map.js"></script>
+  <script src="js/hurricane_map.js"></script>
 </div>
 </template>
 

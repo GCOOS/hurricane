@@ -102,7 +102,7 @@ module.exports = {
     'bootstrap-vue/nuxt'
   ],
   router: {
-    //base: '/hurricane'
+    base: '/hurricane/'
   },
   plugins: [{
     src: '~plugins/ga.js',

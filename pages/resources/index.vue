@@ -8,7 +8,7 @@
       <b-col sm="12" md="6" lg="6" xl="4">
         <b-card header="Useful links" header-text-variant="white" header-tag="header" header-bg-variant="info">
           <b-tabs>
-            <b-tab title="Preparation" active no-fade>
+            <b-tab title="Preparation" active>
               <h4>National Hurricane Center &ndash; Hurricane Preparedness &ndash; Be Ready</h4>
               <ul>
                 <li><a href="http://www.nhc.noaa.gov" target="_blank">Home Page NHC</a></li>
@@ -27,7 +27,7 @@
               <p><a href="https://www.ready.gov/hurricanes" target="_blank">FEMA page on hurricane preparedness (prior, during, post storm)&nbsp;</a></p>
               <p><a href="https://www.ncdc.noaa.gov/billions/overview" target="_blank">Billion-Dollar Weather and Climate Disasters: Overview</a></p>
             </b-tab>
-            <b-tab title="Road Info" no-fade>
+            <b-tab title="Road Info">
               <br />
               <p><strong>FLORIDA</strong></p>
               <ul>
@@ -43,7 +43,7 @@
               <p>&nbsp;</p>
               <p>&nbsp;</p>
             </b-tab>
-            <b-tab title="Post-Hurricane" no-fade>
+            <b-tab title="Post-Hurricane">
               <br>
               <p><strong>FLORIDA</strong></p>
               <ul>
@@ -64,7 +64,7 @@
       <b-col sm="12" md="6" lg="6" xl="8">
         <b-card header="Videos" header-text-variant="white" header-tag="header" header-bg-variant="warning">
           <b-tabs>
-            <b-tab title="Preparation" active no-fade>
+            <b-tab title="Preparation" active>
               <b-row>
                 <b-col md="12" lg="12" xl="6">
                   <iframe src="https://www.youtube.com/embed/L32y1QKz8XI" style="height:315px; width:100%;"></iframe>
@@ -78,7 +78,7 @@
                 </b-col>
               </b-row>
             </b-tab>
-            <b-tab title="During" no-fade>
+            <b-tab title="During">
               <b-row>
                 <b-col md="12" lg="12" xl="6">
                   <iframe src="https://www.youtube.com/embed/2VOJdqT79JY" style="height:315px; width:100%;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -111,5 +111,8 @@
 <style scoped>
 .centered {
   text-align: center;
+}
+.fade:not(.show) {
+  opacity: 100 !important;
 }
 </style>

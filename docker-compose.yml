@@ -1,7 +1,7 @@
 version: "3"
 services:
   web:
-    image: skobara/hurricane
+    image: gcoos/hurricane
     container_name: hurricane
     ports:
       - 8001:8001

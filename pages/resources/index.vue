@@ -63,7 +63,7 @@
       </b-col>
       <b-col sm="12" md="6" lg="6" xl="8">
         <b-card no-body header="Videos" header-text-variant="white" header-tag="header" header-bg-variant="warning">
-          <b-tabs>
+          <b-tabs card>
             <b-tab title="Preparation" active>
               <b-row>
                 <b-col md="12" lg="12" xl="6">
@@ -99,22 +99,6 @@
               </b-row>
             </b-tab>
           </b-tabs>
-<b-card no-body>
-    <b-tabs card v-model="tabIndex">
-      <b-tab title="Tab 1" :title-link-class="linkClass(0)">
-        Tab Contents 1
-      </b-tab>
-      <b-tab title="Tab 2" :title-link-class="linkClass(1)">
-        Tab Contents 2
-      </b-tab>
-      <b-tab title="Tab 3" :title-link-class="linkClass(2)">
-        Tab Contents 3
-      </b-tab>
-    </b-tabs>
-  </b-card>
-
-
-
         </b-card>
       </b-col>
     </b-row>

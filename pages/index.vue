@@ -17,11 +17,11 @@
       <br>
       <b-row>
         <b-col md="4">
-            <b-card footer='2-day Outlook &nbsp;<a href="http://www.nhc.noaa.gov/archive/xgtwo/atl/latest/two_atl_2d0.png" target="_blank"><i class="fas fa-search-plus"></i></a>' img-src="http://www.nhc.noaa.gov/archive/xgtwo/atl/latest/two_atl_2d0.png"
+            <b-card footer='2-day Outlook &nbsp;<a href="https://www.nhc.noaa.gov/archive/xgtwo/atl/latest/two_atl_2d0.png" target="_blank"><i class="fas fa-search-plus"></i></a>' img-src="https://www.nhc.noaa.gov/archive/xgtwo/atl/latest/two_atl_2d0.png"
               img-top></b-card><br>
             </b-col>
             <b-col md="4">
-            <b-card footer='5-day Outlook &nbsp;<a href="http://www.nhc.noaa.gov/archive/xgtwo/atl/latest/two_atl_5d0.png" target="_blank"><i class="fas fa-search-plus"></i></a>' img-src="http://www.nhc.noaa.gov/archive/xgtwo/atl/latest/two_atl_5d0.png"
+            <b-card footer='5-day Outlook &nbsp;<a href="https://www.nhc.noaa.gov/archive/xgtwo/atl/latest/two_atl_5d0.png" target="_blank"><i class="fas fa-search-plus"></i></a>' img-src="https://www.nhc.noaa.gov/archive/xgtwo/atl/latest/two_atl_5d0.png"
               img-top></b-card><br>
             </b-col>
             <b-col md="4">

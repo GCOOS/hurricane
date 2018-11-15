@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header">
-      <a href="http://gcoos.org"><img class="gcoos_logo" src="@/assets/images/gcoos_logo.png"/></a>
+      <a href="http://gcoos.org"><img class="gcoos_logo" src="/hurricane/img/gcoos_logo.png"/></a>
     </div>
   </div>
 </template>

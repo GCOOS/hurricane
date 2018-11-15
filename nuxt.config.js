@@ -20,7 +20,7 @@ module.exports = {
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/favicon.ico'
+        href: '/hurricane/favicon.ico'
       },
       {
         /* Google Font */
@@ -102,7 +102,7 @@ module.exports = {
     'bootstrap-vue/nuxt'
   ],
   router: {
-    base: '/hurricane/'
+    //base: '/hurricane/'
   },
   plugins: [{
     src: '~plugins/ga.js',

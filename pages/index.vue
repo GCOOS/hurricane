@@ -47,7 +47,7 @@
 
           </b-col>
         <b-col md="4">
-          <b-card footer='Storm Surge & Wave &nbsp;<a href="https://cera.coastalrisk.live/" target="_blank"><i class="fas fa-external-link-alt"></i></a>' img-src='~/assets/images/cera_storm_surge_1180x607.jpg'>
+          <b-card footer='Storm Surge & Wave &nbsp;<a href="https://cera.coastalrisk.live/" target="_blank"><i class="fas fa-external-link-alt"></i></a>' img-src='/hurricane/img/cera_storm_surge_1180x607.jpg'>
           </b-card>
         </b-col>
         <b-col md="4">
@@ -59,7 +59,7 @@
 
       </section>
   </b-container>
-  <script src="js/hurricane_map.js"></script>
+  <script src="/hurricane/js/hurricane_map.js"></script>
 </div>
 </template>
 

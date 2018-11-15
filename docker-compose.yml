@@ -13,7 +13,7 @@ services:
       - "traefik.frontend.rule=Host:geo.gcoos.org;PathPrefixStrip:/hurricane/"
       - "traefik.port=8001"
       - "traefik.docker.network=geo_net"
-      networks:
+    networks:
       - geo_net
 
 networks:

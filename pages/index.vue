@@ -2,7 +2,6 @@
 <div>
   <b-container fluid>
     <section>
-      <br/>
       <b-row>
         <!--          <b-col md="4">
             <div class="tweet" style="height:min-height:450px;">
@@ -12,7 +11,7 @@
          </b-col>
 -->
         <b-col>
-          <div id="map" style="min-height:600px;"></div>
+          <div id="map" style="min-height:70vh;"></div>
         </b-col>
       </b-row>
       <br>

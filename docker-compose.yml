@@ -10,7 +10,7 @@ services:
     labels:
       - "traefik.backend=hurricane-web"
       - "traefik.docker.network=geo_net"
-      - "traefik.frontend.rule=Host:geo.gcoos.org;PathPrefixString:/hurricane"
+      - "traefik.frontend.rule=Host:geo.gcoos.org;PathPrefixStrip:/hurricane"
       - "traefik.enable=true"
       - "traefik.port=8001"
     networks:

@@ -81,10 +81,10 @@
                     <div class="container">
                         <div class="footer_logos">
                             <div id="execphp-3" class="widget widget_execphp">
-                                <div class="execphpwidget"><span><a href="http://gcoos.org"><img src="~assets/images/logo/footer-logo.png" alt="GCOOS: Gulf of Mexico Coastal Ocean Observing System" /></a></span>
-                                    <span><a target="_blank" href="https://ioos.noaa.gov/"><img src="~assets/images/logo/ioos-logo.png" alt="Integrated Ocean Observing System" /></a></span>
-                                    <span><a target="_blank" href="http://www.ioosassociation.org/"><img src="~assets/images/logo/ioos-association.png" alt="IOOS Association" /></a></span>
-                                    <span><img src="~assets/images/logo/certified-observing-system.png" alt="Certification - The U.S. Integrated Ocean Observing System (IOOS)" /></span>
+                                <div class="execphpwidget"><span><a href="http://gcoos.org"><img src="@/assets/images/logo/footer-logo.png" alt="GCOOS: Gulf of Mexico Coastal Ocean Observing System" /></a></span>
+                                    <span><a target="_blank" href="https://ioos.noaa.gov/"><img src="@/assets/images/logo/ioos-logo.png" alt="Integrated Ocean Observing System" /></a></span>
+                                    <span><a target="_blank" href="http://www.ioosassociation.org/"><img src="@/assets/images/logo/ioos-association.png" alt="IOOS Association" /></a></span>
+                                    <span><img src="@/assets/images/logo/certified-observing-system.png" alt="Certification - The U.S. Integrated Ocean Observing System (IOOS)" /></span>
                                 </div>
                             </div>
                         </div>

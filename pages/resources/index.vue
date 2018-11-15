@@ -63,8 +63,8 @@
       </b-col>
       <b-col sm="12" md="6" lg="6" xl="8">
         <b-card no-body header="Videos" header-text-variant="white" header-tag="header" header-bg-variant="warning">
-          <b-tabs card>
-            <b-tab no-body title="Preparation" active>
+          <b-tabs card v-model="tabIndex">
+            <b-tab title="Preparation" :title-link-class="linkClass(0)" active>
               <b-row>
                 <b-col md="12" lg="12" xl="6">
                   <iframe src="https://www.youtube.com/embed/L32y1QKz8XI" style="height:315px; width:100%;"></iframe>
@@ -78,7 +78,7 @@
                 </b-col>
               </b-row>
             </b-tab>
-            <b-tab no-body title="During">
+            <b-tab title="During" :title-link-class="linkClass(1)">
               <b-row>
                 <b-col md="12" lg="12" xl="6">
                   <iframe src="https://www.youtube.com/embed/2VOJdqT79JY" style="height:315px; width:100%;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -91,7 +91,7 @@
                 </b-col>
               </b-row>
             </b-tab>
-            <b-tab no-body title="After">
+            <b-tab title="After" :title-link-class="linkClass(2)">
               <b-row>
                 <b-col>
                   <iframe src="https://www.youtube.com/embed/hefpgoYAOno" style="height:315px; width:100%;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

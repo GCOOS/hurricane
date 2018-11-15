@@ -6,8 +6,8 @@
     </div>
     <b-row>
       <b-col sm="12" md="6" lg="6" xl="4">
-        <b-card header="Useful links" header-text-variant="white" header-tag="header" header-bg-variant="info">
-          <b-tabs>
+        <b-card no-body header="Useful links" header-text-variant="white" header-tag="header" header-bg-variant="info">
+          <b-tabs card>
             <b-tab title="Preparation" active>
               <h4>National Hurricane Center &ndash; Hurricane Preparedness &ndash; Be Ready</h4>
               <ul>

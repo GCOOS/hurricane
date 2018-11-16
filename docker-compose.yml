@@ -5,7 +5,7 @@ services:
     image: skobara/hurricane
     container_name: hurricane
     ports:
-      - "8002:80"
+      - "8001:80"
     volumes:
       - "./:/usr/src/app/"
     labels:

@@ -12,7 +12,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'GCOOS Hurricane Information Dashboard. It provides information of hurricane track, satellite images, preparation resources and state/county emergency operation centers and shelters' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
       {
         /* Google Font */
         rel: 'stylesheet',

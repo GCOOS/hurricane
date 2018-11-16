@@ -1,32 +1,24 @@
 {
-  "name": "hurricane",
+  "name": "geo_hurricane",
   "version": "1.0.0",
-  "description": "Gulf of Mexico Coastal Ocean Observing System (GCOOS) provides Hurricane information dashboard",
-  "author": "Shin Kobara <shin.kobara@gmail.com>",
+  "description": "GCOOS Hurricane Information Dashboard",
+  "author": "Shin Kobara",
   "private": true,
   "scripts": {
     "dev": "PORT=3001 nuxt",
     "build": "nuxt build",
-    "start": "HOST=0.0.0.0 PORT=8001 nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "start": "PORT=8001 nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/pwa": "^2.0.5",
-    "@nuxtjs/redirect-module": "^0.1.0",
-    "ajv": "^6.5.3",
-    "bootstrap-vue": "^2.0.0-rc.11",
+    "@nuxtjs/axios": "^5.0.0",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0-beta",
+    "cross-env": "^5.2.0",
     "jquery": "^3.3.1",
-    "node-fetch": "^2.0.0",
-    "nuxt": "^1.0.0",
-    "nuxt-cluster": "^1.0.0"
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0"
+    "nodemon": "^1.11.0"
   }
 }

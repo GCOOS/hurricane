@@ -6,7 +6,7 @@
             </div>
             <b-row>
                 <b-col md='4' lg='3' xl="2" >
-                    <b-card header="State Emergency Centers" header-text-variant="white" header-tag="header" header-bg-variant="dark" img-src="/hurricane/img/disaster-response-center-building_356.jpg" img-alt="Image" img-top tag="article" class="mb-2">
+                    <b-card header="State Emergency Centers" header-text-variant="white" header-tag="header" header-bg-variant="dark" img-src="/img/disaster-response-center-building_356.jpg" img-alt="Image" img-top tag="article" class="mb-2">
                             <ul>
                                 <li><big><a href="http://floridadisaster.org/eoc/Update/Home.asp" target="_blank"><b><span style="font-size: 14.0pt; color: #333333;">Florida</span></b></a></big></li>
                                 <li><big><a href="https://ema.alabama.gov/" target="_blank"><b><span style="font-size: 14.0pt; color: #333333;">Alabama </span></b></a></big></li>
@@ -103,6 +103,19 @@
         </b-container>
     </div>
 </template>
+
+<script>
+export default {
+  head () {
+    return {
+      title: 'Emergency centers - Hurricane',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Emergency center contact' }
+      ]
+    }
+  }
+}
+</script>
 
 <style lang="css" scoped>
 .centered {

@@ -7,8 +7,8 @@
         <b-navbar-nav>
           <b-nav-item href="/hurricane">Outlook</b-nav-item>
           <b-nav-item href="satellites">Satellites</b-nav-item>
-          <b-nav-item href="resources">Resources</b-nav-item>
-          <b-nav-item href="/hurricane/center">Emergency Center</b-nav-item>
+          <b-nav-item href="/hurricane/resources">Resources</b-nav-item>
+          <b-nav-item href="/hurricane/center/">Emergency Center</b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-navbar-brand><a href="http://products.gcoos.org" style="text-decoration:none; color:white;">Products & Service</a></b-navbar-brand>

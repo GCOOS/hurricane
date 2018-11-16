@@ -5,7 +5,7 @@
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
-          <nuxt-link to="/">Outlook</nuxt-link>
+          <b-nav-item href="/">Outlook</b-nav-item>
           <b-nav-item href="satellites">Satellites</b-nav-item>
           <b-nav-item href="resources">Resources</b-nav-item>
           <b-nav-item href="center">Emergency Center</b-nav-item>

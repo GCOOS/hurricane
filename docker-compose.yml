@@ -11,7 +11,7 @@ services:
       - "./dist/:/usr/share/nginx/html"
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:geo.gcoos.org;PathPrefixStrip:/hurricane"
+      - "traefik.frontend.rule=Host:geo.gcoos.org;PathPrefixStrip:/hurricane;ReplacePathRegex: ^/hurricane/(.*) /$$1"
       - "traefik.port=80"
       - "traefik.docker.network=geo_net"
     networks:

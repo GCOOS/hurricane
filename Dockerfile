@@ -16,7 +16,7 @@ CMD ["npm", "run", "generate"]
 
 # based on Nginx, to have only the compiled app, ready for production with Nginx
 FROM nginx:1.15
-COPY ./dist/ /usr/share/nginx/html
+COPY /usr/src/app/dist /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 WORKDIR /usr/share/nginx/html
 RUN chmod 644 *

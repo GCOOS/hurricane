@@ -11,10 +11,11 @@ ONBUILD RUN npm run build
 ENV HOST 0.0.0.0
 EXPOSE 8001
 
+CMD ["npm", "run", "generate"]
 CMD ["npm", "run", "start"]
-#CMD ["npm", "run", "generate"]
 
 # based on Nginx, to have only the compiled app, ready for production with Nginx
-#FROM nginx:1.15
-#COPY ./dist/ /usr/share/nginx/html
-#COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+FROM nginx:1.15
+COPY ./dist/ /usr/share/nginx/html
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80

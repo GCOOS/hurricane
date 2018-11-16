@@ -5,13 +5,13 @@ services:
     image: skobara/hurricane
     container_name: hurricane
     ports:
-      - "8001:8001"
+      - "8002:80"
     volumes:
       - "./:/usr/src/app/"
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:geo.gcoos.org;PathPrefixStrip:/hurricane"
-      - "traefik.port=8001"
+      - "traefik.port=80"
       - "traefik.docker.network=geo_net"
     networks:
       - geo_net

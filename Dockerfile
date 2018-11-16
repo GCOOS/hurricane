@@ -12,7 +12,7 @@ ENV HOST 0.0.0.0
 EXPOSE 8001
 
 CMD ["npm", "run", "generate"]
-CMD ["npm", "run", "start"]
+#CMD ["npm", "run", "start"]
 
 # based on Nginx, to have only the compiled app, ready for production with Nginx
 FROM nginx:1.15

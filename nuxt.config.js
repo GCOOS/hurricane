@@ -118,7 +118,7 @@ module.exports = {
   },
 
   router: {
-    //base: '/hurricane/'
+    base: '/hurricane/'
   },
   
   /*

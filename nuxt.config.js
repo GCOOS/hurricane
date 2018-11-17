@@ -9,7 +9,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'GCOOS Hurricane Information Dashboard. It provides information of hurricane track, satellite images, preparation resources and state/county emergency operation centers and shelters' }
+      { hid: 'description', name: 'description',
+        content: 'GCOOS Hurricane Information Dashboard. Hurricane-related information for the Gulf of Mexico including meteorological & oceanographic conditions; preparation, evacuation & post-storm resources. It provides information of hurricane track, satellite images, preparation resources and state/county emergency operation centers and shelters' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
@@ -120,7 +121,7 @@ module.exports = {
   router: {
     base: '/hurricane/'
   },
-  
+
   /*
   ** Build configuration
   */
@@ -129,7 +130,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }

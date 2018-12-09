@@ -11,7 +11,7 @@
           <b-nav-item href="center/">Emergency Center</b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
-          <b-navbar-brand><a href="http://products.gcoos.org" style="text-decoration:none; color:white;">Products & Service</a></b-navbar-brand>
+          <b-navbar-brand><a href="http://products.gcoos.org" style="text-decoration:none; color:white;">Products & Services</a></b-navbar-brand>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

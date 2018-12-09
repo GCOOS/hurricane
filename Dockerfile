@@ -2,8 +2,8 @@ FROM node:alpine
 
 # Create app directory
 RUN mkdir -p /usr/src/app
+COPY ./ /usr/src/app
 WORKDIR /usr/src/app
-ADD . /usr/src/app
 
 ONBUILD RUN npm install
 ONBUILD RUN npm run build

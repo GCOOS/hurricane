@@ -7,7 +7,6 @@ services:
     ports:
       - "8001:80"
     volumes:
-    #  - "./:/usr/src/app/"
       - "./dist/:/usr/share/nginx/html"
     labels:
       - "traefik.enable=true"

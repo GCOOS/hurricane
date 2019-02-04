@@ -8,17 +8,18 @@
           <i class="fas fa-home"></i>
         </b-navbar-brand>
         <b-navbar-nav>
-          <b-nav-item href="/hurricane">Outlook</b-nav-item>
-          <b-nav-item href="satellites/">Satellites</b-nav-item>
-          <b-nav-item href="resources/">Resources</b-nav-item>
-          <b-nav-item href="center/">Emergency Center</b-nav-item>
+          <b-nav-item href="/hurricane"><i class="fas fa-eye"></i>&nbsp;Outlook</b-nav-item>
+          <b-nav-item href="satellites/"><i class="fas fa-satellite"></i>&nbsp;Satellites</b-nav-item>
+          <b-nav-item href="resources/"><i class="fas fa-info-circle"></i>&nbsp;Resources</b-nav-item>
+          <b-nav-item href="videos/"><i class="fab fa-youtube"></i>&nbsp;Videos</b-nav-item>
+          <b-nav-item href="center/"><i class="fas fa-building"></i>&nbsp;Emergency Center</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>&nbsp;
   </div>
 </template>
 
-<style>
+<style scoped>
 .menubar {
   position: relative;
   margin-top: 105px;

@@ -90,7 +90,7 @@
 <style>
 .header {
   background-color: #ffffff;
-  z-index: 1000;
+  z-index: 1001;
   width: 100%;
   position: fixed;
   top: 0;

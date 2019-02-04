@@ -1,0 +1,357 @@
+footer {
+  padding: 0;
+  margin: 0;
+  font-family: 'DIN';
+  font-weight: 500;
+  padding-top: 96px;
+  font-size: 15px;
+  color: #262626;
+  letter-spacing: 0.30px;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('~assets/fonts/DINBold.eot');
+  src: url('~assets/fonts/DINBold.eot?#iefix') format('embedded-opentype'),
+    url('~assets/fonts/DINBold.woff2') format('woff2'),
+    url('~assets/fonts/DINBold.woff') format('woff'),
+    url('~assets/fonts/DINBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('~assets/fonts/DIN-Light.eot');
+  src: url('~assets/fonts/DIN-Light.eot?#iefix') format('embedded-opentype'),
+    url('~assets/fonts/DIN-Light.woff2') format('woff2'),
+    url('~assets/fonts/DIN-Light.woff') format('woff'),
+    url('~assets/fonts/DIN-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('~assets/fonts/DIN-Medium.eot');
+  src: url('~assets/fonts/DIN-Medium.eot?#iefix') format('embedded-opentype'),
+    url('~assets/fonts/DIN-Medium.woff2') format('woff2'),
+    url('~assets/fonts/DIN-Medium.woff') format('woff'),
+    url('~assets/fonts/DIN-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1340px;
+  padding: 0 10px;
+}
+
+/* Footer CSS Starts ======================= */
+.footer_main {
+  width: 100%;
+  float: left;
+  background: #00a1cb;
+  color: #fff;
+  font-family: 'DIN';
+  font-weight: 500;
+  font-size: 15px;
+  border-top: 3px solid #f19611;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.footer_inner {
+  border-top: 3px solid #fff;
+  position: relative;
+}
+
+.footer_inner:before {
+  content: "";
+  position: absolute;
+  background: #093f61;
+  width: 100%;
+  top: 0;
+  height: 57px;
+  left: 0;
+}
+
+.footer_col h5 {
+  position: relative;
+  color: #fff;
+  font-family: 'DIN';
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  padding: 20px 0;
+  height: 57px;
+  background: #093f61;
+}
+
+.footer_col h5 b {
+  background: url(~assets/images/gcoos/title_Sep.png) no-repeat left bottom;
+  position: absolute;
+  bottom: -9px;
+  left: 5px;
+  width: 18px;
+  height: 18px;
+}
+
+.footer_col h5:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #093f61;
+  top: 0;
+  left: -100%;
+  right: 100%;
+}
+
+.footer_col h5:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #093f61;
+  top: 0;
+  left: 100%;
+  right: -100%;
+}
+
+.footer_col h5 span {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 99;
+}
+
+
+.footer_col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer_col ul li {
+  font-family: 'DIN';
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.45px;
+  /*  margin-bottom: 12px;
+*/
+  margin-bottom: 11px;
+}
+
+.footer_col ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer_col ul li a:hover,
+.footer-nav ul li.current_page_item a {
+  color: #093f61;
+}
+
+.col_contact ul li {
+  line-height: 23px;
+}
+
+.location {
+  background: url(~assets/images/gcoos/location.png) no-repeat left 3px;
+  padding-left: 30px;
+}
+
+.email {
+  background: url(~assets/images/gcoos/email.png) no-repeat left 6px;
+  padding-left: 30px;
+}
+
+.fax {
+  background: url(~assets/images/gcoos/fax.png) no-repeat left 6px;
+  padding-left: 30px;
+}
+
+.footer_middle {
+  background: #c8edf7;
+  width: 100%;
+  float: left;
+  padding: 15px 0;
+  margin: 20px 0 0 0;
+}
+
+.footer_logos {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer_logos span {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 15px 0 10px;
+  background: url(~assets/images/gcoos/logo_sep.gif) no-repeat right top;
+  min-height: 91px;
+}
+
+.footer_logos span:last-child {
+  background-image: none;
+}
+
+.footer_logos span:first-child {
+  padding-left: 0;
+}
+
+.footer_social {
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  text-align: right;
+  color: #093f61;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: 'DIN';
+  font-weight: bold;
+  margin: 35px 0 0 0;
+}
+
+.footer_social span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer_social .soacial {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer_social a {
+  margin-left: 15px;
+}
+
+.footer_social a:hover img {
+  opacity: 0.9;
+}
+
+
+.footer_last {
+  width: 100%;
+  float: left;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.45px;
+  font-family: 'DIN';
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.45px;
+  color: #fff;
+  padding: 25px 0 10px;
+}
+
+.footer_last a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer_last a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.inline {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 5px;
+}
+
+.bull {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  margin: 0 10px 0 13px;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+  .footer_col {
+    padding-bottom: 20px;
+  }
+
+  .footer_middle {
+    text-align: center;
+  }
+
+  .col_Resources {
+    clear: both;
+  }
+
+  .footer_logos {
+    float: none;
+  }
+
+  .footer_social {
+    float: none;
+    margin-top: 20px;
+  }
+
+  /**/
+}
+
+@media only screen and (max-width: 767px) {
+  .footer_logos span {
+    background-image: none;
+  }
+
+  .box_detail {
+    min-height: inherit;
+  }
+
+  .location br {
+    display: none;
+  }
+
+  .location br:first-child {
+    display: inline-block;
+  }
+
+  .footer_logos span {
+    min-height: inherit;
+  }
+
+  .footer_logos img {
+    max-height: 60px;
+  }
+
+  /**/
+}
+
+@media only screen and (max-width: 400px) {
+  .footer_col.col-xs-6 {
+    width: 100%;
+  }
+
+  .col_Resources li,
+  .col_Engaged li,
+  .col_info li {
+    width: 50%;
+    float: left;
+  }
+
+  /**/
+}

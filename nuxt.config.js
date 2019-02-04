@@ -2,22 +2,32 @@ module.exports = {
   mode: 'universal',
 
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: "GCOOS Hurricane Information Dashboard",
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description',
-        content: 'GCOOS Hurricane Information Dashboard. Hurricane-related information for the Gulf of Mexico including meteorological & oceanographic conditions; preparation, evacuation & post-storm resources. It provides information of hurricane track, satellite images, preparation resources and state/county emergency operation centers and shelters' }
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'GCOOS Hurricane Information Dashboard. Hurricane-related information for the Gulf of Mexico including meteorological & oceanographic conditions; preparation, evacuation & post-storm resources. It provides information of hurricane track, satellite images, preparation resources and state/county emergency operation centers and shelters'
+      }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
+    link: [{
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: 'favicon.ico'
+      },
       {
         /* Google Font */
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Roboto'
+        href: 'https://fonts.googleapis.com/css?family=Lato:400,700'
       },
       {
         /* Material Design Icon */
@@ -32,8 +42,8 @@ module.exports = {
       {
         /* Font Awesome */
         rel: 'stylesheet',
-        href: "https://use.fontawesome.com/releases/v5.1.1/css/all.css",
-        integrity: "sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ",
+        href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css",
+        integrity: "sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP",
         crossorigin: "anonymous"
       },
       {
@@ -59,8 +69,7 @@ module.exports = {
         href: "https://unpkg.com/leaflet.markercluster@1.4.0/dist/MarkerCluster.css"
       }
     ],
-    script: [
-      {
+    script: [{
         /* Leaflet */
         src: "https://unpkg.com/leaflet@1.3.4/dist/leaflet.js",
         integrity: "sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==",
@@ -80,31 +89,48 @@ module.exports = {
         /* Leaflet Omnivore */
         src: '//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'
       },
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
+      {
+        /* jQuery */
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+      }
     ]
   },
 
   /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
+   ** Customize the progress-bar color
+   */
+  loading: {
+    color: '#fff'
+  },
 
   /*
-  ** Global CSS
-  */
-  css: [
+   ** Global CSS
+   */
+  css: [{
+      src: '~assets/css/main.css'
+    },
+    {
+      src: '~assets/css/menu.css'
+    },
+    {
+      src: '~assets/css/grid-only.css'
+    },
+    {
+      src: '~assets/css/footer.css'
+    }
   ],
 
   /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-    { src: '~plugins/ga.js', ssr: false }
-  ],
+   ** Plugins to load before mounting the App
+   */
+  plugins: [{
+    src: '~plugins/ga.js',
+    ssr: false
+  }],
 
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
@@ -112,8 +138,8 @@ module.exports = {
     'bootstrap-vue/nuxt'
   ],
   /*
-  ** Axios module configuration
-  */
+   ** Axios module configuration
+   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
@@ -123,12 +149,12 @@ module.exports = {
   },
 
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
+     ** You can extend webpack config here
+     */
     extend(config, ctx) {
 
     }

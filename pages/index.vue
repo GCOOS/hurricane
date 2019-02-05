@@ -3,8 +3,13 @@
     <b-container fluid>
       <section>
         <b-row>
-          <b-col>
-            <div id="map" style="min-height:70vh;"></div>
+          <b-col md="8">
+            <div id="map" style="min-height:600px;"></div>
+          </b-col>
+          <b-col md="4">
+            <div id="twitter_timeline" style="height:650px;">
+              <a class="twitter-timeline" data-height="600" data-dnt="true" href="https://twitter.com/gisp_shin/lists/hurricane?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter">A Twitter List by gisp_shin</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
           </b-col>
         </b-row>
         <br>

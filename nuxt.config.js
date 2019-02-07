@@ -92,6 +92,12 @@ module.exports = {
       {
         /* jQuery */
         src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+      }, {
+        /* d3 */
+        src: "https://d3js.org/d3.v5.min.js"
+      }, {
+        /* d3-fetch */
+        src: "https://d3js.org/d3-fetch.v1.min.js"
       }
     ]
   },
@@ -107,9 +113,6 @@ module.exports = {
    ** Global CSS
    */
   css: [{
-      src: '~assets/css/main.css'
-    },
-    {
       src: '~assets/css/menu.css'
     },
     {
@@ -117,6 +120,9 @@ module.exports = {
     },
     {
       src: '~assets/css/footer.css'
+    },
+    {
+      src: '~assets/css/main.css'
     }
   ],
 

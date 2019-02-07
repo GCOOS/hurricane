@@ -107,7 +107,6 @@
   display: inline-block;
   vertical-align: top;
   margin: 10px 0px 0;
-
   height: 71px;
   width: 209px;
 }

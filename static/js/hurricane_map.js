@@ -60,37 +60,37 @@
     f: "image/png"
   });
 
-/*
-  var hurricaneNOAA = L.esri.dynamicMapLayer({
-    url: "https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer",
-    opacity: 0.9,
-    f: "image"
-  }).addTo(map);
-*/
-/*
-  var webcam = L.esri.dynamicMapLayer({
-    url: "https://gcoos3.tamu.edu/arcgis/rest/services/Stations/Gulf_WebCam/MapServer",
-    opacity: 0.8
-  }).addTo(map);
-  webcam.bindPopup(function (error, featureCollection) {
-    if (error || featureCollection.features.length === 0) {
-      return false;
-    } else {
-      //console.log(featureCollection);
-      return L.Util.template(
-        '<a href="{link}" target="_blank">Open WebCam</a>',
-        featureCollection.features[0].properties
-      );
-    }
-  }).addTo(map);
-*/
-/*
-  var hfr6km = L.tileLayer.wms("http://hfrnet-tds.ucsd.edu/thredds/wms", {
-      layers: 'surface_sea_water_velocity&PALETTE=rainbow',
-          format: 'image/png',
-          transparent: true
-  });
-*/
+  /*
+    var hurricaneNOAA = L.esri.dynamicMapLayer({
+      url: "https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer",
+      opacity: 0.9,
+      f: "image"
+    }).addTo(map);
+  */
+  /*
+    var webcam = L.esri.dynamicMapLayer({
+      url: "https://gcoos3.tamu.edu/arcgis/rest/services/Stations/Gulf_WebCam/MapServer",
+      opacity: 0.8
+    }).addTo(map);
+    webcam.bindPopup(function (error, featureCollection) {
+      if (error || featureCollection.features.length === 0) {
+        return false;
+      } else {
+        //console.log(featureCollection);
+        return L.Util.template(
+          '<a href="{link}" target="_blank">Open WebCam</a>',
+          featureCollection.features[0].properties
+        );
+      }
+    }).addTo(map);
+  */
+  /*
+    var hfr6km = L.tileLayer.wms("http://hfrnet-tds.ucsd.edu/thredds/wms", {
+        layers: 'surface_sea_water_velocity&PALETTE=rainbow',
+            format: 'image/png',
+            transparent: true
+    });
+  */
   var nexrad = L.tileLayer.wms(
     "http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
       layers: "nexrad-n0r-900913",
@@ -162,8 +162,8 @@
   // ================================================================
   const groupedOverlay = {
     "Nautical Chart": nauticalChart,
-//    "WebCam": webcam,
-//    "Hurricane Track": hurricaneNOAA,
+    //    "WebCam": webcam,
+    //    "Hurricane Track": hurricaneNOAA,
     "Active Hurricane": activeHurricaneESRI,
     "Recent Hurricanes": recentHurricaneESRI,
     "Wind Speed": windESRI,
@@ -176,12 +176,31 @@
     //    "HYCOM Region 1": hycom,
     "Sea Surface Height": ssh
   };
-  L.control
-    .layers(basemapLayers, groupedOverlay, {
-      position: "bottomleft"
+  var controlLayers = L.control.layers(basemapLayers, groupedOverlay, {
+      position: "bottomleft",
+      collapsed: true
     })
     .addTo(map);
 
   // Full screen control
   map.addControl(new L.Control.Fullscreen());
+
+  // Hycom Ocean Current
+  d3.json("https://geo.gcoos.org/data/hycom/hycom_surface_current.json").then(function (data) {
+    var velocityLayer = L.velocityLayer({
+      displayValues: true,
+      displayOptions: {
+        velocityType: 'water',
+        displayPosition: 'bottomleft',
+        displayEmptyString: 'No water data'
+      },
+      data: data,
+      maxVelocity: 2.5,
+      velocityScale: 0.1 // arbitrary default 0.005
+    }).addTo(map);
+
+    controlLayers.addOverlay(velocityLayer, 'HYCOM Ocean Current');
+
+  });
+
 })();

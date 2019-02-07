@@ -7,6 +7,12 @@
   margin-top: -20px;
 }
 
+/* the setting below is required for safari */
+.row:before,
+.row:after {
+  display: inline-block;
+}
+
 .iframe_gcoos {
   width: 100%;
   min-height: 600px;

@@ -4,15 +4,25 @@
     <b-navbar toggleable="md" type="dark" variant="dark">
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse is-nav id="nav-collapse">
-        <b-navbar-brand href="http://products.gcoos.org">
+        <b-navbar-brand href="https://products.gcoos.org">
           <i class="fas fa-home"></i>
         </b-navbar-brand>
         <b-navbar-nav>
-          <b-nav-item href="/hurricane"><i class="fas fa-eye"></i>&nbsp;Outlook</b-nav-item>
-          <b-nav-item href="satellites/"><i class="fas fa-satellite"></i>&nbsp;Satellites</b-nav-item>
-          <b-nav-item href="resources/"><i class="fas fa-info-circle"></i>&nbsp;Resources</b-nav-item>
-          <b-nav-item href="videos/"><i class="fab fa-youtube"></i>&nbsp;Videos</b-nav-item>
-          <b-nav-item href="center/"><i class="fas fa-building"></i>&nbsp;Emergency Center</b-nav-item>
+          <b-nav-item href="/hurricane/">
+            <i class="fas fa-eye"></i>&nbsp;Outlook
+          </b-nav-item>
+          <b-nav-item href="/hurricane/satellites/">
+            <i class="fas fa-satellite"></i>&nbsp;Satellites
+          </b-nav-item>
+          <b-nav-item href="/hurricane/resources/">
+            <i class="fas fa-info-circle"></i>&nbsp;Resources
+          </b-nav-item>
+          <b-nav-item href="/hurricane/videos/">
+            <i class="fab fa-youtube"></i>&nbsp;Videos
+          </b-nav-item>
+          <b-nav-item href="/hurricane/center/">
+            <i class="fas fa-building"></i>&nbsp;Emergency Center
+          </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>&nbsp;

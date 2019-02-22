@@ -266,6 +266,11 @@
                     </a>
                   </span>
                   <span>
+                    <a target="_blank" href="https://twitter.com/GCOOS1/">
+                      <img src="~/assets/images/gcoos/twitter.png" alt="GCOOS Twitter Page">
+                    </a>
+                  </span>
+                  <span>
                     <a
                       target="_blank"
                       href="https://www.youtube.com/channel/UCLIjMeR9opm2f6S7uAJWLlQ"

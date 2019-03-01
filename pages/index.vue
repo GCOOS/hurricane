@@ -98,7 +98,7 @@
         <b-col md="4">
           <b-card title="Storm Surge & Wave" img-src="img/cera_storm_surge_1180x607.jpg" img-top>
             <a href="https://cera.coastalrisk.live/" target="_blank">
-              <i class="fas fa-search-plus"></i>
+              <i class="fas fa-external-link-alt"></i>
             </a>
           </b-card>
         </b-col>

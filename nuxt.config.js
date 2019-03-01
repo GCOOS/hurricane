@@ -64,9 +64,20 @@ module.exports = {
         href: "https://unpkg.com/leaflet.markercluster@1.4.0/dist/MarkerCluster.Default.css"
       },
       {
-        /* Leaflet Marker Cluster 2 */
+        /* Leaflet Awesome Marker */
         rel: "stylesheet",
-        href: "https://unpkg.com/leaflet.markercluster@1.4.0/dist/MarkerCluster.css"
+        href: "https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"
+      }, {
+        /* Leaflet Time Dimesion */
+        rel: "stylesheet",
+        href: "https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"
+      }, {
+        /* Leaflet Gesture Control */
+        rel: "stylesheet",
+        href: "https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
+      }, {
+        rel: "stylesheet",
+        href: "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
       }
     ],
     script: [{
@@ -84,10 +95,27 @@ module.exports = {
       {
         /* Leaflet Fullscreen */
         src: "https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"
-      },
-      {
+      }, {
+        /* Leaflet Awesome Marker */
+        src: "https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"
+      }, {
         /* Leaflet Omnivore */
-        src: '//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'
+        src: 'https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'
+      }, {
+        /* ISO 8601 Date and Time */
+        src: "https://cdn.rawgit.com/nezasa/iso8601-js-period/master/iso8601.min.js"
+      }, {
+        /* NonTiledLayer */
+        src: "https://unpkg.com/leaflet.nontiledlayer@1.0.7/dist/NonTiledLayer.js"
+      }, {
+        /* Leaflet Time Dimesion */
+        src: "https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"
+      }, {
+        /* Leaflet Gesture Control */
+        src: "https://unpkg.com/leaflet-gesture-handling"
+      }, {
+        /* High charts */
+        src: "https://code.highcharts.com/highcharts.src.js"
       },
       {
         /* jQuery */
@@ -149,7 +177,13 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
+  /*
+   ** Bootstrap-vue configuration
+   */
+  bootstrapVue: {
+    bootstrapCSS: true, // or false for customized CSS
+    bootstrapVueCSS: true
+  },
   router: {
     base: '/hurricane/'
   },

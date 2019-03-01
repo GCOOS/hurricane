@@ -167,7 +167,7 @@
           <br>
         </b-col>
         <b-col sm="12" md="6" lg="4" xl="4">
-          <b-card no-body header="<b>Storm related blogs</b>">
+          <b-card no-body bg-variant="dark" text-variant="white" header="Storm related blogs">
             <b-list-group flush>
               <b-list-group-item
                 href="http://jyotikastorms.blogspot.com/"

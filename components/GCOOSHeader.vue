@@ -52,12 +52,12 @@
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown text="DATA PORTAL" right class="gcoos_nav_item">
-            <b-dropdown-item href="https://data.gcoos.org/">Regional Assets</b-dropdown-item>
-            <b-dropdown-item href="https://data.gcoos.org/monitoring.php">Data Flow Monitoring</b-dropdown-item>
-            <b-dropdown-item href="https://data.gcoos.org/directAccess.php">HTTP Data Request</b-dropdown-item>
-            <b-dropdown-item href="https://data.gcoos.org/sos.php">Sensor Observing Services</b-dropdown-item>
-            <b-dropdown-item href="https://data.gcoos.org/waf.php">Web Accessible Folder</b-dropdown-item>
-            <b-dropdown-item href="https://data.gcoos.org/erddap.php">ERDDAP Service</b-dropdown-item>
+            <b-dropdown-item href="http://data.gcoos.org/">Regional Assets</b-dropdown-item>
+            <b-dropdown-item href="http://data.gcoos.org/monitoring.php">Data Flow Monitoring</b-dropdown-item>
+            <b-dropdown-item href="http://data.gcoos.org/directAccess.php">HTTP Data Request</b-dropdown-item>
+            <b-dropdown-item href="http://data.gcoos.org/sos.php">Sensor Observing Services</b-dropdown-item>
+            <b-dropdown-item href="http://data.gcoos.org/waf.php">Web Accessible Folder</b-dropdown-item>
+            <b-dropdown-item href="http://data.gcoos.org/erddap.php">ERDDAP Service</b-dropdown-item>
             <b-dropdown-item
               href="http://mmisw.org/ont/gcoos/parameter"
               target="_blank"
@@ -177,7 +177,7 @@
   }
 
   .gcoos_logo {
-    margin: 10px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
   }
 }
 @media only screen and (max-width: 400px) {

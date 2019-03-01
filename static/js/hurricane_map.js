@@ -1,13 +1,30 @@
 (function () {
+  var endDate = new Date();
+  endDate.setUTCMinutes(0, 0, 0);
+
   var map = L.map("map", {
     zoomControl: true,
     scrollWheelZoom: false,
     zoom: 5,
     center: [25.7, -80.8],
+    timeDimension: true,
+    timeDimensionControl: false,
+    timeDimensionOptions: {
+      timeInterval: "PT4H/" + endDate.toISOString(),
+      period: "PT4M",
+      currentTime: endDate
+    },
+    timeDimensionControlOptions: {
+      autoPlay: false,
+      playerOptions: {
+        buffer: 10,
+        transitionTime: 250,
+        loop: true,
+      }
+    },
     attributionControl: true //should be true for goecoding
   });
-  // disable smartphone zoom when scrolloing down
-  map.scrollWheelZoom.disable();
+
   // ================================================================
   // Basemap Layers
   // ================================================================
@@ -33,7 +50,6 @@
   // ================================================================
   const basemapLayers = {
     "Topographic": topo,
-    "National Geographic": nationalgeographic,
     "Ocean": esriOcean,
     "Imagery": esriImage,
     "Imagery(Firefly)": esriImageFirefly,
@@ -60,37 +76,21 @@
     f: "image/png"
   });
 
-  /*
-    var hurricaneNOAA = L.esri.dynamicMapLayer({
-      url: "https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer",
-      opacity: 0.9,
-      f: "image"
-    }).addTo(map);
-  */
-  /*
-    var webcam = L.esri.dynamicMapLayer({
-      url: "https://gcoos3.tamu.edu/arcgis/rest/services/Stations/Gulf_WebCam/MapServer",
-      opacity: 0.8
-    }).addTo(map);
-    webcam.bindPopup(function (error, featureCollection) {
-      if (error || featureCollection.features.length === 0) {
-        return false;
-      } else {
-        //console.log(featureCollection);
-        return L.Util.template(
-          '<a href="{link}" target="_blank">Open WebCam</a>',
-          featureCollection.features[0].properties
-        );
-      }
-    }).addTo(map);
-  */
-  /*
-    var hfr6km = L.tileLayer.wms("http://hfrnet-tds.ucsd.edu/thredds/wms", {
-        layers: 'surface_sea_water_velocity&PALETTE=rainbow',
-            format: 'image/png',
-            transparent: true
-    });
-  */
+  var webcam = L.esri.dynamicMapLayer({
+    url: "http://gis.gcoos.org:8080/arcgis/rest/services/Stations/Gulf_WebCam/MapServer"
+  });
+  webcam.bindPopup(function (error, featureCollection) {
+    if (error || featureCollection.features.length === 0) {
+      return false;
+    } else {
+      //console.log(featureCollection);
+      return L.Util.template(
+        '<a href="{link}" target="_blank">Open WebCam</a>',
+        featureCollection.features[0].properties
+      );
+    }
+  });
+
   var nexrad = L.tileLayer.wms(
     "https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
       layers: "nexrad-n0r-900913",
@@ -109,39 +109,21 @@
     opacity: 0.7
   });
 
-  var nrlWaterTemp = L.tileLayer.wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {
-    layers: 'NRL_MEAN/water_temp',
+  var nrl26cIsotherm = L.tileLayer.wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {
+    layers: 'NRL_MEAN/Isotherm',
     format: 'image/png',
     transparent: true,
     attribution: "GCOOS-RA, NRL",
     opacity: 0.7
   });
 
-  var nrlSurfEl = L.tileLayer.wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {
-    layers: 'NRL_MEAN/surf_el_detlcl',
+  var nrlcyclonPotential = L.tileLayer.wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {
+    layers: 'NRL_MEAN/TCHP',
     format: 'image/png',
     transparent: true,
     attribution: "GCOOS-RA, NRL",
     opacity: 0.7
   });
-
-  var currentsNOAA = L.esri.dynamicMapLayer({
-    url: "https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/guidance_model_ocean_grtofs_offsets/MapServer",
-    f: "image"
-  });
-
-  var nauticalChart = L.esri.dynamicMapLayer({
-    url: "https://seamlessrnc.nauticalcharts.noaa.gov/arcgis/rest/services/RNC/NOAA_RNC/MapServer/",
-    opacity: 0.7,
-    f: "image"
-  });
-
-  // var hycom = L.tileLayer.wms("http://ecowatch.ncddc.noaa.gov/thredds/wms", {
-  //   layers: 'sea_water_velocity',
-  //    format: 'image/png',
-  //    transparent: true,
-  //    elevation: '0'
-  //  });
 
   var ssh = L.tileLayer.wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {
     layers: 'EDDY_SSH/ssh',
@@ -151,30 +133,30 @@
     opacity: 0.7
   });
 
-  var gebcoGrid = L.tileLayer.wms("http://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv", {
-    layers: 'GEBCO_LATEST',
-    format: 'image/png',
-    transparent: 'true'
+  var currentsNOAA = L.esri.dynamicMapLayer({
+    url: "https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/guidance_model_ocean_grtofs_time/MapServer"
+  });
+
+  var nauticalChart = L.esri.dynamicMapLayer({
+    url: "https://seamlessrnc.nauticalcharts.noaa.gov/arcgis/rest/services/RNC/NOAA_RNC/MapServer/",
+    opacity: 0.7,
+    f: "image"
   });
 
   // ================================================================
   /* grouping ancillayr data layers */
   // ================================================================
   const groupedOverlay = {
-    "Nautical Chart": nauticalChart,
-    //    "WebCam": webcam,
-    //    "Hurricane Track": hurricaneNOAA,
     "Active Hurricane": activeHurricaneESRI,
     "Recent Hurricanes": recentHurricaneESRI,
     "Wind Speed": windESRI,
     "Radar": nexrad,
-    "NRL Mean Seawater Velocity": nrlVelocity,
-    "NRL Mean Seawater Temperature": nrlWaterTemp,
-    "NRL Mean Seasurface Elevation": nrlSurfEl,
-    "NOAA Ocean Current Model": currentsNOAA,
-    //    "HF Radar 6km": hfr6km,
-    //    "HYCOM Region 1": hycom,
-    "Sea Surface Height": ssh
+    "NRL Mean Seawater Velocity<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=NRL_MEAN/sea_water_velocity&bbox=-98.0,18.0,-79.5145715943338,30.96001434326172' target='_blank'>**</a>": nrlVelocity,
+    "NRL Depth 26C Isotherm<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=NRL_MEAN/Isotherm&bbox=-98.0,18.0,-79.5145715943338,30.96001434326172' target='_blank'>**</a>": nrl26cIsotherm,
+    "NRL Mean Tropical Cyclone Heat Potential<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=NRL_MEAN/TCHP&bbox=-98.0,18.0,-79.5145715943338,30.96001434326172' target='_blank'>**</a>": nrlcyclonPotential,
+    "Sea Surface Height<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=EDDY_SSH/ssh&bbox=-180.0,-66.0,180.0,66.0' target='_blank'>**</a>": ssh,
+    "NOAA nowCOAST Ocean Curret Model": currentsNOAA,
+    "Nautical Chart": nauticalChart,
   };
   var controlLayers = L.control.layers(basemapLayers, groupedOverlay, {
       position: "bottomleft",
@@ -186,21 +168,61 @@
   map.addControl(new L.Control.Fullscreen());
 
   // Hycom Ocean Current
-  d3.json("https://geo.gcoos.org/data/hycom/hycom_surface_current.json").then(function (data) {
-    var velocityLayer = L.velocityLayer({
-      displayValues: true,
-      displayOptions: {
-        velocityType: 'water',
-        displayPosition: 'bottomleft',
-        displayEmptyString: 'No water data'
-      },
-      data: data,
-      maxVelocity: 2.5,
-      velocityScale: 0.1 // arbitrary default 0.005
-    }).addTo(map);
+  function addHycom() {
+    d3.json("https://geo.gcoos.org/data/hycom/hycom_surface_current.json").then(function (data) {
+      var velocityLayer = L.velocityLayer({
+        displayValues: true,
+        displayOptions: {
+          velocityType: 'water',
+          displayPosition: 'bottomleft',
+          displayEmptyString: 'No water data'
+        },
+        data: data,
+        maxVelocity: 2.5,
+        velocityScale: 0.1 // arbitrary default 0.005
+      }).addTo(map);
 
-    controlLayers.addOverlay(velocityLayer, 'HYCOM Ocean Current');
+      controlLayers.addOverlay(velocityLayer, 'HYCOM Ocean Current');
+    });
+  }
+  addHycom();
 
+  //=================================================================
+  // Weather Info from Forecast.io
+  //=================================================================
+  var redMarker = L.AwesomeMarkers.icon({
+    icon: 'cloud-sun-rain',
+    iconColor: 'black',
+    prefix: 'fa',
+    markerColor: 'red'
   });
+  var weatherMarker = L.marker([27, -90], {
+    icon: redMarker,
+    riseOnHover: true, // z-index offset 250
+    zIndexOffset: 2000,
+    draggable: true
+  }).addTo(map);
+  weatherMarker.bindPopup(L.popup({
+    maxWidth: 250
+  }).setContent("<b>Drag and Drop this marker to see weather information at the marker's point<br>Weather information will be updated hourly</b>"));
+  // every time the marker is dragged, update the weather container
+  weatherMarker.on('dragend', onDragEnd);
+  // Set the initial marker coordinate on load.
 
+  // ================================================================
+  // Weather update
+  // ================================================================
+  function onDragEnd() {
+    $("#customize-script-container").html('');
+    var m = weatherMarker.getLatLng();
+    console.log('Latitude: ' + m.lat.toFixed(4) + ' Longitude: ' + m.lng.toFixed(4));
+    $("#customize-script-container").append('<script type="text/javascript" src="https://darksky.net/widget/graph-bar/' + m.lat.toFixed(4) + ',' + m.lng.toFixed(4) + '/us12/en.js?width=100%&height=400&title=FullForecast&textColor=333333&bgColor=ransparent&transparency=false&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=333333&currentDetailsOption=true"></script>');
+  }
+
+  // Set layers which redraw in a certain period
+  setInterval(function () {
+    onDragEnd();
+    controlLayers.removeLayer(velocityLayer);
+    addHycom();
+  }, 360000);
 })();

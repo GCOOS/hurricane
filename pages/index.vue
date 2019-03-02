@@ -3,14 +3,16 @@
     <b-container fluid>
       <b-row>
         <b-col md="8">
-          <div id="map" style="min-height:600px;"></div>
+          <div id="map"></div>
+          <br>
           <div id="customize-script-container">
             <script
               type="text/javascript"
-              src="https://darksky.net/widget/graph-bar/27.0000,-90.00000/us12/en.js?width=undefined&title=Full Forecast&textColor=333333&bgColor=FFFFFF&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=C7C7C7&currentDetailsOption=true"
+              src="https://darksky.net/widget/graph-bar/27.0000,-90.00000/us12/en.js?width=undefined&height=350&title=Full Forecast&textColor=333333&bgColor=FFFFFF&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=C7C7C7&currentDetailsOption=true"
             ></script>
           </div>
         </b-col>
+
         <b-col md="4">
           <div id="twitter_timeline" style="height:650px;">
             <a
@@ -133,12 +135,21 @@ export default {
 </script>
 
 <style>
+#map {
+  min-height: 500px;
+  height: 70vh;
+}
 #customize-script-container {
-  margin-top: -40px;
   width: 100%;
-  height: 320px;
 }
 .leaflet-control-velocity.leaflet-control {
   color: white;
+}
+
+@media only screen and (max-width: 400px) {
+  #leaflet_map {
+    min-height: 250px;
+    height: 70vh;
+  }
 }
 </style>

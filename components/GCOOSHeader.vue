@@ -112,7 +112,6 @@
   display: inline-block;
   vertical-align: top;
   margin: 10px 0px 0;
-
   height: 71px;
   width: 209px;
 }
@@ -175,15 +174,14 @@
   .social_list {
     display: none;
   }
-
-  .gcoos_logo {
-    margin: 0px 0px 0px 0px;
-  }
 }
 @media only screen and (max-width: 400px) {
   .gcoos_logo svg {
     max-height: 50px;
     max-width: 145px;
+  }
+  .gcoos_logo {
+    margin: 0px 0px 0px 0px;
   }
 }
 </style>

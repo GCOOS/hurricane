@@ -174,6 +174,10 @@
   .social_list {
     display: none;
   }
+  /* only hurricane */
+  .gcoos_logo {
+    margin: 0px 0px 0px 0px;
+  }
 }
 @media only screen and (max-width: 400px) {
   .gcoos_logo svg {

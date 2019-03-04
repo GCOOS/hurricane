@@ -76,6 +76,7 @@ module.exports = {
         rel: "stylesheet",
         href: "https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
       }, {
+        /* jQuery UI */
         rel: "stylesheet",
         href: "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
       }
@@ -119,7 +120,10 @@ module.exports = {
       },
       {
         /* jQuery */
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+        src: "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+      }, {
+        /* jQuery-UI */
+        src: "https://code.jquery.com/ui/1.12.1/jquery-ui.js"
       }, {
         /* d3 */
         src: "https://d3js.org/d3.v5.min.js"

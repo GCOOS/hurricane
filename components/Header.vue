@@ -29,7 +29,7 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 .menubar {
   position: relative;
   margin-top: 105px;
@@ -45,9 +45,6 @@
 /* Navbar setting */
 .navbar {
   padding: 1px 12px !important;
-}
-.nav-link {
-  color: white !important;
 }
 .bg-dark {
   background-color: #0d4060 !important;

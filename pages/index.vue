@@ -2,22 +2,19 @@
   <div>
     <b-container fluid>
       <b-row>
-        <b-col md="8">
+        <b-col md="8" xs="12">
           <div id="map"></div>
-          <br>
-          <div id="customize-script-container">
+          <div id="customize-script-container" class="weather_div">
             <script
               type="text/javascript"
-              src="https://darksky.net/widget/graph-bar/27.0000,-90.00000/us12/en.js?width=undefined&height=350&title=Full Forecast&textColor=333333&bgColor=FFFFFF&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=C7C7C7&currentDetailsOption=true"
+              src="https://darksky.net/widget/graph-bar/25.18879,-80.66849/us12/en.js?width=undefined&height=350&title=Full Forecast&textColor=333333&bgColor=FFFFFF&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=C7C7C7&currentDetailsOption=true"
             ></script>
           </div>
         </b-col>
-
-        <b-col md="4">
-          <div id="twitter_timeline" style="height:650px;">
+        <b-col md="4" xs="12">
+          <div id="tweet_timeline">
             <a
               class="twitter-timeline"
-              data-height="800"
               data-dnt="true"
               href="https://twitter.com/gisp_shin/lists/hurricane?ref_src=twsrc%5Etfw"
               data-chrome="noheader nofooter"
@@ -25,8 +22,8 @@
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </b-col>
+        <br>
       </b-row>
-      <br>
       <b-row>
         <b-col md="4">
           <b-card
@@ -41,6 +38,7 @@
               <i class="fas fa-search-plus"></i>
             </a>
           </b-card>
+          <br>
         </b-col>
         <b-col md="4">
           <b-card
@@ -55,6 +53,7 @@
               <i class="fas fa-search-plus"></i>
             </a>
           </b-card>
+          <br>
         </b-col>
         <b-col md="4">
           <b-card
@@ -68,9 +67,9 @@
               <i class="fas fa-search-plus"></i>
             </a>
           </b-card>
+          <br>
         </b-col>
       </b-row>
-      <br>
       <b-row>
         <b-col md="4">
           <b-card
@@ -85,6 +84,7 @@
               <i class="fas fa-search-plus"></i>
             </a>
           </b-card>
+          <br>
         </b-col>
         <b-col md="4">
           <b-card
@@ -96,6 +96,7 @@
               <i class="fas fa-search-plus"></i>
             </a>
           </b-card>
+          <br>
         </b-col>
         <b-col md="4">
           <b-card title="Storm Surge & Wave" img-src="img/cera_storm_surge_1180x607.jpg" img-top>
@@ -105,7 +106,6 @@
           </b-card>
         </b-col>
       </b-row>
-      <br>
     </b-container>
     <script src="js/leaflet-velocity.js"></script>
     <script src="js/hurricane_map.js"></script>
@@ -141,6 +141,10 @@ export default {
 }
 #customize-script-container {
   width: 100%;
+  height: 100%;
+}
+#tweet_timeline {
+  height: 70%;
 }
 .leaflet-control-velocity.leaflet-control {
   color: white;
@@ -150,6 +154,15 @@ export default {
   #leaflet_map {
     min-height: 250px;
     height: 70vh;
+  }
+  .weather_div {
+    display: none;
+  }
+  #tweet_timeline {
+    display: none;
+  }
+  .awesome-marker-icon-red.awesome-marker.leaflet-zoom-animated.leaflet-interactive.leaflet-marker-draggable {
+    display: none;
   }
 }
 </style>

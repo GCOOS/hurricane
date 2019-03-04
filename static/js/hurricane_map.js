@@ -4,9 +4,10 @@
 
   var map = L.map("map", {
     zoomControl: true,
-    scrollWheelZoom: false,
-    zoom: 5,
-    center: [25.7, -80.8],
+    scrollWheelZoom: true,
+    gestureHandling: true,
+    //zoom: 5,
+    //center: [25.7, -80.8],
     timeDimension: true,
     timeDimensionControl: false,
     timeDimensionOptions: {
@@ -23,7 +24,10 @@
       }
     },
     attributionControl: true //should be true for goecoding
-  });
+  }).fitBounds([
+    [23.000, -88.500],
+    [28.000, -73.000]
+  ]);
 
   // ================================================================
   // Basemap Layers
@@ -196,7 +200,7 @@
     prefix: 'fa',
     markerColor: 'red'
   });
-  var weatherMarker = L.marker([27, -90], {
+  var weatherMarker = L.marker([25.18879, -80.66849], {
     icon: redMarker,
     riseOnHover: true, // z-index offset 250
     zIndexOffset: 2000,

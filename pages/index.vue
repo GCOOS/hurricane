@@ -16,6 +16,7 @@
             <a
               class="twitter-timeline"
               data-dnt="true"
+              data-height="800"
               href="https://twitter.com/gisp_shin/lists/hurricane?ref_src=twsrc%5Etfw"
               data-chrome="noheader nofooter"
             >A Twitter List by gisp_shin</a>
@@ -144,7 +145,7 @@ export default {
   height: 100%;
 }
 #tweet_timeline {
-  height: 70%;
+  min-height: 500px;
 }
 .leaflet-control-velocity.leaflet-control {
   color: white;

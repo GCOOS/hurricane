@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="75px" viewBox="0 0 148 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M49.4974747,25.5391052 L73.5391052,1.49747468 L97.5807358,25.5391052 L73.5391052,49.5807358 L49.4974747,73.6223664 L25.4558441,49.5807358 L49.4974747,25.5391052 Z M4.26325641e-13,24.1248917 L24.0416306,0.0832611207 L48.0832611,24.1248917 L24.0416306,48.1665222 L4.26325641e-13,24.1248917 Z M57.9827561,67.9655121 L67.882251,58.0660172 L71.4177849,61.6015511 L61.51829,71.501046 L57.9827561,67.9655121 Z" id="path-1"></path>
+        <path d="M98.9949494,26.9533188 L123.03658,2.91168825 L147.07821,26.9533188 L123.03658,50.9949494 L98.9949494,75.0365799 L74.9533188,50.9949494 L98.9949494,26.9533188 Z M107.480231,69.3797257 L117.379726,59.4802307 L120.91526,63.0157646 L111.015765,72.9152596 L107.480231,69.3797257 Z M131.521861,45.3380951 L141.421356,35.4386002 L144.95689,38.9741341 L135.057395,48.873629 L131.521861,45.3380951 Z" id="path-3"></path>
+    </defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logotype-/-white" transform="translate(0.000000, -3.000000)">
+            <g id="Group-2" transform="translate(0.000000, 3.000000)">
+                <g id="logo-/-medium-blue">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="logo" fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <use id="logo" fill="#096AD0" xlink:href="#path-3"></use>
+            </g>
+        </g>
+    </g>
+</svg>

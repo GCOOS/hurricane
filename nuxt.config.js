@@ -22,35 +22,30 @@ module.exports = {
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
-        href: 'favicon.ico'
+        href: '/hurricane/favicon.ico'
       },
       {
         /* Google Font */
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Lato:400,700'
-      },
-      {
-        /* Material Design Icon */
         rel: "stylesheet",
-        href: "https://cdn.materialdesignicons.com/1.3.41/css/materialdesignicons.min.css"
+        href: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
       },
       {
-        /* Google Material Icons */
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
+        /* Adobe Proxima Nova */
+        rel: "stylesheet",
+        href: "https://use.typekit.net/pel5bpx.css"
       },
       {
         /* Font Awesome */
-        rel: 'stylesheet',
-        href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css",
-        integrity: "sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP",
+        rel: "stylesheet",
+        href: "https://use.fontawesome.com/releases/v5.8.1/css/all.css",
+        integrity: "sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf",
         crossorigin: "anonymous"
       },
       {
         /* Leaflet */
         rel: "stylesheet",
-        href: "https://unpkg.com/leaflet@1.3.4/dist/leaflet.css",
-        integrity: "sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==",
+        href: "https://unpkg.com/leaflet@1.5.1/dist/leaflet.css",
+        integrity: "sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==",
         crossorigin: ""
       },
       {
@@ -67,30 +62,29 @@ module.exports = {
         /* Leaflet Awesome Marker */
         rel: "stylesheet",
         href: "https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"
-      }, {
-        /* Leaflet Time Dimesion */
-        rel: "stylesheet",
-        href: "https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"
-      }, {
+      },
+      {
         /* Leaflet Gesture Control */
         rel: "stylesheet",
         href: "https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
-      }, {
-        /* jQuery UI */
+      },
+      {
+        /* Leaflet Time Dimesion */
         rel: "stylesheet",
-        href: "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+        href: "https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"
       }
+
     ],
     script: [{
         /* Leaflet */
-        src: "https://unpkg.com/leaflet@1.3.4/dist/leaflet.js",
-        integrity: "sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==",
+        src: "https://unpkg.com/leaflet@1.5.1/dist/leaflet.js",
+        integrity: "sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==",
         crossorigin: ""
       },
       {
         /* ESRI Leaflet */
-        src: "https://unpkg.com/esri-leaflet@2.2.3/dist/esri-leaflet.js",
-        integrity: "sha512-YZ6b5bXRVwipfqul5krehD9qlbJzc6KOGXYsDjU9HHXW2gK57xmWl2gU6nAegiErAqFXhygKIsWPKbjLPXVb2g==",
+        src: "https://unpkg.com/esri-leaflet@2.2.4/dist/esri-leaflet.js",
+        integrity: "sha512-tyPum7h2h36X52O2gz+Pe8z/3l+Y9S1yEUscbVs5r5aEY5dFmP1WWRY/WLLElnFHa+k1JBQZSCDGwEAnm2IxAQ==",
         crossorigin: ""
       },
       {
@@ -113,18 +107,27 @@ module.exports = {
         src: "https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"
       }, {
         /* Leaflet Gesture Control */
-        src: "https://unpkg.com/leaflet-gesture-handling"
-      }, {
-        /* High charts */
-        src: "https://code.highcharts.com/highcharts.src.js"
+        src: "https://unpkg.com/leaflet-gesture-handling@1.1.8/dist/leaflet-gesture-handling.min.js"
       },
       {
-        /* jQuery */
-        src: "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+        /* Google Maps API */
+        src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Qb_BhHlGWmRWf4PQrgTcG2xZai5ENP8&libraries=places"
       }, {
-        /* jQuery-UI */
-        src: "https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        /* Leaflet GoogleMutant */
+        src: "https://unpkg.com/leaflet.gridlayer.googlemutant@latest/Leaflet.GoogleMutant.js"
+      },
+      {
+        /* jQuery for antiweather and ajax */
+        src: "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      },
+      {
+        /* moment js for antiweather */
+        src: "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
       }, {
+        /* moment timezone for antiweather */
+        src: "https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data.min.js"
+      },
+      {
         /* d3 */
         src: "https://d3js.org/d3.v5.min.js"
       }, {
@@ -138,20 +141,14 @@ module.exports = {
    ** Customize the progress-bar color
    */
   loading: {
-    color: '#fff'
+    color: '#00a2cc'
   },
 
   /*
    ** Global CSS
    */
   css: [{
-      src: '~assets/css/menu.css'
-    },
-    {
-      src: '~assets/css/grid-only.css'
-    },
-    {
-      src: '~assets/css/footer.css'
+      src: "~assets/css/webflow.css"
     },
     {
       src: '~assets/css/main.css'
@@ -170,17 +167,22 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios',
-    // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt'
+    "bootstrap-vue/nuxt",
+    "@nuxtjs/axios",
+    "@nuxtjs/proxy",
+    "@nuxtjs/pwa",
+    "@nuxtjs/dotenv",
+    "@nuxtjs/sentry",
+    // cache with options
+    [
+      "@nuxtjs/component-cache",
+      {
+        max: 10000,
+        maxAge: 1000 * 60 * 60
+      }
+    ],
+
   ],
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
   /*
    ** Bootstrap-vue configuration
    */
@@ -188,6 +190,14 @@ module.exports = {
     bootstrapCSS: true, // or false for customized CSS
     bootstrapVueCSS: true
   },
+
+  /*
+   ** Axios module configuration
+   */
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+  },
+
   router: {
     base: '/hurricane/'
   },

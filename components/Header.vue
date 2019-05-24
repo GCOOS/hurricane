@@ -31,12 +31,17 @@
 
 <style>
 .menubar {
+  font-family: "proxima-nova", Lato, Roboto, sans-serif;
+  font-size: 18px;
+  display: inline-block;
   position: relative;
-  margin-top: 105px;
+  padding: 0;
+  margin-top: 106px;
   height: auto;
   width: 100%;
   z-index: 999;
 }
+
 .oneline {
   width: 100%;
   height: 2px;
@@ -47,6 +52,18 @@
   padding: 1px 12px !important;
 }
 .bg-dark {
-  background-color: #0d4060 !important;
+  background-color: #093f61 !important;
+}
+
+@media only screen and (max-width: 1200px) {
+  .menubar {
+    margin-top: 96px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .menubar {
+    margin-top: 75px;
+  }
 }
 </style>

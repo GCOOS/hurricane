@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/Q&amp;A</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon/Q&amp;A" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="outline-question_answer-24px">
+            <g id="Bounding_Boxes">
+                <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+            </g>
+            <g id="Outline" transform="translate(2.000000, 2.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <path d="M13,2 L13,9 L4,9 L3.17,9 L2.58,9.59 L2,10.17 L2,2 L13,2 Z M14,0 L1,0 C0.45,0 0,0.45 0,1 L0,15 L4,11 L14,11 C14.55,11 15,10.55 15,10 L15,1 C15,0.45 14.55,0 14,0 Z M19,4 L17,4 L17,13 L4,13 L4,15 C4,15.55 4.45,16 5,16 L16,16 L20,20 L20,5 C20,4.45 19.55,4 19,4 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

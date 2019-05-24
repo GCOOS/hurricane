@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="223px" height="364px" viewBox="0 0 223 364" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <pattern id="pattern-1" width="12" height="12" x="33" y="-1" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-2" transform="scale(0.25,0.25)"></use>
+        </pattern>
+        <image id="image-2" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAThJREFUaAXtmE0KwkAMhZPZuXXtHXoFL+TWQ7j1EF7DK3gHwZ1bdx0nhUDRaTI2CgWfIFPz85j31Q40RPiAAAiAAAj8MwFuMb/aXTaU6cB93kp9Tnwmpv3j2F1b+r2aiL5rQMS5p0vOeT3eCDPfc6IuaiKqn8abql4X8q+bl7ohVnLVnk+CQX3XgP5tanuycrX6WszSsHKq5RrQwqWuroHhgZ3YvZWbaHkLWxpWToVcA3LayAOrDboOsZLT37PXoL5rQE4ZOW0o8akcWTf5yvU3TiAx/Wv92WDRCAIgAAIgAAIgAAIgAAIgsHgC7lhFHETmNi0EIvqugejcxjMQ1XdfKWUih7mQcRus2Y+VU0n/DmjlQlfXgDWbsXKtfi0NK6f6rgHMhRTVxIq50AQYhEEABEAABJoIPAFxqc8VIaapUgAAAABJRU5ErkJggg=="></image>
+    </defs>
+    <g id="documentation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2" transform="translate(2.000000, 1.000000)">
+            <g id="5b72dda27218c725a79027b4_paperclip">
+                <path d="M197,91 L197,275 C197,310.36 168.36,339 133,339 C97.64,339 69,310.36 69,275 L69,75 C69,52.92 86.92,35 109,35 C131.08,35 149,52.92 149,75 L149,243 C149,251.8 141.8,259 133,259 C124.2,259 117,251.8 117,243 L117,139 L93,139 L93,243 C93,265.08 110.92,283 133,283 C155.08,283 173,265.08 173,243 L173,75 C173,39.64 144.36,11 109,11 C73.64,11 45,39.64 45,75 L45,275 C45,323.64 84.36,363 133,363 C181.64,363 221,323.64 221,275 L221,91 L197,91 Z" id="Shape" fill="url(#pattern-1)" fill-rule="nonzero"></path>
+                <path d="M185.5,79.5 L210.5,79.5 L210.5,264 C210.5,312.916142 170.916142,352.5 122,352.5 C73.0838576,352.5 33.5,312.916142 33.5,264 L33.5,64 C33.5,28.3638576 62.3638576,-0.5 98,-0.5 C133.636142,-0.5 162.5,28.3638576 162.5,64 L162.5,232 C162.5,254.356142 144.356142,272.5 122,272.5 C99.6438576,272.5 81.5,254.356142 81.5,232 L81.5,127.5 L106.5,127.5 L106.5,232 C106.5,240.523858 113.476142,247.5 122,247.5 C130.523858,247.5 137.5,240.523858 137.5,232 L137.5,64 C137.5,42.1961424 119.803858,24.5 98,24.5 C76.1961424,24.5 58.5,42.1961424 58.5,64 L58.5,264 C58.5,299.083858 86.9161424,327.5 122,327.5 C157.083858,327.5 185.5,299.083858 185.5,264 L185.5,79.5 Z" id="Shape" stroke="#096AD0" fill="#F7FBFF" fill-rule="nonzero"></path>
+                <path d="M34,160.5 C16.0507456,160.5 1.5,145.949254 1.5,128 C1.5,110.050746 16.0507456,95.5 34,95.5 C51.9492544,95.5 66.5,110.050746 66.5,128 C66.5,145.949254 51.9492544,160.5 34,160.5 Z" id="Oval" stroke="#096AD0" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <path d="M34,144.5 C24.8873016,144.5 17.5,137.112698 17.5,128 C17.5,118.887302 24.8873016,111.5 34,111.5 C43.1126984,111.5 50.5,118.887302 50.5,128 C50.5,137.112698 43.1126984,144.5 34,144.5 Z" id="Path" stroke="#096AD0" fill="#096AD0"></path>
+                <path d="M64.6484934,69.1674083 L68.6539899,80.5 L-0.653989918,80.5 L3.35150659,69.1674083 C7.93032064,56.212752 20.1930853,47.5 34,47.5 C47.8069147,47.5 60.0696794,56.212752 64.6484934,69.1674083 Z" id="Oval-Copy-2" stroke="#096AD0" fill="#096AD0" fill-rule="nonzero"></path>
+                <path d="M176.648493,69.1674084 L180.653989,80.5 L111.346011,80.5 L115.351507,69.1674084 C119.930321,56.212752 132.193085,47.5 146,47.5 C159.806915,47.5 172.069679,56.212752 176.648493,69.1674084 Z" id="Oval-Copy-3" stroke="#096AD0" fill="#096AD0" fill-rule="nonzero"></path>
+                <path d="M146,160.5 C128.050746,160.5 113.5,145.949254 113.5,128 C113.5,110.050746 128.050746,95.5 146,95.5 C163.949254,95.5 178.5,110.050746 178.5,128 C178.5,145.949254 163.949254,160.5 146,160.5 Z" id="Oval-Copy" stroke="#096AD0" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <path d="M146,144.5 C136.887302,144.5 129.5,137.112698 129.5,128 C129.5,118.887302 136.887302,111.5 146,111.5 C155.112698,111.5 162.5,118.887302 162.5,128 C162.5,137.112698 155.112698,144.5 146,144.5 Z" id="Path" stroke="#096AD0" fill="#096AD0"></path>
+            </g>
+        </g>
+    </g>
+</svg>

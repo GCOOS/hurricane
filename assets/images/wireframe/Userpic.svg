@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Userpic</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="45" cy="45" r="45"></circle>
+    </defs>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Team" transform="translate(-200.000000, -4237.000000)">
+            <g id="Team-#5" transform="translate(0.000000, 4019.000000)">
+                <g id="#1" transform="translate(200.000000, 218.000000)">
+                    <g id="Images-/-Userpic-Frame-/-Userpic-Frame-90px">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Background" fill="#E4F1FD" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <g id="ic_person" stroke-width="1" fill-rule="evenodd" mask="url(#mask-2)">
+                            <g transform="translate(21.000000, 21.000000)" id="Icon-24px">
+                                <g>
+                                    <path d="M24,24 C28.42,24 32,20.42 32,16 C32,11.58 28.42,8 24,8 C19.58,8 16,11.58 16,16 C16,20.42 19.58,24 24,24 L24,24 Z M24,28 C18.66,28 8,30.68 8,36 L8,40 L40,40 L40,36 C40,30.68 29.34,28 24,28 L24,28 Z" id="Shape" fill="#096AD0"></path>
+                                    <polygon id="Shape" points="0 0 48 0 48 48 0 48"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

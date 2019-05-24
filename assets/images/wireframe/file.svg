@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/file</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon/file" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="file">
+            <g id="Bounding_Boxes">
+                <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+            </g>
+            <g id="Outline" transform="translate(4.000000, 2.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <path d="M10,0 L2,0 C0.9,0 0.01,0.9 0.01,2 L0,18 C0,19.1 0.89,20 1.99,20 L14,20 C15.1,20 16,19.1 16,18 L16,6 L10,0 Z M2,18 L2,2 L9,2 L9,7 L14,7 L14,18 L2,18 Z" id="XMLID_339_"></path>
+            </g>
+        </g>
+    </g>
+</svg>

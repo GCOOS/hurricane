@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="400px" viewBox="0 0 360 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Userpic #1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Team" transform="translate(-540.000000, -2320.000000)">
+            <g id="Team-#3" transform="translate(0.000000, 2082.000000)">
+                <g id="Images-/-Userpic-Frame-/-Userpic-Frame-555px" transform="translate(540.000000, 238.000000)">
+                    <rect id="Background" fill="#E4F1FD" x="0" y="0" width="360" height="400" rx="4"></rect>
+                    <g id="ic_person" stroke-width="1" transform="translate(126.324324, 146.360360)">
+                        <g id="Icon-24px">
+                            <path d="M54,54 C63.945,54 72,45.945 72,36 C72,26.055 63.945,18 54,18 C44.055,18 36,26.055 36,36 C36,45.945 44.055,54 54,54 L54,54 Z M54,63 C41.985,63 18,69.03 18,81 L18,90 L90,90 L90,81 C90,69.03 66.015,63 54,63 L54,63 Z" id="Shape" fill="#096AD0"></path>
+                            <polygon id="Shape" points="0 0 108 0 108 108 0 108"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

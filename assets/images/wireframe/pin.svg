@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="40px" viewBox="0 0 28 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Location</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M14,0 C6.26,0 0,6.26 0,14 C0,24.5 14,40 14,40 C14,40 28,24.5 28,14 C28,6.26 21.74,0 14,0 L14,0 Z M14,19 C11.24,19 9,16.76 9,14 C9,11.24 11.24,9 14,9 C16.76,9 19,11.24 19,14 C19,16.76 16.76,19 14,19 L14,19 Z" id="path-1"></path>
+    </defs>
+    <g id="Components-design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-453.000000, -301.000000)">
+            <g id="Contact-#3">
+                <g id="Map" transform="translate(247.000000, 203.000000)">
+                    <g id="Location" transform="translate(206.000000, 98.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#096AD0" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

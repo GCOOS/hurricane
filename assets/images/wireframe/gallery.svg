@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/gallery</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon/gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="gallery2">
+            <g id="Bounding_Boxes">
+                <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+            </g>
+            <g id="Outline" transform="translate(1.000000, 3.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <g id="Group">
+                    <path d="M20,0 L2,0 C1,0 0,1 0,2 L0,16 C0,17.1 0.9,18 2,18 L20,18 C21,18 22,17 22,16 L22,2 C22,1 21,0 20,0 Z M20,15.92 C19.98,15.95 19.94,15.98 19.92,16 L2,16 L2,2.08 C2.02,2.06 2.06,2.02 2.08,2 L19.91,2 C19.94,2.02 19.97,2.06 19.99,2.08 L19.99,15.92 L20,15.92 Z" id="Shape"></path>
+                    <polygon id="Shape" points="10 12.51 7.5 9.5 4 14 18 14 13.5 8"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

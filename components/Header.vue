@@ -4,7 +4,7 @@
     <b-navbar toggleable="md" type="dark" variant="dark">
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse is-nav id="nav-collapse">
-        <b-navbar-brand href="https://products.gcoos.org">
+        <b-navbar-brand href="https://products.gcoos.org/category">
           <i class="fas fa-home"></i>
         </b-navbar-brand>
         <b-navbar-nav>

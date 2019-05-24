@@ -5,9 +5,9 @@
   "author": "Shin Kobara",
   "private": true,
   "scripts": {
-    "dev": "PORT=3001 nuxt",
+    "dev": "nuxt --port 3333",
     "build": "nuxt build",
-    "start": "PORT=8001 nuxt start",
+    "start": "nuxt start --port 8001",
     "generate": "nuxt generate"
   },
   "dependencies": {

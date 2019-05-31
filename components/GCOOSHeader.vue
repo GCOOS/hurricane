@@ -96,7 +96,7 @@
 .header {
   position: fixed;
   background-color: #ffffff;
-  z-index: 1001;
+  z-index: 2000;
   top: 0;
   left: 0;
   width: 100%;
@@ -104,7 +104,7 @@
   clear: both;
   padding: 10px;
   text-align: right;
-  font-family: "proxima-nova", Lato, Roboto;
+  font-family: "proxima-nova", Roboto;
   font-size: 15px;
 }
 .gcoos_header_navbar {
@@ -335,7 +335,10 @@
 */
 @media only screen and (max-width: 400px) {
   .navbar {
-    padding: 0px !important;
+    padding: 0 !important;
+  }
+  .navbar-brand {
+    padding-top: 0 !important;
   }
   .header {
     height: 75px;

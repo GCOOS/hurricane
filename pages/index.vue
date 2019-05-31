@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="canvas">
     <b-container fluid>
       <b-row>
         <b-col md="8" xs="12">

@@ -31,15 +31,17 @@
 
 <style>
 .menubar {
-  font-family: "proxima-nova", Lato, Roboto, sans-serif;
+  font-family: "proxima-nova", Roboto, sans-serif;
   font-size: 18px;
   display: inline-block;
-  position: relative;
+  position: fixed;
+  /*  margin-top: 106px; */
+  top: 106px;
+  margin: 0;
   padding: 0;
-  margin-top: 106px;
   height: auto;
   width: 100%;
-  z-index: 999;
+  z-index: 1999;
 }
 
 .oneline {
@@ -48,7 +50,7 @@
   background-color: #da880e;
 }
 /* Navbar setting */
-.navbar {
+.menubar .navbar {
   padding: 1px 12px !important;
 }
 .bg-dark {
@@ -57,13 +59,20 @@
 
 @media only screen and (max-width: 1200px) {
   .menubar {
-    margin-top: 96px;
+    top: 96px;
+  }
+  .menubar .dropdown-toggle::after {
+    position: relative;
+    margin-left: 15px;
+    border-right-width: 8px;
+    border-left-width: 8px;
+    border-top-width: 4px;
   }
 }
 
 @media only screen and (max-width: 400px) {
   .menubar {
-    margin-top: 75px;
+    top: 75px;
   }
 }
 </style>

@@ -6,13 +6,13 @@ services:
     container_name: hurricane
     restart: always
     ports:
-      - "8001:80"
+      - "8001:3000"
     volumes:
       - "./dist/:/usr/share/nginx/html"
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:geo.gcoos.org;PathPrefixStrip:/hurricane;ReplacePathRegex: ^/hurricane/(.*) /$$1"
-      - "traefik.port=80"
+      - "traefik.frontend.rule=Host:geo.gcoos.org;PathPrefix:/hurricane"
+      - "traefik.port=3000"
       - "traefik.docker.network=geo_net"
     networks:
       - geo_net

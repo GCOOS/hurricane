@@ -1,6 +1,5 @@
 module.exports = {
-  mode: 'universal',
-
+  mode: 'spa',
   /*
    ** Headers of the page
    */
@@ -90,16 +89,20 @@ module.exports = {
       {
         /* Leaflet Fullscreen */
         src: "https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"
-      }, {
+      },
+      {
         /* Leaflet Awesome Marker */
         src: "https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"
-      }, {
+      },
+      {
         /* Leaflet Omnivore */
         src: 'https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'
-      }, {
+      },
+      {
         /* ISO 8601 Date and Time */
         src: "https://cdn.rawgit.com/nezasa/iso8601-js-period/master/iso8601.min.js"
-      }, {
+      },
+      {
         /* NonTiledLayer */
         src: "https://unpkg.com/leaflet.nontiledlayer@1.0.7/dist/NonTiledLayer.js"
       }, {
@@ -136,7 +139,6 @@ module.exports = {
       }
     ]
   },
-
   /*
    ** Customize the progress-bar color
    */
@@ -167,11 +169,8 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    "bootstrap-vue/nuxt",
     "@nuxtjs/axios",
-    "@nuxtjs/proxy",
     "@nuxtjs/pwa",
-    "@nuxtjs/dotenv",
     "@nuxtjs/sentry",
     // cache with options
     [
@@ -181,7 +180,7 @@ module.exports = {
         maxAge: 1000 * 60 * 60
       }
     ],
-
+    "bootstrap-vue/nuxt",
   ],
   /*
    ** Bootstrap-vue configuration
@@ -194,10 +193,7 @@ module.exports = {
   /*
    ** Axios module configuration
    */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
-
+  axios: {},
   router: {
     base: '/hurricane/'
   },

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="canvas">
         <b-container fluid>
             <div class="centered">
                 <h2>Emergency Operation Center/Counties Evacuation and Shelter Information</h2>

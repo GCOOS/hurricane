@@ -925,32 +925,13 @@
 footer {
   padding: 0;
   margin: 0;
-  font-family: "proxima-nova";
+  font-family: "proxima-nova", Roboto;
   font-weight: 500;
   padding-top: 96px;
   font-size: 15px;
   color: #262626;
   letter-spacing: 0.3px;
 }
-
-@font-face {
-  font-family: "proxima-nova";
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "proxima-nova";
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "proxima-nova";
-  font-weight: 500;
-  font-style: normal;
-}
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

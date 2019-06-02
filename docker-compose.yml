@@ -8,7 +8,7 @@ services:
     ports:
       - "8001:3000"
     volumes:
-      - "./dist/:/usr/share/nginx/html"
+      - "./:/usr/src/app"
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:geo.gcoos.org;PathPrefix:/hurricane"

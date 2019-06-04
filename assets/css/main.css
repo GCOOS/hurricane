@@ -1,7 +1,8 @@
 .canvas {
-  /* 106px + 2px + 74px -10px */
-  margin-top: 172px;
-  min-height: 95vh;
+  margin: 0;
+  /* 106px + 2px + 74px -19px */
+  padding-top: 165px;
+  min-height: 60vh;
   font-family: "proxima-nova", Roboto, 'Helvetica Neue', sans-serif;
   font-style: normal;
 }
@@ -28,25 +29,44 @@ div.card {
   border-radius: 10px 10px;
 }
 
+
+/* Bootstrap grid system
+* Extra small <576px 
+* Small ≥576px
+* Medium ≥768px
+* Large ≥992px
+* Extra large ≥1200px
+*/
+
+/* Large grid 992-1200 */
 @media only screen and (max-width: 1200px) {
   .canvas {
-    /* 96px + 2px + 74px - 10px */
-    margin-top: 162px
+    margin: 0;
+    /* 96px + 2px + 38px + 10px space */
+    padding-top: 146px
   }
-
 }
 
-/* show a hamberger menu
-* show social icons as well
-*/
-@media only screen and (max-width: 500px) {}
+/* Medium Grid 768-991 */
+@media only screen and (max-width: 992px) {}
 
-/* remove social icons
-* show a hamburger menu
+/* iPad 768w*1024h
+* Small Grid 576-768
 */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 768px) {}
+
+/* Mobile (414px max so far)
+* Extra Small grid <576px
+*/
+@media only screen and (max-width: 420px) {
   .canvas {
-    /* 75px + 2px + 71px - 10px */
-    margin-top: 138px
+    /* 75px + 2px + 42px */
+    margin: 0;
+    padding-top: 129px;
+  }
+
+  .footer_main {
+    margin: 0 !important;
+    padding-bottom: 59px !important;
   }
 }

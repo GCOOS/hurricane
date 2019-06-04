@@ -1,11 +1,11 @@
 <template>
   <div class="canvas">
-    <b-container fluid>
+    <b-container>
       <div class="centered">
         <h2>Resources - Preparation, Post-Hurricane</h2>
       </div>
       <b-row>
-        <b-col sm="12" md="6" lg="8" xl="8">
+        <b-col sm="12">
           <b-card
             no-body
             header="Information"
@@ -166,24 +166,20 @@
           </b-card>
           <br>
         </b-col>
-        <b-col sm="12" md="6" lg="4" xl="4">
-          <b-card no-body bg-variant="dark" text-variant="white" header="Storm related blogs">
-            <b-list-group flush>
-              <b-list-group-item
-                href="http://jyotikastorms.blogspot.com/"
-                target="_blank"
-              >Tropical Storm Blog</b-list-group-item>
-              <b-list-group-item
-                href="http://www.esl.lsu.edu/hurricanes/2018/"
-                target="_blank"
-              >LSU Atlantic Storm Basin</b-list-group-item>
-              <b-list-group-item
-                href="https://www.tropicaltidbits.com/"
-                target="_blank"
-              >Tropical Tidbits: Blog & More</b-list-group-item>
-            </b-list-group>
-          </b-card>
-          <br>
+      </b-row>
+      <b-row>
+        <b-col>
+          <div>
+            <h2>Saffir-Simpson scale</h2>
+          </div>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col>
+          <div>
+            <img src="~assets/images/resource/Saffir-Simpson-Scale.png">
+            <p>Image courtesy of National Meteorological Service of Belize</p>
+          </div>
         </b-col>
       </b-row>
     </b-container>

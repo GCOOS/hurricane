@@ -17,6 +17,9 @@
           <b-nav-item href="/hurricane/resources/">
             <i class="fas fa-info-circle"></i>&nbsp;Resources
           </b-nav-item>
+          <b-nav-item href="/hurricane/model/">
+            <i class="fas fa-laptop-code"></i>&nbsp;Model
+          </b-nav-item>
           <b-nav-item href="/hurricane/videos/">
             <i class="fab fa-youtube"></i>&nbsp;Videos
           </b-nav-item>
@@ -60,6 +63,7 @@
 @media only screen and (max-width: 1200px) {
   .menubar {
     top: 96px;
+    font-size: 16px;
   }
   .menubar .dropdown-toggle::after {
     position: relative;
@@ -70,7 +74,7 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
   .menubar {
     top: 75px;
   }

@@ -63,10 +63,3 @@
     </b-container>
   </div>
 </template>
-
-
-<style scoped>
-.centered {
-  text-align: center;
-}
-</style>

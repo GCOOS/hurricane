@@ -2,12 +2,12 @@
   var endDate = new Date();
   endDate.setUTCMinutes(0, 0, 0);
 
-  var map = L.map("map", {
+  var map = L.map("hurricaneMap", {
     zoomControl: true,
-    scrollWheelZoom: true,
-    gestureHandling: true,
-    //zoom: 5,
-    //center: [25.7, -80.8],
+    scrollWheelZoom: false,
+    gestureHandling: false,
+    zoom: 4,
+    center: [25.7, -80.8],
     timeDimension: true,
     timeDimensionControl: false,
     timeDimensionOptions: {
@@ -24,27 +24,24 @@
       }
     },
     attributionControl: true //should be true for goecoding
-  }).fitBounds([
-    [23.000, -88.500],
-    [28.000, -73.000]
-  ]);
+  });
 
   // ================================================================
   // Basemap Layers
   // ================================================================
-  let topo = L.esri.basemapLayer("Topographic");
-  let nationalgeographic = L.esri.basemapLayer("NationalGeographic");
-  let darkGray = L.esri.basemapLayer("DarkGray");
-  let lightGray = L.esri.basemapLayer("Gray");
-  let esriOcean = L.layerGroup([
+  var topo = L.esri.basemapLayer("Topographic");
+  var nationalgeographic = L.esri.basemapLayer("NationalGeographic");
+  var darkGray = L.esri.basemapLayer("DarkGray");
+  var lightGray = L.esri.basemapLayer("Gray");
+  var esriOcean = L.layerGroup([
     L.esri.basemapLayer("Oceans"),
     L.esri.basemapLayer("OceansLabels")
   ]);
-  let esriImage = L.layerGroup([
+  var esriImage = L.layerGroup([
     L.esri.basemapLayer("Imagery"),
     L.esri.basemapLayer("ImageryLabels")
   ]).addTo(map);
-  let esriImageFirefly = L.layerGroup([
+  var esriImageFirefly = L.layerGroup([
     L.esri.basemapLayer("ImageryFirefly"),
     L.esri.basemapLayer("ImageryLabels")
   ]);
@@ -52,7 +49,7 @@
   // ================================================================
   /* grouping basemap layers */
   // ================================================================
-  const basemapLayers = {
+  var basemapLayers = {
     "Topographic": topo,
     "Ocean": esriOcean,
     "Imagery": esriImage,
@@ -64,36 +61,10 @@
   // Ancillary Data Layers - Top Corner Layers Group
   // ================================================================
 
-  var windESRI = L.esri.dynamicMapLayer({
-    url: "https://utility.arcgis.com/usrsvcs/servers/f986fb492f2347d8b077df0236229db0/rest/services/LiveFeeds/NOAA_METAR_current_wind_speed_direction/MapServer",
-    opacity: 0.8,
-    f: "image/png"
-  });
 
-  var activeHurricaneESRI = L.esri.dynamicMapLayer({
-    url: "https://utility.arcgis.com/usrsvcs/servers/6c6699e853424b22a8618f00d8e0cf81/rest/services/LiveFeeds/Hurricane_Active/MapServer",
-    f: "image/png"
+  var noaaHurricaneTrack = L.esri.dynamicMapLayer({
+    url: "https://www.nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer"
   }).addTo(map);
-
-  var recentHurricaneESRI = L.esri.dynamicMapLayer({
-    url: "https://utility.arcgis.com/usrsvcs/servers/c10892ebdbf8428e939f601c2acae7e4/rest/services/LiveFeeds/Hurricane_Recent/MapServer",
-    f: "image/png"
-  });
-
-  var webcam = L.esri.dynamicMapLayer({
-    url: "http://gis.gcoos.org:8080/arcgis/rest/services/Stations/Gulf_WebCam/MapServer"
-  });
-  webcam.bindPopup(function (error, featureCollection) {
-    if (error || featureCollection.features.length === 0) {
-      return false;
-    } else {
-      //console.log(featureCollection);
-      return L.Util.template(
-        '<a href="{link}" target="_blank">Open WebCam</a>',
-        featureCollection.features[0].properties
-      );
-    }
-  });
 
   var nexrad = L.tileLayer.wms(
     "https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
@@ -137,30 +108,16 @@
     opacity: 0.7
   });
 
-  var currentsNOAA = L.esri.dynamicMapLayer({
-    url: "https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/guidance_model_ocean_grtofs_time/MapServer"
-  });
-
-  var nauticalChart = L.esri.dynamicMapLayer({
-    url: "https://seamlessrnc.nauticalcharts.noaa.gov/arcgis/rest/services/RNC/NOAA_RNC/MapServer/",
-    opacity: 0.7,
-    f: "image"
-  });
-
   // ================================================================
   /* grouping ancillayr data layers */
   // ================================================================
-  const groupedOverlay = {
-    "Active Hurricane": activeHurricaneESRI,
-    "Recent Hurricanes": recentHurricaneESRI,
-    "Wind Speed": windESRI,
+  var groupedOverlay = {
+    "NOAA Hurricane Track<a href='https://www.nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer' target='_blank'>**</a>": noaaHurricaneTrack,
     "Radar": nexrad,
     "NRL Mean Seawater Velocity<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=NRL_MEAN/sea_water_velocity&bbox=-98.0,18.0,-79.5145715943338,30.96001434326172' target='_blank'>**</a>": nrlVelocity,
     "NRL Depth 26C Isotherm<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=NRL_MEAN/Isotherm&bbox=-98.0,18.0,-79.5145715943338,30.96001434326172' target='_blank'>**</a>": nrl26cIsotherm,
     "NRL Mean Tropical Cyclone Heat Potential<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=NRL_MEAN/TCHP&bbox=-98.0,18.0,-79.5145715943338,30.96001434326172' target='_blank'>**</a>": nrlcyclonPotential,
     "Sea Surface Height<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=EDDY_SSH/ssh&bbox=-180.0,-66.0,180.0,66.0' target='_blank'>**</a>": ssh,
-    "NOAA nowCOAST Ocean Curret Model": currentsNOAA,
-    "Nautical Chart": nauticalChart,
   };
   var controlLayers = L.control.layers(basemapLayers, groupedOverlay, {
       position: "bottomleft",
@@ -189,7 +146,7 @@
       controlLayers.addOverlay(velocityLayer, 'HYCOM Ocean Current');
     });
   }
-  addHycom();
+  //  addHycom();
 
   //=================================================================
   // Weather Info from Forecast.io
@@ -226,7 +183,7 @@
   // Set layers which redraw in a certain period
   setInterval(function () {
     onDragEnd();
-    controlLayers.removeLayer(velocityLayer);
-    addHycom();
+    //    controlLayers.removeLayer(velocityLayer);
+    //    addHycom();
   }, 360000);
 })();

@@ -1230,7 +1230,7 @@ img {
   /**/
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
   .footer_col.col-xs-6 {
     width: 100%;
   }

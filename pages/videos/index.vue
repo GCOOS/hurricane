@@ -16,7 +16,14 @@
             <b-tabs card>
               <b-tab title="Preparation" active>
                 <b-row>
-                  <b-col md="12" lg="12" xl="6">
+                  <b-col md="12" lg="6" xl="6">
+                    <iframe
+                      src="https://www.youtube.com/embed/VCYmoSyrT54"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      style="height:315px; width:100%;"
+                    ></iframe>
                     <iframe
                       src="https://www.youtube.com/embed/L32y1QKz8XI"
                       style="height:315px; width:100%;"
@@ -30,7 +37,7 @@
                       style="height:315px; width:100%;"
                     ></iframe>
                   </b-col>
-                  <b-col md="12" lg="12" xl="6">
+                  <b-col md="12" lg="6" xl="6">
                     <iframe
                       src="https://www.youtube.com/embed/OwSaHc0X2KA"
                       style="height:315px; width:100%;"
@@ -48,7 +55,7 @@
               </b-tab>
               <b-tab title="During">
                 <b-row>
-                  <b-col md="12" lg="12" xl="6">
+                  <b-col md="12" lg="6" xl="6">
                     <iframe
                       src="https://www.youtube.com/embed/2VOJdqT79JY"
                       style="height:315px; width:100%;"
@@ -66,7 +73,7 @@
                       allowfullscreen
                     ></iframe>
                   </b-col>
-                  <b-col md="12" lg="12" xl="6">
+                  <b-col md="12" lg="6" xl="6">
                     <iframe
                       src="https://www.youtube.com/embed/-Kou0HBpX4A"
                       style="height:315px; width:100%;"

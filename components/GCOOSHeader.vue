@@ -333,7 +333,7 @@
 /* remove social icons
 * show a hamburger menu
 */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
   .navbar {
     padding: 0 !important;
   }

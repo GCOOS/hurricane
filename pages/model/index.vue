@@ -61,6 +61,7 @@
               <i class="fas fa-external-link-alt"></i>
             </a>
           </b-card>
+          <br>
         </b-col>
 
         <b-col md="4">

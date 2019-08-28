@@ -248,13 +248,6 @@ export default {
         console.log(`Level was changed: ${level}`);
       });
       */
-      var activeHurricaneESRI = L.esri
-        .dynamicMapLayer({
-          url:
-            "https://utility.arcgis.com/usrsvcs/servers/6c6699e853424b22a8618f00d8e0cf81/rest/services/LiveFeeds/Hurricane_Active/MapServer",
-          f: "image/png"
-        })
-        .addTo(map);
 
       var noaaHurricaneTrack = L.esri.dynamicMapLayer({
         url:

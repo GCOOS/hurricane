@@ -26,7 +26,7 @@
           </div>
         </b-col>
       </b-row>
-      <br>
+      <br />
       <b-row>
         <b-col>
           <h2>Forecast</h2>
@@ -46,7 +46,7 @@
               <i class="fas fa-search-plus"></i>
             </a>
           </b-card>
-          <br>
+          <br />
         </b-col>
         <b-col md="4">
           <b-card
@@ -61,9 +61,14 @@
               <i class="fas fa-search-plus"></i>
             </a>
           </b-card>
-          <br>
+          <br />
         </b-col>
         <b-col md="4">
+          <b-card
+            img-src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/eus/GEOCOLOR/1000x1000.jpg"
+            img-top
+          >
+            <!--
           <b-card img-src="https://geo.gcoos.org/data/hurricane/most_likely_toa_34_sm2.png" img-top>
             <a
               href="https://geo.gcoos.org/data/hurricane/most_likely_toa_34_sm2.png"
@@ -71,8 +76,9 @@
             >
               <i class="fas fa-search-plus"></i>
             </a>
+            -->
           </b-card>
-          <br>
+          <br />
         </b-col>
       </b-row>
       <b-row>
@@ -242,12 +248,18 @@ export default {
         console.log(`Level was changed: ${level}`);
       });
       */
-      var noaaHurricaneTrack = L.esri
+      var activeHurricaneESRI = L.esri
         .dynamicMapLayer({
           url:
-            "https://www.nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer"
+            "https://utility.arcgis.com/usrsvcs/servers/6c6699e853424b22a8618f00d8e0cf81/rest/services/LiveFeeds/Hurricane_Active/MapServer",
+          f: "image/png"
         })
         .addTo(map);
+
+      var noaaHurricaneTrack = L.esri.dynamicMapLayer({
+        url:
+          "https://www.nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer"
+      });
 
       var nrlVelocity = L.tileLayer
         .wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {

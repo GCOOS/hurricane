@@ -2,7 +2,7 @@
   <div class="header">
     <b-navbar toggleable="xl" class="gcoos_header_navbar">
       <b-navbar-brand href="https://gcoos.org/">
-        <img class="gcoos_logo" src="~assets/images/gcoos/logo.svg">
+        <img class="gcoos_logo" src="~assets/images/gcoos/logo.svg" />
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
@@ -66,8 +66,9 @@
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown text="PRODUCTS & SERVICES" right class="gcoos_nav_item">
-            <b-dropdown-item href="https://products.gcoos.org/">Stations</b-dropdown-item>
+            <b-dropdown-item href="https://products.gcoos.org/">Stations Map</b-dropdown-item>
             <b-dropdown-item href="https://products.gcoos.org/search">Search All Products</b-dropdown-item>
+            <b-dropdown-item href="https://products.gcoos.org/category">Categories</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>

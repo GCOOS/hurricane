@@ -14,17 +14,23 @@
           <b-nav-item href="/hurricane/satellites/">
             <i class="fas fa-satellite"></i>&nbsp;Satellites
           </b-nav-item>
+          <b-nav-item href="/hurricane/model/">
+            <i class="fas fa-laptop-code"></i>&nbsp;Models
+          </b-nav-item>
           <b-nav-item href="/hurricane/resources/">
             <i class="fas fa-info-circle"></i>&nbsp;Resources
-          </b-nav-item>
-          <b-nav-item href="/hurricane/model/">
-            <i class="fas fa-laptop-code"></i>&nbsp;Model
           </b-nav-item>
           <b-nav-item href="/hurricane/videos/">
             <i class="fab fa-youtube"></i>&nbsp;Videos
           </b-nav-item>
           <b-nav-item href="/hurricane/center/">
             <i class="fas fa-building"></i>&nbsp;Emergency Center
+          </b-nav-item>
+        </b-navbar-nav>
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item href="https://geo.gcoos.org/weather/" target="_blank">
+            <i class="fas fa-cloud-sun-rain"></i>&nbsp;Weather
           </b-nav-item>
         </b-navbar-nav>
       </b-collapse>

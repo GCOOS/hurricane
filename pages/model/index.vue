@@ -11,10 +11,15 @@
           <div id="windy"></div>
         </b-col>
       </b-row>
-      <br>
+      <br />
       <b-row>
         <b-col sm="12">
-          <b-card no-body bg-variant="dark" text-variant="white" header="Storm related blogs">
+          <b-card
+            no-body
+            bg-variant="dark"
+            text-variant="white"
+            header="Blogs (including Forecast)"
+          >
             <b-list-group flush>
               <b-list-group-item
                 href="http://jyotikastorms.blogspot.com/"
@@ -32,7 +37,7 @@
           </b-card>
         </b-col>
       </b-row>
-      <br>
+      <br />
       <b-row>
         <b-col>
           <h2>Model Examples</h2>
@@ -52,7 +57,7 @@
               <i class="fas fa-search-plus"></i>
             </a>
           </b-card>
-          <br>
+          <br />
         </b-col>
 
         <b-col md="4">
@@ -61,7 +66,7 @@
               <i class="fas fa-external-link-alt"></i>
             </a>
           </b-card>
-          <br>
+          <br />
         </b-col>
 
         <b-col md="4">
@@ -74,7 +79,7 @@
               <i class="fas fa-search-plus"></i>
             </a>
           </b-card>
-          <br>
+          <br />
         </b-col>
       </b-row>
     </b-container>

@@ -5,8 +5,8 @@ RUN mkdir -p /usr/src/app
 COPY ./ /usr/src/app
 WORKDIR /usr/src/app
 
-ONBUILD RUN npm install
-ONBUILD RUN npm run build
+RUN npm install
+RUN npm run build
 
 ENV HOST 0.0.0.0
 EXPOSE 3000

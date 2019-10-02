@@ -11,19 +11,20 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.5.3",
+    "@nuxtjs/axios": "^5.6.0",
     "@nuxtjs/component-cache": "^1.1.5",
-    "@nuxtjs/pwa": "^3.0.0-beta.16",
+    "@nuxtjs/pwa": "^3.0.0-beta.19",
     "@nuxtjs/sentry": "^3.0.0",
     "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.0-rc.22",
+    "bootstrap-vue": "^2.0.2",
     "cross-env": "^5.2.0",
     "event-stream": "^4.0.1",
-    "nuxt": "^2.8.1",
-    "portal-vue": "^2.1.5"
+    "nuxt": "^2.10.0",
+    "portal-vue": "^2.1.6"
   },
   "devDependencies": {
     "jest": "^24.8.0",
+    "jquery": "^3.4.1",
     "nodemon": "^1.11.0"
   }
 }

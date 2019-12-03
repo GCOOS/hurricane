@@ -61,11 +61,6 @@
   // Ancillary Data Layers - Top Corner Layers Group
   // ================================================================
 
-
-  var noaaHurricaneTrack = L.esri.dynamicMapLayer({
-    url: "https://www.nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer"
-  });
-
   var nexrad = L.tileLayer.wms(
     "https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
       layers: "nexrad-n0r-900913",
@@ -111,7 +106,9 @@
   var activeHurricaneESRI = L.esri
     .dynamicMapLayer({
       url: "https://utility.arcgis.com/usrsvcs/servers/6c6699e853424b22a8618f00d8e0cf81/rest/services/LiveFeeds/Hurricane_Active/MapServer",
-      f: "image/png"
+      f: "image/png",
+      transparent: true,
+      opacity: 0.7
     })
     .addTo(map);
 

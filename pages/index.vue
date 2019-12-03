@@ -21,8 +21,13 @@
               data-height="800"
               href="https://twitter.com/gisp_shin/lists/hurricane?ref_src=twsrc%5Etfw"
               data-chrome="noheader nofooter"
-            >A Twitter List by gisp_shin</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              >A Twitter List by gisp_shin</a
+            >
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
           </div>
         </b-col>
       </b-row>
@@ -86,17 +91,20 @@
           <div>
             Icons made by
             <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from
-            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
+            <a href="https://www.flaticon.com/" title="Flaticon"
+              >www.flaticon.com</a
+            >
+            is licensed by
             <a
               href="http://creativecommons.org/licenses/by/3.0/"
               title="Creative Commons BY 3.0"
               target="_blank"
-            >CC 3.0 BY</a>
+              >CC 3.0 BY</a
+            >
           </div>
         </b-col>
       </b-row>
     </b-container>
-    <script src="js/hurricane_map.js"></script>
   </div>
 </template>
 
@@ -154,9 +162,9 @@ export default {
         },
         {
           /* ESRI Leaflet */
-          src: "https://unpkg.com/esri-leaflet@2.2.4/dist/esri-leaflet.js",
+          src: "https://unpkg.com/esri-leaflet@2.3.2/dist/esri-leaflet.js",
           integrity:
-            "sha512-tyPum7h2h36X52O2gz+Pe8z/3l+Y9S1yEUscbVs5r5aEY5dFmP1WWRY/WLLElnFHa+k1JBQZSCDGwEAnm2IxAQ==",
+            "sha512-6LVib9wGnqVKIClCduEwsCub7iauLXpwrd5njR2J507m3A2a4HXJDLMiSZzjcksag3UluIfuW1KzuWVI5n/cuQ==",
           crossorigin: ""
         },
         {
@@ -220,51 +228,223 @@ export default {
       }
     })(document, "script", "twitter-wjs");
 
-    const options = {
-      key: "OIx5V8xPEniclcCnCOMWJ0DwyJEoOxPM",
-      verbose: true,
-      lat: 25.0,
-      lon: -85,
-      zoom: 4,
+    this.initMap();
+  },
+  methods: {
+    initMap() {
+      var endDate = new Date();
+      endDate.setUTCMinutes(0, 0, 0);
 
-      timestamp: Date.now() + 1 * 24 * 60 * 60 * 1000,
-
-      hourFormat: "12h"
-    };
-
-    windyInit(options, windyAPI => {
-      const { store, broadcast } = windyAPI;
-      // All the params are stored in windyAPI.store
-      const levels = store.getAllowed("availLevels");
-      /*
-      var i = 0;
-      setInterval(() => {
-        i = i === levels.length - 1 ? 0 : i + 1;
-        // Changing Windy params at runtime
-        store.set("level", levels[i]);
-      }, 3600);
-      // Observing change of .store value
-      store.on("level", level => {
-        console.log(`Level was changed: ${level}`);
-      });
-      */
-
-      var noaaHurricaneTrack = L.esri.dynamicMapLayer({
-        url:
-          "https://www.nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer"
+      var map = L.map("hurricaneMap", {
+        zoomControl: true,
+        scrollWheelZoom: false,
+        gestureHandling: false,
+        zoom: 4,
+        center: [25.7, -80.8],
+        timeDimension: true,
+        timeDimensionControl: false,
+        timeDimensionOptions: {
+          timeInterval: "PT4H/" + endDate.toISOString(),
+          period: "PT4M",
+          currentTime: endDate
+        },
+        timeDimensionControlOptions: {
+          autoPlay: false,
+          playerOptions: {
+            buffer: 10,
+            transitionTime: 250,
+            loop: true
+          }
+        },
+        attributionControl: true //should be true for goecoding
       });
 
-      var nrlVelocity = L.tileLayer
-        .wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {
-          layers: "NRL_MEAN/sea_water_velocity",
+      // ================================================================
+      // Basemap Layers
+      // ================================================================
+      var topo = L.esri.basemapLayer("Topographic");
+      var nationalgeographic = L.esri.basemapLayer("NationalGeographic");
+      var darkGray = L.esri.basemapLayer("DarkGray");
+      var lightGray = L.esri.basemapLayer("Gray");
+      var esriOcean = L.layerGroup([
+        L.esri.basemapLayer("Oceans"),
+        L.esri.basemapLayer("OceansLabels")
+      ]);
+      var esriImage = L.layerGroup([
+        L.esri.basemapLayer("Imagery"),
+        L.esri.basemapLayer("ImageryLabels")
+      ]).addTo(map);
+      var esriImageFirefly = L.layerGroup([
+        L.esri.basemapLayer("ImageryFirefly"),
+        L.esri.basemapLayer("ImageryLabels")
+      ]);
+
+      // ================================================================
+      /* grouping basemap layers */
+      // ================================================================
+      var basemapLayers = {
+        Topographic: topo,
+        Ocean: esriOcean,
+        Imagery: esriImage,
+        "Imagery(Firefly)": esriImageFirefly,
+        "Light Gray": lightGray,
+        "Dark Gray": darkGray
+      };
+      // ================================================================
+      // Ancillary Data Layers - Top Corner Layers Group
+      // ================================================================
+
+      var nexrad = L.tileLayer
+        .wms("https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
+          layers: "nexrad-n0r-900913",
           format: "image/png",
           transparent: true,
-          attribution: "GCOOS-RA, NRL",
-          elevation: "0",
+          attribution: "Weather data © 2012 IEM Nexrad"
+        })
+        .addTo(map);
+
+      var activeHurricaneESRI = L.esri
+        .dynamicMapLayer({
+          url:
+            "https://utility.arcgis.com/usrsvcs/servers/6c6699e853424b22a8618f00d8e0cf81/rest/services/LiveFeeds/Hurricane_Active/MapServer",
+          f: "image/png",
+          transparent: true,
           opacity: 0.7
         })
         .addTo(map);
-    });
+
+      var recentHurricaneESRI = L.esri.dynamicMapLayer({
+        url:
+          "https://utility.arcgis.com/usrsvcs/servers/c10892ebdbf8428e939f601c2acae7e4/rest/services/LiveFeeds/Hurricane_Recent/MapServer",
+        f: "image/png"
+      });
+
+      var histHurricaneTrack = L.esri.featureLayer({
+        url:
+          "https://services1.arcgis.com/VAI453sU9tG9rSmh/arcgis/rest/services/Historic_Major_Hurricane_Tracks/FeatureServer/0",
+        where: "wmo_wind > 95",
+        style: function(feature) {
+          var c,
+            w,
+            o = 0.75;
+
+          if (feature.properties.wmo_wind >= 137) {
+            c = "#FF0000";
+            w = 5;
+          }
+          if (
+            feature.properties.wmo_wind < 136 &&
+            feature.properties.wmo_wind >= 112
+          ) {
+            c = "#FFEB00";
+            w = 3;
+          }
+          return {
+            color: c,
+            opacity: o,
+            weight: w
+          };
+        }
+      });
+      histHurricaneTrack.bindPopup(function(layer) {
+        return L.Util.template(
+          "<b>Historic Major Hurricane Tracks</b><hr><b>{Name}</b><br>{ISO_time}<br>Wind Speed: {wmo_wind} kt",
+          layer.feature.properties
+        );
+      });
+
+      // ================================================================
+      /* grouping ancillayr data layers */
+      // ================================================================
+      var groupedOverlay = {
+        "Current Hurricane": activeHurricaneESRI,
+        "Recent Hurricane": recentHurricaneESRI,
+        "Historic Hurricane Track: H4(Yellow), H5(Red)": histHurricaneTrack,
+        Radar: nexrad
+      };
+      var controlLayers = L.control
+        .layers(basemapLayers, groupedOverlay, {
+          position: "bottomleft",
+          collapsed: true
+        })
+        .addTo(map);
+
+      // Full screen control
+      map.addControl(new L.Control.Fullscreen());
+
+      // Hycom Ocean Current
+      function addHycom() {
+        d3.json(
+          "https://geo.gcoos.org/data/hycom/hycom_surface_current.json"
+        ).then(function(data) {
+          var velocityLayer = L.velocityLayer({
+            displayValues: true,
+            displayOptions: {
+              velocityType: "water",
+              displayPosition: "bottomleft",
+              displayEmptyString: "No water data"
+            },
+            data: data,
+            maxVelocity: 2.5,
+            velocityScale: 0.1 // arbitrary default 0.005
+          }).addTo(map);
+
+          controlLayers.addOverlay(velocityLayer, "HYCOM Ocean Current");
+        });
+      }
+      //  addHycom();
+
+      //=================================================================
+      // Weather Info from Forecast.io
+      //=================================================================
+      var redMarker = L.AwesomeMarkers.icon({
+        icon: "cloud-sun-rain",
+        iconColor: "black",
+        prefix: "fa",
+        markerColor: "red"
+      });
+      var weatherMarker = L.marker([25.18879, -80.66849], {
+        icon: redMarker,
+        riseOnHover: true, // z-index offset 250
+        zIndexOffset: 2000,
+        draggable: true
+      }).addTo(map);
+      weatherMarker.bindPopup(
+        L.popup({
+          maxWidth: 250
+        }).setContent(
+          "<b>Drag and Drop this marker to see weather information at the marker's point<br>Weather information will be updated hourly</b>"
+        )
+      );
+      // every time the marker is dragged, update the weather container
+      weatherMarker.on("dragend", onDragEnd);
+      // Set the initial marker coordinate on load.
+
+      // ================================================================
+      // Weather update
+      // ================================================================
+      function onDragEnd() {
+        $("#customize-script-container").html("");
+        var m = weatherMarker.getLatLng();
+        console.log(
+          "Latitude: " + m.lat.toFixed(4) + " Longitude: " + m.lng.toFixed(4)
+        );
+        $("#customize-script-container").append(
+          "<script src='https://darksky.net/widget/graph-bar/" +
+            m.lat.toFixed(4) +
+            "," +
+            m.lng.toFixed(4) +
+            "/us12/en.js?width=100%&height=400&title=FullForecast&textColor=333333&bgColor=ransparent&transparency=false&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=333333&currentDetailsOption=true' />"
+        );
+      }
+
+      // Set layers which redraw in a certain period
+      setInterval(function() {
+        onDragEnd();
+        //    controlLayers.removeLayer(velocityLayer);
+        //    addHycom();
+      }, 360000);
+    }
   }
 };
 </script>

@@ -116,7 +116,6 @@ module.exports = {
   router: {
     base: '/hurricane/'
   },
-
   /*
    ** Build configuration
    */

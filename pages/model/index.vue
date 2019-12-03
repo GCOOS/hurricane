@@ -24,15 +24,18 @@
               <b-list-group-item
                 href="http://jyotikastorms.blogspot.com/"
                 target="_blank"
-              >Tropical Storm Blog</b-list-group-item>
+                >Tropical Storm Blog</b-list-group-item
+              >
               <b-list-group-item
                 href="http://www.esl.lsu.edu/hurricanes/"
                 target="_blank"
-              >LSU Atlantic Storm Basin</b-list-group-item>
+                >LSU Atlantic Storm Basin</b-list-group-item
+              >
               <b-list-group-item
                 href="https://www.tropicaltidbits.com/"
                 target="_blank"
-              >Tropical Tidbits: Blog & More</b-list-group-item>
+                >Tropical Tidbits: Blog & More</b-list-group-item
+              >
             </b-list-group>
           </b-card>
         </b-col>
@@ -61,7 +64,11 @@
         </b-col>
 
         <b-col md="4">
-          <b-card title="Storm Surge & Wave" img-src="img/cera_storm_surge_1180x607.jpg" img-top>
+          <b-card
+            title="Storm Surge & Wave"
+            img-src="img/cera_storm_surge_1180x607.jpg"
+            img-top
+          >
             <a href="https://cera.coastalrisk.live/" target="_blank">
               <i class="fas fa-external-link-alt"></i>
             </a>
@@ -75,7 +82,10 @@
             img-src="http://seawater.tamu.edu/tglo/wind_animation_wg.gif"
             img-top
           >
-            <a href="http://seawater.tamu.edu/tglo/wind_animation_wg.gif" target="_blank">
+            <a
+              href="http://seawater.tamu.edu/tglo/wind_animation_wg.gif"
+              target="_blank"
+            >
               <i class="fas fa-search-plus"></i>
             </a>
           </b-card>
@@ -161,18 +171,7 @@ export default {
       const { store, broadcast } = windyAPI;
       // All the params are stored in windyAPI.store
       const levels = store.getAllowed("availLevels");
-      /*
-      var i = 0;
-      setInterval(() => {
-        i = i === levels.length - 1 ? 0 : i + 1;
-        // Changing Windy params at runtime
-        store.set("level", levels[i]);
-      }, 3600);
-      // Observing change of .store value
-      store.on("level", level => {
-        console.log(`Level was changed: ${level}`);
-      });
-      */
+
       var noaaHurricaneTrack = L.esri
         .dynamicMapLayer({
           url:

@@ -100,6 +100,55 @@
                     </b-card>
                 </b-col>
             </b-row>
+            <br>
+                  <b-row>
+        <b-col sm="12">
+          <b-card
+            no-body
+            header="Road Information"
+            header-tag="header"
+            header-bg-variant="warning"
+          >
+                <p>
+                  <strong>FLORIDA</strong>
+                </p>
+                <ul>
+                  <li>
+                    <a
+                      href="http://fl511.com"
+                      target="_blank"
+                    >Real time road information for Florida (FL511)</a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.flhsmv.gov/fhp/traffic/live_traffic_feed.html"
+                      target="_blank"
+                    >Live traffic crash and road condition report</a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www3.dot.state.fl.us/trafficinformation/"
+                      target="_blank"
+                    >Traffic information activate only during emergencies</a>
+                  </li>
+                </ul>
+                <p>
+                  <strong>TEXAS</strong>
+                </p>
+                <ul>
+                  <li>
+                    <a
+                      href="https://drivetexas.org/#/7/30.484/-96.303?future=false"
+                      target="_blank"
+                    >Texas Highway Conditions</a>
+                  </li>
+                  <li>
+                    <a href="https://map.texasflood.org/" target="_blank">Texas Flood Information</a>
+                  </li>
+                </ul>
+          </b-card>
+        </b-col>
+      </b-row>
         </b-container>
     </div>
 </template>

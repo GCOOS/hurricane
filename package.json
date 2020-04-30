@@ -23,7 +23,7 @@
     "portal-vue": "^2.1.6"
   },
   "devDependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "nodemon": "^1.19.4"
   }
 }

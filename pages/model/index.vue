@@ -75,22 +75,6 @@
           </b-card>
           <br />
         </b-col>
-
-        <b-col md="4">
-          <b-card
-            title="Wind forecast"
-            img-src="http://seawater.tamu.edu/tglo/wind_animation_wg.gif"
-            img-top
-          >
-            <a
-              href="http://seawater.tamu.edu/tglo/wind_animation_wg.gif"
-              target="_blank"
-            >
-              <i class="fas fa-search-plus"></i>
-            </a>
-          </b-card>
-          <br />
-        </b-col>
       </b-row>
     </b-container>
   </div>

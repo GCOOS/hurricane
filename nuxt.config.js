@@ -88,8 +88,6 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    "@nuxtjs/axios",
-    "@nuxtjs/pwa",
     "@nuxtjs/sentry",
     // cache with options
     [
@@ -108,11 +106,6 @@ module.exports = {
     bootstrapCSS: true, // or false for customized CSS
     bootstrapVueCSS: true
   },
-
-  /*
-   ** Axios module configuration
-   */
-  axios: {},
   router: {
     base: '/hurricane/'
   },

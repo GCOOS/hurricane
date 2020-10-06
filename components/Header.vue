@@ -8,9 +8,9 @@
           <i class="fas fa-home"></i>
         </b-navbar-brand>
         <b-navbar-nav>
-          <b-nav-item href="/hurricane/">
+          <!-- <b-nav-item href="/hurricane/">
             <i class="fas fa-eye"></i>&nbsp;Outlook
-          </b-nav-item>
+          </b-nav-item> -->
           <b-nav-item href="/hurricane/satellites/">
             <i class="fas fa-satellite"></i>&nbsp;Satellites
           </b-nav-item>

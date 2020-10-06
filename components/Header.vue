@@ -4,7 +4,7 @@
     <b-navbar toggleable="md" type="dark" variant="dark">
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse is-nav id="nav-collapse">
-        <b-navbar-brand href="https://products.gcoos.org/category">
+        <b-navbar-brand href="/hurricane/">
           <i class="fas fa-home"></i>
         </b-navbar-brand>
         <b-navbar-nav>
@@ -33,8 +33,8 @@
             <i class="fas fa-cloud-sun-rain"></i>&nbsp;Weather
           </b-nav-item>
         </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>&nbsp;
+      </b-collapse> </b-navbar
+    >&nbsp;
   </div>
 </template>
 

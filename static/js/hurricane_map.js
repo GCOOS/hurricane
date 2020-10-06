@@ -70,39 +70,6 @@
     }
   ).addTo(map);
 
-  var nrlVelocity = L.tileLayer.wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {
-    layers: 'NRL_MEAN/sea_water_velocity',
-    format: 'image/png',
-    transparent: true,
-    attribution: "GCOOS-RA, NRL",
-    elevation: '0',
-    opacity: 0.7
-  });
-
-  var nrl26cIsotherm = L.tileLayer.wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {
-    layers: 'NRL_MEAN/Isotherm',
-    format: 'image/png',
-    transparent: true,
-    attribution: "GCOOS-RA, NRL",
-    opacity: 0.7
-  });
-
-  var nrlcyclonPotential = L.tileLayer.wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {
-    layers: 'NRL_MEAN/TCHP',
-    format: 'image/png',
-    transparent: true,
-    attribution: "GCOOS-RA, NRL",
-    opacity: 0.7
-  });
-
-  var ssh = L.tileLayer.wms("http://gcoos-mdv.gcoos.org:8080/ncWMS/wms", {
-    layers: 'EDDY_SSH/ssh',
-    format: 'image/png',
-    transparent: true,
-    attribution: "GCOOS-RA, NRL",
-    opacity: 0.7
-  });
-
   var activeHurricaneESRI = L.esri
     .dynamicMapLayer({
       url: "https://utility.arcgis.com/usrsvcs/servers/6c6699e853424b22a8618f00d8e0cf81/rest/services/LiveFeeds/Hurricane_Active/MapServer",
@@ -119,10 +86,6 @@
     //    "NOAA Hurricane Track<a href='https://www.nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer' target='_blank'>**</a>": noaaHurricaneTrack,
     "Hurricane Track": activeHurricaneESRI,
     "Radar": nexrad,
-    "NRL Mean Seawater Velocity<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=NRL_MEAN/sea_water_velocity&bbox=-98.0,18.0,-79.5145715943338,30.96001434326172' target='_blank'>**</a>": nrlVelocity,
-    "NRL Depth 26C Isotherm<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=NRL_MEAN/Isotherm&bbox=-98.0,18.0,-79.5145715943338,30.96001434326172' target='_blank'>**</a>": nrl26cIsotherm,
-    "NRL Mean Tropical Cyclone Heat Potential<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=NRL_MEAN/TCHP&bbox=-98.0,18.0,-79.5145715943338,30.96001434326172' target='_blank'>**</a>": nrlcyclonPotential,
-    "Sea Surface Height<a href='http://gcoos-mdv.gcoos.org:8080/ncWMS/godiva2.html?layer=EDDY_SSH/ssh&bbox=-180.0,-66.0,180.0,66.0' target='_blank'>**</a>": ssh,
   };
   var controlLayers = L.control.layers(basemapLayers, groupedOverlay, {
       position: "bottomleft",

@@ -1,0 +1,29 @@
+{
+  "name": "hurricane",
+  "version": "1.3.1",
+  "description": "GCOOS Hurricane Information Dashboard",
+  "author": "Shin Kobara <shin.kobara@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt --port 3333",
+    "build": "nuxt build",
+    "start": "nuxt start --port 3000",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.0",
+    "@nuxtjs/component-cache": "^1.1.6",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "@nuxtjs/sentry": "^3.3.1",
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.15.0",
+    "cross-env": "^5.2.1",
+    "event-stream": "^4.0.1",
+    "nuxt": "^2.13.3",
+    "portal-vue": "^2.1.7"
+  },
+  "devDependencies": {
+    "jquery": "^3.5.1",
+    "nodemon": "^1.19.4"
+  }
+}

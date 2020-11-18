@@ -173,7 +173,7 @@ module.exports = {
       "@nuxtjs/component-cache",
       {
         max: 10000,
-        maxAge: 1000 * 60 * 60
+        maxAge: 1000 * 60 * 15
       }
     ],
     "bootstrap-vue/nuxt",

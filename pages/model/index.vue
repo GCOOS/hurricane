@@ -10,7 +10,7 @@
         <b-col md="6">
           <b-card
             title="SSMI/AMSRE Precipitable Water"
-            img-src="http://tropic.ssec.wisc.edu/real-time/mtpw2/webAnims/tpw_nrl_colors/natl/mimictpw_natl_latest.gif"
+            img-src="~assets/images/resource/ssec_tpw_nrl.jpg"
             img-top
             
           >
@@ -36,6 +36,11 @@
           <br />
         </b-col>
       </b-row>
+            <b-row>
+        <b-col>
+          <h2>Tropical Storm Models and Discussion</h2>
+        </b-col>
+      </b-row>
       <b-row>
         <b-col sm="12">
           <b-card
@@ -46,12 +51,12 @@
           >
             <b-list-group flush>
               <b-list-group-item
-                href="http://jyotikastorms.blogspot.com/"
+                href="https://jyotikastorms.blogspot.com/"
                 target="_blank"
                 >Tropical Storm Blog</b-list-group-item
               >
               <b-list-group-item
-                href="http://www.esl.lsu.edu/hurricanes/"
+                href="https://www.esl.lsu.edu/hurricanes/outlook-and-discussion/"
                 target="_blank"
                 >LSU Atlantic Storm Basin</b-list-group-item
               >
@@ -84,41 +89,4 @@
   </div>
 </template>
 
-<script>
-export default {
-  mounted() {
-    const options = {
-      key: "OIx5V8xPEniclcCnCOMWJ0DwyJEoOxPM",
-      verbose: true,
-      lat: 25.0,
-      lon: -85,
-      zoom: 4,
-      timestamp: Date.now() + 1 * 24 * 60 * 60 * 1000,
-      hourFormat: "12h"
-    };
 
-    windyInit(options, windyAPI => {
-      const { store, broadcast } = windyAPI;
-      // All the params are stored in windyAPI.store
-      const levels = store.getAllowed("availLevels");
-
-      var noaaHurricaneTrack = L.esri
-        .dynamicMapLayer({
-          url:
-            "https://www.nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer"
-        })
-        .addTo(map);
-    });
-  }
-};
-</script>
-
-<style>
-#windy {
-  width: 100%;
-  height: 500px;
-}
-.leaflet-pane {
-  z-index: auto !important;
-}
-</style>

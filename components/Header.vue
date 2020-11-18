@@ -18,7 +18,7 @@
             <i class="fas fa-laptop-code"></i>&nbsp;Models
           </b-nav-item>
           <b-nav-item href="/hurricane/resources/">
-            <i class="fas fa-info-circle"></i>&nbsp;Resources
+            <i class="fas fa-info-circle"></i>&nbsp;Preparation
           </b-nav-item>
           <b-nav-item href="/hurricane/videos/">
             <i class="fab fa-youtube"></i>&nbsp;Videos

@@ -13,7 +13,7 @@
             header-text-variant="white"
             header-tag="header"
             header-bg-variant="dark"
-            img-src="img/disaster-response-center-building_356.jpg"
+            img-src="~assets/images/resource/disaster-response-center-building_356.jpg"
             img-alt="Image"
             img-top
             tag="article"

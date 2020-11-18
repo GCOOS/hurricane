@@ -26,7 +26,7 @@
         <b-col md="6">
           <b-card
             title="Storm Surge & Wave"
-            img-src="img/cera_storm_surge_1180x607.jpg"
+            img-src="~assets/images/resource/cera_storm_surge_1180x607.jpg"
             img-top
           >
             <a href="https://cera.coastalrisk.live/" target="_blank">
@@ -80,7 +80,7 @@
       <b-row>
         <b-col>
           <div>
-            <img src="~assets/images/resource/Saffir-Simpson-Scale.png">
+            <img src="~assets/images/resource/Saffir-Simpson-Scale.jpg">
             <p>Image courtesy of National Meteorological Service of Belize</p>
           </div>
         </b-col>

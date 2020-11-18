@@ -76,8 +76,9 @@ module.exports = {
     script: [
       {
         /* Font Awesome */
-        src: "https://use.fontawesome.com/releases/v5.8.1/js/all.js",
-        integrity: "sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ",
+        rel: "stylesheet",
+        href: "https://use.fontawesome.com/releases/v5.11.2/css/all.css",
+        integrity: "sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN",
         crossorigin: "anonymous"
       },
       {

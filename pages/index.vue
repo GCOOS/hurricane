@@ -117,7 +117,7 @@ export default {
       var map = L.map("hurricaneMap", {
         zoomControl: true,
         scrollWheelZoom: false,
-        gestureHandling: false,
+        gestureHandling: true,
         zoom: 4,
         center: [25.7, -80.8],
         attributionControl: true //should be true for goecoding

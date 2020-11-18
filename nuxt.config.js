@@ -60,7 +60,7 @@ module.exports = {
       {
         /* Leaflet Gesture Control */
         rel: "stylesheet",
-        href: "https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
+        href: "https://unpkg.com/leaflet-gesture-handling@1.2.1/dist/leaflet-gesture-handling.min.css"
       },
       {
         /* Leaflet Time Dimesion */
@@ -103,7 +103,7 @@ module.exports = {
       },
       {
         /* Leaflet Gesture Control */
-        src: "https://unpkg.com/leaflet-gesture-handling@1.1.8/dist/leaflet-gesture-handling.min.js"
+        src: "https://unpkg.com/leaflet-gesture-handling@1.2.1/dist/leaflet-gesture-handling.min.js"
       },
       {
         /* Google Maps API */

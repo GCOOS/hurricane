@@ -13,7 +13,7 @@
               data-height="800"
               href="https://twitter.com/gisp_shin/lists/hurricane?ref_src=twsrc%5Etfw"
               data-chrome="noheader nofooter"
-              >A Twitter List by gisp_shin</a
+              >Hurricane</a
             >
             <script
               async
@@ -93,18 +93,23 @@
 
 <script>
 export default {
+  head: {
+    script: [
+      { hid: 'twitter', type: 'text/javascript', src: '//platform.twitter.com/widgets.js', async: true, defer: true }
+    ]
+  },
   mounted() {
-    !(function(d, s, id) {
-      var js,
-        fjs = d.getElementsByTagName(s)[0],
-        p = /^http:/.test(d.location) ? "http" : "https";
-      if (!d.getElementById(id)) {
-        js = d.createElement(s);
-        js.id = id;
-        js.src = p + "://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }
-    })(document, "script", "twitter-wjs");
+    // !(function(d, s, id) {
+    //   var js,
+    //     fjs = d.getElementsByTagName(s)[0],
+    //     p = /^http:/.test(d.location) ? "http" : "https";
+    //   if (!d.getElementById(id)) {
+    //     js = d.createElement(s);
+    //     js.id = id;
+    //     js.src = p + "://platform.twitter.com/widgets.js";
+    //     fjs.parentNode.insertBefore(js, fjs);
+    //   }
+    // })(document, "script", "twitter-wjs");
     this.initMap();
   },
   methods: {
@@ -376,7 +381,7 @@ export default {
 <style>
 #hurricaneMap {
   min-height: 500px;
-  height: 60vh;
+  height: 800px;
 }
 #customize-script-container {
   width: 100%;
@@ -384,7 +389,7 @@ export default {
 }
 #tweet_timeline {
   min-height: 500px;
-  height: 60vh;
+  height: 800px;
 }
 .leaflet-control-velocity.leaflet-control {
   color: white;

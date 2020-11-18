@@ -4,14 +4,14 @@
       <b-row>
         <b-col md="8" xs="12">
           <div id="hurricaneMap"></div>
-          <no-ssr>
+          <client-only>
             <div id="customize-script-container" class="weather_div">
               <script
                 type="text/javascript"
                 src="https://darksky.net/widget/graph-bar/25.18879,-80.66849/us12/en.js?width=undefined&height=350&title=Full Forecast&textColor=333333&bgColor=FFFFFF&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=C7C7C7&currentDetailsOption=true"
               ></script>
             </div>
-          </no-ssr>
+          </client-only>
         </b-col>
         <b-col md="4" xs="12">
           <div id="tweet_timeline">

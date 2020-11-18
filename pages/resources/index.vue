@@ -167,21 +167,6 @@
           <br>
         </b-col>
       </b-row>
-      <b-row>
-        <b-col>
-          <div>
-            <h2>Saffir-Simpson scale</h2>
-          </div>
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <div>
-            <img src="~assets/images/resource/Saffir-Simpson-Scale.png">
-            <p>Image courtesy of National Meteorological Service of Belize</p>
-          </div>
-        </b-col>
-      </b-row>
     </b-container>
   </div>
 </template>

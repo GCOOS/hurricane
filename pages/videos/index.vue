@@ -20,34 +20,52 @@
                     <iframe
                       src="https://www.youtube.com/embed/VCYmoSyrT54"
                       frameborder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen
                       style="height:315px; width:100%;"
                     ></iframe>
                     <iframe
                       src="https://www.youtube.com/embed/L32y1QKz8XI"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
                       style="height:315px; width:100%;"
                     ></iframe>
                     <iframe
                       src="https://www.youtube.com/embed/sW831S7BM9Y"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
                       style="height:315px; width:100%;"
                     ></iframe>
                     <iframe
                       src="https://fave.api.cnn.io/v1/fav/?video=weather/2016/08/29/orig-weather-preparing-for-a-hurricane.cnn&customer=cnn&edition=domestic&env=prod"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
                       style="height:315px; width:100%;"
                     ></iframe>
                   </b-col>
                   <b-col md="12" lg="6" xl="6">
                     <iframe
                       src="https://www.youtube.com/embed/OwSaHc0X2KA"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
                       style="height:315px; width:100%;"
                     ></iframe>
                     <iframe
                       src="https://www.youtube.com/embed/STiMKEYZ3Q4"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
                       style="height:315px; width:100%;"
                     ></iframe>
                     <iframe
                       src="https://www.youtube.com/embed/NhE_6hvZapY"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
                       style="height:315px; width:100%;"
                     ></iframe>
                   </b-col>
@@ -58,28 +76,28 @@
                   <b-col md="12" lg="6" xl="6">
                     <iframe
                       src="https://www.youtube.com/embed/2VOJdqT79JY"
-                      style="height:315px; width:100%;"
-                      frameborder="0"
-                      allow="autoplay; encrypted-media"
+                      sframeborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen
+                      style="height:315px; width:100%;"
                     ></iframe>
                   </b-col>
                   <b-col md="12" lg="12" xl="6">
                     <iframe
                       src="https://www.youtube.com/embed/maywde6eILE"
-                      style="height:315px; width:100%;"
                       frameborder="0"
-                      allow="autoplay; encrypted-media"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen
+                      style="height:315px; width:100%;"
                     ></iframe>
                   </b-col>
                   <b-col md="12" lg="6" xl="6">
                     <iframe
                       src="https://www.youtube.com/embed/-Kou0HBpX4A"
-                      style="height:315px; width:100%;"
                       frameborder="0"
-                      allow="autoplay; encrypted-media"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen
+                      style="height:315px; width:100%;"
                     ></iframe>
                   </b-col>
                 </b-row>
@@ -89,10 +107,10 @@
                   <b-col>
                     <iframe
                       src="https://www.youtube.com/embed/hefpgoYAOno"
-                      style="height:315px; width:100%;"
                       frameborder="0"
-                      allow="autoplay; encrypted-media"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen
+                      style="height:315px; width:100%;"
                     ></iframe>
                   </b-col>
                 </b-row>

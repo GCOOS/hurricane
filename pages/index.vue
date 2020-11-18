@@ -110,112 +110,7 @@
 
 <script>
 export default {
-  head() {
-    return {
-      link: [
-        {
-          /* Leaflet */
-          rel: "stylesheet",
-          href: "https://unpkg.com/leaflet@1.4.0/dist/leaflet.css",
-          integrity:
-            "sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==",
-          crossorigin: ""
-        },
-        {
-          /* Leaflet Fullscreen Button */
-          rel: "stylesheet",
-          href:
-            "https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css"
-        },
-        {
-          /* Leaflet Marker Cluster */
-          rel: "stylesheet",
-          href:
-            "https://unpkg.com/leaflet.markercluster@1.4.0/dist/MarkerCluster.Default.css"
-        },
-        {
-          /* Leaflet Awesome Marker */
-          rel: "stylesheet",
-          href:
-            "https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"
-        },
-        {
-          /* Leaflet Gesture Control */
-          rel: "stylesheet",
-          href:
-            "https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"
-        },
-        {
-          /* Leaflet Time Dimesion */
-          rel: "stylesheet",
-          href:
-            "https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"
-        }
-      ],
-      script: [
-        {
-          /* Leaflet */
-          src: "https://unpkg.com/leaflet@1.4.0/dist/leaflet.js",
-          integrity:
-            "sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==",
-          crossorigin: ""
-        },
-        {
-          /* ESRI Leaflet */
-          src: "https://unpkg.com/esri-leaflet@2.3.2/dist/esri-leaflet.js",
-          integrity:
-            "sha512-6LVib9wGnqVKIClCduEwsCub7iauLXpwrd5njR2J507m3A2a4HXJDLMiSZzjcksag3UluIfuW1KzuWVI5n/cuQ==",
-          crossorigin: ""
-        },
-        {
-          /* Leaflet Fullscreen */
-          src:
-            "https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"
-        },
-        {
-          /* Leaflet Awesome Marker */
-          src:
-            "https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"
-        },
-        {
-          /* Leaflet Omnivore */
-          src:
-            "https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js"
-        },
-        {
-          /* ISO 8601 Date and Time */
-          src:
-            "https://cdn.rawgit.com/nezasa/iso8601-js-period/master/iso8601.min.js"
-        },
-        {
-          /* Leaflet Time Dimesion */
-          src:
-            "https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"
-        },
-        {
-          /* Leaflet Gesture Control */
-          src:
-            "https://unpkg.com/leaflet-gesture-handling@1.1.8/dist/leaflet-gesture-handling.min.js"
-        },
-        {
-          /* Google Maps API */
-          src:
-            "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Qb_BhHlGWmRWf4PQrgTcG2xZai5ENP8&libraries=places"
-        },
-        {
-          /* Leaflet GoogleMutant */
-          src:
-            "https://unpkg.com/leaflet.gridlayer.googlemutant@latest/Leaflet.GoogleMutant.js"
-        },
-        {
-          /* Windy.com API */
-          src: "https://api4.windy.com/assets/libBoot.js"
-        }
-      ]
-    };
-  },
   mounted() {
-    console.log(window.globalVar);
     !(function(d, s, id) {
       var js,
         fjs = d.getElementsByTagName(s)[0],
@@ -227,7 +122,6 @@ export default {
         fjs.parentNode.insertBefore(js, fjs);
       }
     })(document, "script", "twitter-wjs");
-
     this.initMap();
   },
   methods: {
@@ -397,10 +291,9 @@ export default {
       //=================================================================
       // Weather Info from Forecast.io
       //=================================================================
-      var redMarker = L.AwesomeMarkers.icon({
-        icon: "cloud-sun-rain",
-        iconColor: "black",
-        prefix: "fa",
+      var redMarker = L.ExtraMarkers.icon({
+        icon: "fa-search-location",
+        prefix: "fas",
         markerColor: "red"
       });
       var weatherMarker = L.marker([25.18879, -80.66849], {

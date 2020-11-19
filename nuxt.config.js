@@ -129,8 +129,7 @@ module.exports = {
         src: "https://d3js.org/d3.v5.min.js"
       },
       { 
-        hid: 'twitter', 
-        type: 'text/javascript', 
+        /* twitter */
         src: 'https://platform.twitter.com/widgets.js', 
         async: true, 
         defer: true 

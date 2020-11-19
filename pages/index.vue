@@ -383,7 +383,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-#tweet_timeline {
+.tweet_timeline {
   min-height: 500px;
   height: 800px;
 }

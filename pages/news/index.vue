@@ -10,8 +10,7 @@
               data-height="800"
               href="https://twitter.com/gisp_shin/lists/hurricane?ref_src=twsrc%5Etfw"
               data-chrome="noheader nofooter"
-              >Hurricane</a
-            >
+              >Hurricane</a>
             <script
               async
               src="https://platform.twitter.com/widgets.js"
@@ -31,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-#tweet_timeline {
+.tweet_timeline {
   min-height: 500px;
 }
 @media screen and (max-width: 760px) {

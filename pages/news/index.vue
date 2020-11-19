@@ -38,7 +38,7 @@ export default {
         fjs.parentNode.insertBefore(js, fjs);
       }
     })(document, "script", "twitter-wjs");
-  },
+  }
 };
 </script>
 

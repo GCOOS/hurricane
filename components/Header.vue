@@ -4,13 +4,10 @@
     <b-navbar toggleable="md" type="dark" variant="dark">
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse is-nav id="nav-collapse">
-        <b-navbar-brand href="/hurricane/">
-          <i class="fas fa-home"></i>
-        </b-navbar-brand>
         <b-navbar-nav>
-          <!-- <b-nav-item href="/hurricane/">
-            <i class="fas fa-eye"></i>&nbsp;Outlook
-          </b-nav-item> -->
+          <b-nav-item href="/hurricane/">
+            <i class="fas fa-home"></i>&nbsp;Home
+          </b-nav-item>
           <b-nav-item href="/hurricane/satellites/">
             <i class="fas fa-satellite"></i>&nbsp;Satellites
           </b-nav-item>

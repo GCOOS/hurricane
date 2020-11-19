@@ -2,7 +2,7 @@
   <div class="canvas">
     <b-container>
       <b-row>
-        <b-col xs="12">
+        <b-col>
           <div id="tweet_timeline">
             <a
               class="twitter-timeline"
@@ -25,30 +25,8 @@
 </template>
 
 <script>
-// if (process.browser) {
-//   window.globalVar = "global variable loaded...";
-// }
 export default {
-  layout: "mobile",
-  head: {
-    script: [
-      { hid: 'twitter', type: 'text/javascript', src: '//platform.twitter.com/widgets.js', async: true, defer: true }
-    ]
-  },
-  mounted() {
-    // console.log(window.globalVar);
-    // !(function(d, s, id) {
-    //   var js,
-    //     fjs = d.getElementsByTagName(s)[0],
-    //     p = /^http:/.test(d.location) ? "http" : "https";
-    //   if (!d.getElementById(id)) {
-    //     js = d.createElement(s);
-    //     js.id = id;
-    //     js.src = p + "://platform.twitter.com/widgets.js";
-    //     fjs.parentNode.insertBefore(js, fjs);
-    //   }
-    // })(document, "script", "twitter-wjs");
-  }
+  layout: "mobile"
 };
 </script>
 

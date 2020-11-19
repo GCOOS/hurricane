@@ -93,11 +93,6 @@
 
 <script>
 export default {
-  head: {
-    script: [
-      { hid: 'twitter', type: 'text/javascript', src: '//platform.twitter.com/widgets.js', async: true, defer: true }
-    ]
-  },
   mounted() {
     // !(function(d, s, id) {
     //   var js,

@@ -275,7 +275,7 @@ export default {
       })
       tideStation.bindPopup(function (layer) {
         return L.Util.template(
-          '<h4>{name}</h4>" + "<hr><p>{daily}<br>{monthly}</p>',
+          '<h4>{name}</h4>' + '<hr><p>{daily}<br>{monthly}</p>',
           layer.feature.properties
         )
       })

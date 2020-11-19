@@ -186,6 +186,7 @@ export default {
           return popup
         }
       })
+
       // Weather Radar
       var nexrad = L.tileLayer.wms(
         'https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi',
@@ -298,7 +299,7 @@ export default {
             featureCollection.features[0].properties
           )
         }
-      })
+      });
 
       var precipOutlook = L.esri.dynamicMapLayer({
           url:

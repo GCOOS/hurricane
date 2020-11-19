@@ -63,11 +63,6 @@ module.exports = {
         href: "https://unpkg.com/leaflet-gesture-handling@1.2.1/dist/leaflet-gesture-handling.min.css"
       },
       {
-        /* Leaflet Time Dimesion */
-        rel: "stylesheet",
-        href: "https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"
-      },
-      {
         /* jQuery UI */
         rel: "stylesheet",
         href: "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
@@ -132,10 +127,6 @@ module.exports = {
       {
         /* d3 */
         src: "https://d3js.org/d3.v5.min.js"
-      },
-      {
-        /* Windy.com API */
-        src: "https://api4.windy.com/assets/libBoot.js"
       }
     ]
   },
@@ -171,13 +162,6 @@ module.exports = {
   modules: [
     "bootstrap-vue/nuxt",
   ],
-  /*
-   ** Bootstrap-vue configuration
-   */
-  bootstrapVue: {
-    bootstrapCSS: true, // or false for customized CSS
-    bootstrapVueCSS: true
-  },
   router: {
     base: '/hurricane/'
   },

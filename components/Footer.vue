@@ -925,7 +925,7 @@
 footer {
   padding: 0;
   margin: 0;
-  font-family: "proxima-nova", Roboto;
+  font-family: Roboto;
   font-weight: 500;
   padding-top: 96px;
   font-size: 15px;
@@ -958,7 +958,7 @@ img {
   float: left;
   background: #00a1cb;
   color: #fff;
-  font-family: "proxima-nova";
+  font-family: Roboto;
   font-weight: 500;
   font-size: 15px;
   border-top: 3px solid #f19611;
@@ -984,7 +984,7 @@ img {
 .footer_col h5 {
   position: relative;
   color: #fff;
-  font-family: "proxima-nova";
+  font-family: "Roboto";
   font-weight: bold;
   font-style: normal;
   font-size: 16px;
@@ -1041,7 +1041,7 @@ img {
 }
 
 .footer_col ul li {
-  font-family: "proxima-nova";
+  font-family: "Roboto";
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.45px;
@@ -1117,7 +1117,7 @@ img {
   letter-spacing: 0.45px;
   text-transform: uppercase;
   font-size: 16px;
-  font-family: "proxima-nova";
+  font-family: "Roboto";
   font-weight: bold;
   margin: 35px 0 0 0;
 }
@@ -1146,7 +1146,7 @@ img {
   text-align: center;
   font-size: 15px;
   letter-spacing: 0.45px;
-  font-family: "proxima-nova";
+  font-family: "Roboto";
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.45px;

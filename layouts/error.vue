@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 .error-page {
-  font-family: "proxima-nova";
+  font-family: "Roboto";
   padding: 100px 50px 100px 50px;
   text-align: center;
 }

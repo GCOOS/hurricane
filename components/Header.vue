@@ -37,7 +37,7 @@
 
 <style>
 .menubar {
-  font-family: "proxima-nova", Roboto, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 18px;
   display: inline-block;
   position: fixed;

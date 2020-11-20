@@ -26,6 +26,6 @@ export default {
 
 <style>
 html {
-  font-family: "proxima-nova", "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 </style>

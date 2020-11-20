@@ -93,7 +93,7 @@
     clear: both;
     padding: 10px;
     text-align: right;
-    font-family: "proxima-nova", Roboto;
+    font-family: Roboto;
     font-size: 15px;
 }
 
@@ -126,7 +126,7 @@
 .gcoos_nav_item {
     margin: 0 0 0 13px;
     font-size: 15px;
-    font-family: "proxima-nova", Lato, Roboto;
+    font-family: Roboto;
     font-weight: bold;
     text-decoration: none;
     letter-spacing: 0.45px;
@@ -157,7 +157,7 @@
 
 .header li a {
     font-size: 15px;
-    font-family: "proxima-nova", Lato, Roboto;
+    font-family: Roboto;
     line-height: 22px;
     font-weight: bold;
     color: #222222;
@@ -183,7 +183,7 @@
 
 .header li ul li a {
     float: none;
-    font-family: "proxima-nova", Lato, Roboto;
+    font-family: Roboto;
     font-weight: 500;
     line-height: 1.2em;
     display: block;
@@ -290,7 +290,7 @@
     .gcoos_nav_item {
         margin: 0 0 0 13px;
         font-size: 15px;
-        font-family: "proxima-nova", Lato, Roboto;
+        font-family: Roboto;
         font-weight: bold;
         text-decoration: none;
         letter-spacing: 0.45px;

@@ -141,13 +141,19 @@ export default {
       // ================================================================
       // Ancillary Data Layers - Top Corner Layers Group
       // ================================================================
+      var activeTropCyclones = L.esri.dynamicMapLayer({
+        url: 'https://idpgis.ncep.noaa.gov/arcgis/rest/services/NWS_Forecasts_Guidance_Warnings/NHC_Atl_trop_cyclones_active/MapServer',
+        f: 'image/png',
+        transparent: true,
+        opacity: 0.9
+      }).addTo(map);
       var activeHurricaneESRI = L.esri.dynamicMapLayer({
           url:
             'https://utility.arcgis.com/usrsvcs/servers/6c6699e853424b22a8618f00d8e0cf81/rest/services/LiveFeeds/Hurricane_Active/MapServer',
           f: 'image/png',
           transparent: true,
           opacity: 0.8
-        }).addTo(map)
+        })
       activeHurricaneESRI.bindPopup(function (error, featureCollection) {
         if (error || featureCollection.features.length === 0) {
           return false
@@ -349,7 +355,7 @@ export default {
       /* grouping ancillayr data layers */
       // ================================================================
       var groupedOverlay = {
-        'Active Hurricane': activeHurricaneESRI,
+        'Active Hurricane': activeTropCyclones,
         "Rcent Hurricane": recentHurricaneESRI,
         'Radar <img style="display:none;" src="https://nowcoast.noaa.gov/images/legends/radar.png" alt="legend">': nexrad,
         'Web Camera': webcam,

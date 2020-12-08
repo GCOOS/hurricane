@@ -93,13 +93,13 @@
 
 <script>
 export default {
-  head () {
-    return {
-      script: [
-        // { src: "https://unpkg.com/esri-leaflet-renderers@2.0.6"}
-      ]
-    }
-  },
+  head() {
+        return {
+            script: [{
+                src: "/hurricane/js/leaflet-velocity.js",
+            }, ],
+        };
+    },
   mounted() {
     // !(function(d, s, id) {
     //   var js,
@@ -120,7 +120,7 @@ export default {
         zoomControl: true,
         scrollWheelZoom: false,
         gestureHandling: true,
-        zoom: 4,
+        zoom: 5,
         center: [25.7, -80.8],
         attributionControl: true //should be true for goecoding
       });
@@ -400,20 +400,14 @@ export default {
               },
               data: data,
               maxVelocity: 2.5,
-              velocityScale: 0.1, // arbitrary default 0.005
+              velocityScale: 0.5, // arbitrary default 0.005
             }).addTo(map);
             controlLayers.addOverlay(velocityLayer, "HYCOM Ocean Current");
           }
         );
-          console.log("Hycom data imported");
+        console.log("Hycom data imported");
       }
       addHycom();
-
-      // Set layers which redraw in a certain period
-      setInterval(function () {
-        controlLayers.removeLayer(velocityLayer);
-        addHycom();
-      }, 360000);
 
     }
   }
@@ -486,6 +480,19 @@ export default {
   border-radius: 50%;
   line-height: 50px;
   opacity: 0.7;
+}
+
+.leaflet-control-velocity {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0 5px;
+    margin: 0 !important;
+    color: #333;
+    font: 11px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.velocity-overlay {
+    position: absolute;
+    z-index: 1;
 }
 
 @media only screen and (max-width: 1200px) {

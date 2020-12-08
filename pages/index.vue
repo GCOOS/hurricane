@@ -400,7 +400,7 @@ export default {
               },
               data: data,
               maxVelocity: 2.5,
-              velocityScale: 0.5, // arbitrary default 0.005
+              velocityScale: 0.3, // arbitrary default 0.005
             }).addTo(map);
             controlLayers.addOverlay(velocityLayer, "HYCOM Ocean Current");
           }

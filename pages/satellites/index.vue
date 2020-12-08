@@ -2,7 +2,7 @@
   <div class="canvas">
     <b-container fluid>
       <div class="centered">
-        <h2>Satellites</h2>
+        <h2>Views from Satellites</h2>
       </div>
       <b-row>
         <b-col>

@@ -15,7 +15,7 @@
           >
             <b-tabs card>
               <b-tab title="Preparation" active>
-                <h4>National Hurricane Center &ndash; Hurricane Preparedness &ndash; Be Ready</h4>
+                <h4>National Hurricane Center (NHC) &ndash; Hurricane Preparedness</h4>
                 <ul>
                   <li>
                     <a href="http://www.nhc.noaa.gov" target="_blank">Home Page NHC</a>
@@ -50,9 +50,17 @@
                     >Hurricane Preparedness Week Information</a>
                   </li>
                 </ul>
-                <p>
-                  <b>Action items</b>
-                </p>
+                <hr>
+                <h4>Be Ready!</h4>
+                <div class="doc-note doc-note--tip">
+                "Ready is a National public service campaign designed to educate and empower the American people to prepare for, respond to and mitigate emergencies, including natural and man-made disasters."
+              </div>
+                <ul>
+                  <li><a href="http://ready.gov/hurricanes" target="_blank">Hurricane</a></li>
+                  <li><a href="http://ready.gov/floods" target="_blank">Flood</a></li>
+                </ul>
+                <br>
+                <h4>Action items</h4>
                 <p>
                   <a href="http://www.nws.noaa.gov/om/hurricane/plan.shtml " target="_blank">
                     What to do

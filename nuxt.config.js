@@ -36,8 +36,8 @@ module.exports = {
       {
         /* Font Awesome */
         rel: "stylesheet",
-        href: "https://use.fontawesome.com/releases/v5.8.1/css/all.css",
-        integrity: "sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf",
+        href: "https://use.fontawesome.com/releases/v5.11.2/css/all.css",
+        integrity: "sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN",
         crossorigin: "anonymous"
       },
       {
@@ -74,13 +74,6 @@ module.exports = {
       },
     ],
     script: [
-      {
-        /* Font Awesome */
-        rel: "stylesheet",
-        href: "https://use.fontawesome.com/releases/v5.11.2/css/all.css",
-        integrity: "sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN",
-        crossorigin: "anonymous"
-      },
       {
         /* jQuery for ajax */
         src: "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"

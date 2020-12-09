@@ -11,7 +11,7 @@
               class="twitter-timeline"
               data-dnt="true"
               data-height="800"
-              href="https://twitter.com/gisp_shin/lists/hurricane?ref_src=twsrc%5Etfw"
+              href='https://twitter.com/gisp_shin/lists/hurricane?ref_src=twsrc%5Etfw'
               data-chrome="noheader nofooter"
               >Hurricane</a
             >
@@ -130,7 +130,7 @@ export default {
         },
         timeDimensionControl: true,
         timeDimensionControlOptions: {
-            autoPlay: true,
+            autoPlay: false,
             playerOptions: {
                 buffer: 10,
                 transitionTime: 500,

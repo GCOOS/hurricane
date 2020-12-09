@@ -143,12 +143,6 @@ module.exports = {
       { src: "/hurricane/js/leaflet-velocity.js" }, 
       { src: "/hurricane/js/leaflet.timedimension.circlelabelmarker.js"},
       { src: "/hurricane/js/leaflet.timedimension.layer.wms.timeseries.js"},
-      { 
-        /* twitter: must be the last*/
-        src: 'https://platform.twitter.com/widgets.js', 
-        async: true, 
-        defer: true 
-      },
     ]
   },
   /*

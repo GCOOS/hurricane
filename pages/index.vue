@@ -93,18 +93,6 @@
 
 <script>
 export default {
-  head() {
-        return {
-            script: [
-              { 
-                src: "https://unpkg.com/esri-leaflet-renderers@2.1.2"
-              },
-              { src: "/hurricane/js/leaflet-velocity.js" }, 
-              { src: "/hurricane/js/leaflet.timedimension.circlelabelmarker.js"},
-              { src: "/hurricane/js/leaflet.timedimension.layer.wms.timeseries.js"}
-            ],
-        };
-    },
   mounted() {
     // !(function(d, s, id) {
     //   var js,

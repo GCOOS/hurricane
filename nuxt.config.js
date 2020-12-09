@@ -121,9 +121,13 @@ module.exports = {
         /* jQuery-UI */
         src: "https://code.jquery.com/ui/1.12.1/jquery-ui.js"
       },
+      /* Leaflet Time Dimension */
       { src: "https://cdn.jsdelivr.net/npm/leaflet.nontiledlayer@1.0.7/dist/NonTiledLayer.js"},
       { src: "https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"},
       { src: "https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"},
+      { 
+        src: "https://unpkg.com/esri-leaflet-renderers@2.1.2"
+      },
       {
         /* moment.js */
         src: "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
@@ -141,7 +145,10 @@ module.exports = {
         src: 'https://platform.twitter.com/widgets.js', 
         async: true, 
         defer: true 
-      }
+      },
+      { src: "/hurricane/js/leaflet-velocity.js" }, 
+      { src: "/hurricane/js/leaflet.timedimension.circlelabelmarker.js"},
+      { src: "/hurricane/js/leaflet.timedimension.layer.wms.timeseries.js"}
     ]
   },
   /*

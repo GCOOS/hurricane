@@ -82,6 +82,18 @@ module.exports = {
         crossorigin: "anonymous"
       },
       {
+        /* jQuery for ajax */
+        src: "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      },
+      {
+        /* jQuery-UI */
+        src: "https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+      },
+      {
+        /* d3 */
+        src: "https://d3js.org/d3.v5.min.js"
+      },
+      {
         /* Leaflet */
         src: "https://unpkg.com/leaflet@1.7.1/dist/leaflet.js",
         integrity:"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==",
@@ -113,14 +125,6 @@ module.exports = {
         /* Leaflet GoogleMutant */
         src: "https://unpkg.com/leaflet.gridlayer.googlemutant@latest/Leaflet.GoogleMutant.js"
       },
-      {
-        /* jQuery for ajax */
-        src: "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-      },
-      {
-        /* jQuery-UI */
-        src: "https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-      },
       /* Leaflet Time Dimension */
       { src: "https://cdn.jsdelivr.net/npm/leaflet.nontiledlayer@1.0.7/dist/NonTiledLayer.js"},
       { src: "https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"},
@@ -136,19 +140,15 @@ module.exports = {
         /* moment timezone */
         src: "https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data.min.js"
       },
-      {
-        /* d3 */
-        src: "https://d3js.org/d3.v5.min.js"
-      },
+      { src: "/hurricane/js/leaflet-velocity.js" }, 
+      { src: "/hurricane/js/leaflet.timedimension.circlelabelmarker.js"},
+      { src: "/hurricane/js/leaflet.timedimension.layer.wms.timeseries.js"},
       { 
-        /* twitter */
+        /* twitter: must be the last*/
         src: 'https://platform.twitter.com/widgets.js', 
         async: true, 
         defer: true 
       },
-      { src: "/hurricane/js/leaflet-velocity.js" }, 
-      { src: "/hurricane/js/leaflet.timedimension.circlelabelmarker.js"},
-      { src: "/hurricane/js/leaflet.timedimension.layer.wms.timeseries.js"}
     ]
   },
   /*

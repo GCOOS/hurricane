@@ -95,9 +95,14 @@
 export default {
   head() {
         return {
-            script: [{
-                src: "/hurricane/js/leaflet-velocity.js",
-            }, ],
+            script: [
+              { 
+                src: "https://unpkg.com/esri-leaflet-renderers@2.1.2"
+              },
+              { src: "/hurricane/js/leaflet-velocity.js" }, 
+              { src: "/hurricane/js/leaflet.timedimension.circlelabelmarker.js"},
+              { src: "/hurricane/js/leaflet.timedimension.layer.wms.timeseries.js"}
+            ],
         };
     },
   mounted() {
@@ -116,13 +121,34 @@ export default {
   },
   methods: {
     initMap() {
+      var endDate = new Date();
+      endDate.setUTCMinutes(30, 0, 0);
+      console.log(moment(endDate).format());
+
       var map = L.map("hurricaneMap", {
         zoomControl: true,
         scrollWheelZoom: false,
         gestureHandling: true,
         zoom: 5,
         center: [25.7, -80.8],
-        attributionControl: true //should be true for goecoding
+        attributionControl: true, //should be true for goecoding
+        timeDimension: true,
+        timeDimensionOptions: {
+            timeInterval: moment(endDate).subtract(1, "days").format('YYYY-MM-DD') +
+                "/" +
+                moment(endDate).format('YYYY-MM-DD'),
+            period: "PT1H",
+            currentTime: endDate,
+        },
+        timeDimensionControl: true,
+        timeDimensionControlOptions: {
+            autoPlay: true,
+            playerOptions: {
+                buffer: 10,
+                transitionTime: 500,
+                loop: true,
+            },
+        },
       });
 
       // ================================================================
@@ -148,16 +174,33 @@ export default {
       // ================================================================
       // Ancillary Data Layers - Top Corner Layers Group
       // ================================================================
-      var activeHurricane = L.esri.dynamicMapLayer({
-        url: "https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/wwa_meteocean_tropicalcyclones_trackintensityfcsts_time/MapServer",
-        opacity: 0.9
-      }).addTo(map);
+      const forecastPosition = L.esri.featureLayer({
+        url:"https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/0"
+      });
+      const observedPosition = L.esri.featureLayer({
+        url:"https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/1"
+      });
+      const forecastTrack = L.esri.featureLayer({
+        url:"https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/2"
+      });
+      const observedTrack = L.esri.featureLayer({
+        url:"https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/3"
+      });
+      const forecastErrorCone = L.esri.featureLayer({
+        url:"https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/4"
+      });
+      const watchesWarnings = L.esri.featureLayer({
+        url:"https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/5"
+      });
 
-      var windBuoysESRI = L.esri.featureLayer({
-          url:
-            'https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/NOAA_METAR_current_wind_speed_direction_v1/FeatureServer/1'
-        })
+      var activeHurricane = L.featureGroup([forecastPosition, observedPosition, forecastTrack, observedTrack, forecastErrorCone, watchesWarnings]).addTo(map);     
+      activeHurricane.bindPopup(function(layer){
+        // console.log("layer:", layer);
+      }).on("click", function(e){
+                return '<h3>Name: '+e.layer.feature.properties.STORMNAME+'</h3><br><h4>Type: '+e.layer.feature.properties.STORMTYPE+'</h4>';
 
+      });
+ 
       // Weather Radar
       var nexrad = L.tileLayer.wms(
         'https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi',
@@ -262,7 +305,8 @@ export default {
               iconAnchor: [15, 42]
             })
           })
-        }
+        },
+        ignoreRenderer: true
       })
       webcam.bindPopup(function (layer) {
         return L.Util.template(
@@ -286,55 +330,66 @@ export default {
               iconAnchor: [15, 42]
             })
           })
-        }
+        },
+        ignoreRenderer: true
       })
       tideStation.bindPopup(function (layer) {
         return L.Util.template(
           '<h4>{name}</h4>' + '<hr><p>{daily}<br>{monthly}</p>',
           layer.feature.properties
         )
-      })
-
-      var warningAreas = L.esri.dynamicMapLayer({
-          url:
-            'https://idpgis.ncep.noaa.gov/arcgis/rest/services/NWS_Forecasts_Guidance_Warnings/watch_warn_adv/MapServer',
-          f: 'image/png'
-        }).addTo(map);
-      warningAreas.bindPopup(function (error, featureCollection) {
-        if (error || featureCollection.features.length === 0) {
-          return false
-        } else {
-          return L.Util.template(
-            '<p>{prod_type}<br><a href="{url}" target="_blank">More info</a><br>Issuance: {issuance}<br>Expiration: {expiration}',
-            featureCollection.features[0].properties
-          )
-        }
       });
 
-      var precipOutlook = L.esri.dynamicMapLayer({
+      /* NWS Wathces Warnings */
+      var warningAreas = L.esri.featureLayer({
           url:
-            'https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/forecast_meteoceanhydro_sfc_ndfd_qpf6hrs_offsets/MapServer',
-          f: 'image/png',
-          opacity: 0.7,
-          layers: [3]
-        });
+            'https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/NWS_Watches_Warnings_v1/FeatureServer/6',
+        }).addTo(map);
+      warningAreas.bindPopup(function (layer) {
+        var updateTime = moment(layer.feature.properties.Updated);
+        var startTime = moment(layer.feature.properties.Start);
+        // console.log("UpdateTime", updateTime._d);
+        return L.Util.template(
+          '<h4>{Event}: {Severity}</h4><hr>{Summary}<br><br><a href="{Link}" target="_blank">More info</a><br>Urgency: {Urgency}<br>Certainty: {Certainty}<br>Updated: ' + updateTime._d + '<br>Start: ' + startTime._d,
+          layer.feature.properties
+        )
+      });
 
-      var floodInfo = L.esri.dynamicMapLayer({
+      /* NWS Warning Report */
+      var tornadoReport = L.esri.featureLayer({
         url:
-          'https://utility.arcgis.com/usrsvcs/servers/7790d9d371364f36b38365522bc03751/rest/services/Live_Stream_Gauges/MapServer',
-        f: 'image/png'
-      })
-      floodInfo.bindPopup(function (error, featureCollection) {
-        if (error || featureCollection.features.length === 0) {
-          return false
-        } else {
-          return L.Util.template(
-            'Live Stream Gauges: {Name}<hr>Station ID: {StationID}<br><a href="{StationURL}" target="_blank">Station Info.<a/><br><a href="{FlowURL}" target="_blank">Flow Info</a>',
-            featureCollection.features[0].properties
-          )
-        }
+          'https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/NOAA_storm_reports_v1/FeatureServer/1',
+      }).addTo(map);
+      tornadoReport.bindPopup(function (layer) {
+        return L.Util.template(
+          '<h4>{LOCATION}</h4><br>{COUNTY}, {STATE}<br>DATE (UTC): {UTC_DATETIME}<br>Scale: {F_SCALE}<br>{COMMENTS}',
+          layer.feature.properties
+        )
       })
 
+      var hailStormReport = L.esri.featureLayer({
+        url:
+          'https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/NOAA_storm_reports_v1/FeatureServer/0',
+      }).addTo(map);
+      hailStormReport.bindPopup(function (layer) {
+        return L.Util.template(
+          '<b>{LOCATION}</b><br>{COUNTY}, {STATE}<br>DATE (UTC): {UTC_DATETIME}<br>Hail Size: {HAIL_SIZE}<br>{COMMENTS}',
+          layer.feature.properties
+        )
+      })
+
+      var windStormReport = L.esri.featureLayer({
+        url:
+          'https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/NOAA_storm_reports_v1/FeatureServer/2',
+      }).addTo(map);
+      windStormReport.bindPopup(function (layer) {
+        return L.Util.template(
+          '<b>{LOCATION}</b><br>{COUNTY}, {STATE}<br>DATE (UTC): {UTC_DATETIME}<br>Speed: {SPEED}<br>{COMMENTS}',
+          layer.feature.properties
+        )
+      })
+
+      /* GCOOS Stations */
       var stationIcon = L.divIcon({
         className: "station-div-icon",
       });
@@ -361,25 +416,52 @@ export default {
         );
       });
 
+      /* HF Radar 6km Hourly */
+      var proxy = "/hurricane/js/proxy.php";
+      var hf6kmWMS =
+          "https://hfrnet-tds.ucsd.edu/thredds/wms/HFR/USEGC/6km/hourly/RTV/HFRADAR_US_East_and_Gulf_Coast_6km_Resolution_Hourly_RTV_best.ncd";
+      var hfradar6kmLayer = L.tileLayer.wms(hf6kmWMS, {
+          layers: "surface_sea_water_velocity",
+          version: '1.3.0',
+          format: 'image/png',
+          transparent: true,
+          styles: 'prettyvec/rainbow',
+          markerscale: 15,
+          markerspacing: 10,
+          abovemaxcolor: "extend",
+          belowmincolor: "extend",
+      });
+      // hfradar6kmLayer.options.crs = L.CRS.EPSG3857;
+      var tdhfradar6kmLayer = L.timeDimension.layer.wms(hfradar6kmLayer, {
+              proxy: proxy,
+              cache: 25,
+              cacheBackward: 25,
+              cacheForward: 25,
+              updateTimeDimension: false,
+          })
+          .addTo(map);
+
       // ================================================================
       /* grouping ancillayr data layers */
       // ================================================================
       var groupedOverlay = {
-        'Active Hurricane': activeHurricane,
-        "Recent Hurricane": recentHurricaneESRI,
-        "Historical Hurricane Track (>4)": histHurricaneTrack,
-        // "Wind Speed/Direction at Buoys": windBuoysESRI,
-        'Radar <img style="display:none;" src="https://nowcoast.noaa.gov/images/legends/radar.png" alt="legend">': nexrad,
+        'Active Hurricane <img style="height:400px;" src="https://geo.gcoos.org/data/images/hurricane_legend.png" />': activeHurricane,
+        'Recent Hurricane': recentHurricaneESRI,
+        'Historical Hurricane Track (>4)': histHurricaneTrack,
+        // 'Wind Speed/Direction at Buoys': windBuoysESRI,
+        'Radar <img src="https://nowcoast.noaa.gov/images/legends/radar.png" alt="legend">': nexrad,
         'Web Camera': webcam,
         'Tide Station': tideStation,
         'Watches Warnings (inc. Tornado)': warningAreas,
-        '6-hr Precipitation Outlook': precipOutlook,
-        'Flood Info (Live Stream Gauges)': floodInfo,
-        "Buoys": gcoosAssets,
+        'Tornado Report <a href="https://www.spc.noaa.gov/climo/reports/" target="_blank">(NWS)</a>': tornadoReport,
+        'Hail Storm Report <a href="https://www.spc.noaa.gov/climo/reports/" target="_blank">(NWS)</a>': hailStormReport,
+        'Wind Storm Report <a href="https://www.spc.noaa.gov/climo/reports/" target="_blank">(NWS)</a>': windStormReport,
+        'Buoys': gcoosAssets,
+        'HF Radar (6km Hourly) <img src="https://hfrnet-tds.ucsd.edu/thredds/wms/HFR/USEGC/6km/hourly/RTV/HFRADAR_US_East_and_Gulf_Coast_6km_Resolution_Hourly_RTV_best.ncd?REQUEST=GetLegendGraphic&LAYER=surface_sea_water_velocity&PALETTE=rainbow&numcolorbands=10&colorscalerange=0,1.0">': tdhfradar6kmLayer
       };
       var controlLayers = L.control
         .layers(basemapLayers, groupedOverlay, {
-          position: "bottomleft",
+          position: "topright",
           collapsed: true
         })
         .addTo(map);

@@ -63,6 +63,11 @@ module.exports = {
         href: "https://unpkg.com/leaflet-gesture-handling@1.2.1/dist/leaflet-gesture-handling.min.css"
       },
       {
+        /* Leaflet TimeDimension */
+        rel: "stylesheet",
+        href: "https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.min.css"
+      },
+      {
         /* jQuery UI */
         rel: "stylesheet",
         href: "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
@@ -116,6 +121,9 @@ module.exports = {
         /* jQuery-UI */
         src: "https://code.jquery.com/ui/1.12.1/jquery-ui.js"
       },
+      { src: "https://cdn.jsdelivr.net/npm/leaflet.nontiledlayer@1.0.7/dist/NonTiledLayer.js"},
+      { src: "https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"},
+      { src: "https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"},
       {
         /* moment.js */
         src: "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"

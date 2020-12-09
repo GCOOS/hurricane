@@ -184,8 +184,10 @@ export default {
       var activeHurricane = L.featureGroup([forecastPosition, observedPosition, forecastTrack, observedTrack, forecastErrorCone, watchesWarnings]).addTo(map);     
       activeHurricane.bindPopup(function(layer){
         // console.log("layer:", layer);
+        return '<h3>'+layer.feature.properties.STORMNAME+'</h3><h4>Type: '+layer.feature.properties.STORMTYPE+'</h4>';
       }).on("click", function(e){
-                return '<h3>Name: '+e.layer.feature.properties.STORMNAME+'</h3><br><h4>Type: '+e.layer.feature.properties.STORMTYPE+'</h4>';
+          // console.log("e: ", e);
+          return '<h3>'+e.layer.feature.properties.STORMNAME+'</h3><h4>Type: '+e.layer.feature.properties.STORMTYPE+'</h4>';
 
       });
  

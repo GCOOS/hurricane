@@ -366,7 +366,35 @@ export default {
           '<b>{LOCATION}</b><br>{COUNTY}, {STATE}<br>DATE (UTC): {UTC_DATETIME}<br>Speed: {SPEED}<br>{COMMENTS}',
           layer.feature.properties
         )
-      })
+      });
+
+
+      var cat5stormSurge = L.esri.tiledMapLayer({
+        url:
+          "https://tiles.arcgis.com/tiles/C8EMgrsFcRFL6LrL/arcgis/rest/services/NHC_NationalMOM_Category5_CONUS/MapServer?f=html&cacheKey=b5783d377cac9cee"
+      });
+
+      var cat4stormSurge = L.esri.tiledMapLayer({
+        url:
+          "https://tiles.arcgis.com/tiles/C8EMgrsFcRFL6LrL/arcgis/rest/services/NHC_NationalMOM_Category4_CONUS/MapServer?f=html&cacheKey=996b51cf260d6d4a"
+      });
+
+      var cat3stormSurge = L.esri.tiledMapLayer({
+        url:
+          "https://tiles.arcgis.com/tiles/C8EMgrsFcRFL6LrL/arcgis/rest/services/NHC_NationalMOM_Category3_CONUS/MapServer?f=html&cacheKey=a5370e1ade681ba1"
+      });
+
+      var femaOffice = L.esri.featureLayer({
+        url:
+          "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/FEMA_Regional_Offices/FeatureServer/0"
+      });
+      femaOffice.bindPopup(function(layer) {
+        return L.Util.template(
+          "<p>{NAME}<br>{ST_ADDR}<br>{CITY_NAME}, {STATE_NAME} {ZIP}</p>",
+          layer.feature.properties
+        );
+      });
+
 
       /* GCOOS Stations */
       var stationIcon = L.divIcon({
@@ -424,11 +452,11 @@ export default {
       /* grouping ancillayr data layers */
       // ================================================================
       var groupedOverlay = {
-        'Active Hurricane <img style="height:400px;" src="https://geo.gcoos.org/data/images/hurricane_legend.png" />': activeHurricane,
+        'Active Hurricane <br><img style="height:400px;" src="https://geo.gcoos.org/data/images/hurricane_legend.png" />': activeHurricane,
         'Recent Hurricane': recentHurricaneESRI,
-        'Historical Hurricane Track (>4)': histHurricaneTrack,
+        'Historical Hurricane Track (H4:Red, H5:Black)': histHurricaneTrack,
         // 'Wind Speed/Direction at Buoys': windBuoysESRI,
-        'Radar <img src="https://nowcoast.noaa.gov/images/legends/radar.png" alt="legend">': nexrad,
+        'Radar <br><img src="https://nowcoast.noaa.gov/images/legends/radar.png" alt="legend">': nexrad,
         'Web Camera': webcam,
         'Tide Station': tideStation,
         'Watches Warnings (inc. Tornado)': warningAreas,
@@ -436,7 +464,11 @@ export default {
         'Hail Storm Report <a href="https://www.spc.noaa.gov/climo/reports/" target="_blank">(NWS)</a>': hailStormReport,
         'Wind Storm Report <a href="https://www.spc.noaa.gov/climo/reports/" target="_blank">(NWS)</a>': windStormReport,
         'Buoys': gcoosAssets,
-        'HF Radar (6km Hourly) <img src="https://hfrnet-tds.ucsd.edu/thredds/wms/HFR/USEGC/6km/hourly/RTV/HFRADAR_US_East_and_Gulf_Coast_6km_Resolution_Hourly_RTV_best.ncd?REQUEST=GetLegendGraphic&LAYER=surface_sea_water_velocity&PALETTE=rainbow&numcolorbands=10&colorscalerange=0,1.0">': tdhfradar6kmLayer
+        "FEMA Regional Office": femaOffice,
+        "Category5 Storm Surge Inudation Estimate": cat5stormSurge,
+        "Category4 Storm Surge Inundation Estimate": cat4stormSurge,
+        "Category3 Storm Surge Inundation Estimate": cat3stormSurge,
+        'HF Radar (6km Hourly) <br><img src="https://hfrnet-tds.ucsd.edu/thredds/wms/HFR/USEGC/6km/hourly/RTV/HFRADAR_US_East_and_Gulf_Coast_6km_Resolution_Hourly_RTV_best.ncd?REQUEST=GetLegendGraphic&LAYER=surface_sea_water_velocity&PALETTE=rainbow&numcolorbands=10&colorscalerange=0,1.0">': tdhfradar6kmLayer
       };
       var controlLayers = L.control
         .layers(basemapLayers, groupedOverlay, {

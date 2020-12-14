@@ -116,7 +116,7 @@ module.exports = {
       },
       {
         /* Leaflet GoogleMutant */
-        src: "https://unpkg.com/leaflet.gridlayer.googlemutant@latest/Leaflet.GoogleMutant.js"
+        src: "https://unpkg.com/leaflet.gridlayer.googlemutant@latest/dist/Leaflet.GoogleMutant.js"
       },
       /* Leaflet Time Dimension */
       { src: "https://cdn.jsdelivr.net/npm/leaflet.nontiledlayer@1.0.7/dist/NonTiledLayer.js"},

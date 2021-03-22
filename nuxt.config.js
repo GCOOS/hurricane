@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   mode: 'universal',
   /*
@@ -112,7 +114,7 @@ module.exports = {
       },
       {
         /* Google Maps API */
-        src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Qb_BhHlGWmRWf4PQrgTcG2xZai5ENP8&libraries=places"
+        src: "https://maps.googleapis.com/maps/api/js?key="+process.env.GOOGLE_MAP_API_KEY+"&libraries=places"
       },
       {
         /* Leaflet GoogleMutant */
@@ -152,7 +154,7 @@ module.exports = {
   },
 
   /*
-   ** Global CSS
+   ** Global CSS 
    */
   css: [{
       src: "~assets/css/webflow.css"
@@ -161,7 +163,9 @@ module.exports = {
       src: '~assets/css/main.css'
     }
   ],
-
+  buildModules: [
+    '@nuxtjs/dotenv',
+  ],
   /*
    ** Plugins to load before mounting the App
    */

@@ -401,7 +401,7 @@ export default {
         className: "station-div-icon",
       });
       var gcoosAssets = L.esri.featureLayer({
-        url: "https://gis.gcoos.org/arcgis/rest/services/Stations/The_GCOOS_Region/FeatureServer/0",
+        url: "https://services1.arcgis.com/qr14biwnHA6Vis6l/arcgis/rest/services/The_GCOOS_Region/FeatureServer/0",
         pointToLayer: function (feature, latlng) {
           return L.marker(latlng, {
             icon: stationIcon,

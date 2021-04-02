@@ -23,6 +23,9 @@
           <b-nav-item href="/hurricane/center/">
             <i class="fas fa-building"></i>&nbsp;Emergency Center
           </b-nav-item>
+          <b-nav-item href="/hurricane/TCHP/">
+            <i class="fas fa-thermometer-three-quarters"></i>&nbsp;TCHP
+          </b-nav-item>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">

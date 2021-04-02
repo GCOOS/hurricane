@@ -44,19 +44,19 @@
                 </b-nav-item-dropdown>
 
                 <b-nav-item-dropdown text="DATA PORTAL" right class="gcoos_nav_item">
-                    <b-dropdown-item href="http://data.gcoos.org/">Regional Assets</b-dropdown-item>
-                    <b-dropdown-item href="http://data.gcoos.org/monitoring.php">Data Flow Monitoring</b-dropdown-item>
-                    <b-dropdown-item href="http://data.gcoos.org/directAccess.php">HTTP Data Request</b-dropdown-item>
-                    <b-dropdown-item href="http://data.gcoos.org/waf.php">Web Accessible Folder</b-dropdown-item>
-                    <b-dropdown-item href="http://data.gcoos.org/erddap.php">ERDDAP Service</b-dropdown-item>
-                    <b-dropdown-item href="http://mmisw.org/ont/gcoos/parameter" target="_blank">Vocabularies</b-dropdown-item>
+                    <b-dropdown-item href="https://data.gcoos.org/">Regional Assets</b-dropdown-item>
+                    <b-dropdown-item href="https://data.gcoos.org/monitoring.php">Data Flow Monitoring</b-dropdown-item>
+                    <b-dropdown-item href="https://data.gcoos.org/directAccess.php">HTTP Data Request</b-dropdown-item>
+                    <b-dropdown-item href="https://data.gcoos.org/waf.php">Web Accessible Folder</b-dropdown-item>
+                    <b-dropdown-item href="https://data.gcoos.org/erddap.php">ERDDAP Service</b-dropdown-item>
+                    <b-dropdown-item href="https://ntl.gcoos.org/">BSEE/NTL Data Repository</b-dropdown-item>
+                    <b-dropdown-item href="https://mmisw.org/ont/gcoos/parameter" target="_blank">Vocabularies</b-dropdown-item>
                 </b-nav-item-dropdown>
 
                 <b-nav-item-dropdown text="PRODUCTS & SERVICES" right class="gcoos_nav_item">
-                    <b-dropdown-item href="https://geo.gcoos.org/weather">Weather</b-dropdown-item>
-                    <b-dropdown-item href="https://products.gcoos.org/">Gulf of Mexico Observing Assets</b-dropdown-item>
                     <b-dropdown-item href="https://products.gcoos.org/search">Search All Products</b-dropdown-item>
-                    <b-dropdown-item href="https://products.gcoos.org/category">Categories</b-dropdown-item>
+                    <b-dropdown-item href="https://products.gcoos.org/category">Thematic Search</b-dropdown-item>
+                    <b-dropdown-item href="https://gisdata.gcoos.org">GIS Catalog</b-dropdown-item>
                 </b-nav-item-dropdown>
             </b-navbar-nav>
         </b-collapse>

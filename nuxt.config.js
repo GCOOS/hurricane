@@ -1,7 +1,6 @@
 require('dotenv').config()
 
 module.exports = {
-  mode: 'universal',
   /*
    ** Headers of the page
    */
@@ -163,9 +162,6 @@ module.exports = {
       src: '~assets/css/main.css'
     }
   ],
-  buildModules: [
-    '@nuxtjs/dotenv',
-  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -173,11 +169,23 @@ module.exports = {
     src: '~plugins/ga.js',
     ssr: false
   }],
-
   /*
    ** Nuxt.js modules
    */
+   buildModules: [
+    '@nuxtjs/dotenv',
+  ],
   modules: [
+    // Doc: https://github.com/nuxt-community/axios-module#usage
+    "@nuxtjs/axios",
+    // cache with options
+    [
+      "@nuxtjs/component-cache",
+      {
+        max: 10000,
+        maxAge: 1000 * 60 * 60
+      }
+    ],
     "bootstrap-vue/nuxt",
   ],
   router: {

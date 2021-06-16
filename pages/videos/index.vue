@@ -14,7 +14,22 @@
             header-bg-variant="warning"
           >
             <b-tabs card>
-              <b-tab title="Preparation" active>
+              <b-tab title="New Normal" active>
+                <b-row>
+                  <b-col md="12">
+                    <iframe 
+                      src="https://www.youtube.com/embed/pEWUoM8j3co" 
+                      title="New Normal" 
+                      frameborder="0" 
+                      sframeborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen
+                      style="min-height:750px; width:100%;">
+                    </iframe>
+                  </b-col>
+                </b-row>
+              </b-tab>
+              <b-tab title="Preparation">
                 <b-row>
                   <b-col md="12" lg="6" xl="6">
                     <iframe

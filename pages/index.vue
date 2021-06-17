@@ -6,11 +6,21 @@
           <div id="hurricaneMap"></div>
         </b-col>
         <b-col md="4" xs="12">
+          <div id="newnormal">
+            <iframe 
+              src="https://www.youtube.com/embed/s_LvvvO_60g" 
+              title="New Normal" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+              style="height:250px; width:100%;">
+            </iframe>
+          </div>
           <div id="tweet_timeline">
             <a
               class="twitter-timeline"
               data-dnt="true"
-              data-height="800"
+              data-height="600"
               href='https://twitter.com/gisp_shin/lists/hurricane?ref_src=twsrc%5Etfw'
               data-chrome="noheader nofooter"
               >Hurricane</a
@@ -23,7 +33,7 @@
           </div>
         </b-col>
       </b-row>
-      <br />
+      <!-- <br /> -->
       <b-row>
         <b-col>
           <h2>Forecast</h2>
@@ -509,8 +519,8 @@ export default {
 
 <style>
 #hurricaneMap {
-  min-height: 500px;
-  height: 800px;
+  min-height: 600px;
+  height: 850px;
 }
 #customize-script-container {
   width: 100%;
@@ -518,7 +528,7 @@ export default {
 }
 .tweet_timeline {
   min-height: 500px;
-  height: 800px;
+  height: 600px;
 }
 .leaflet-control-velocity.leaflet-control {
   color: white;

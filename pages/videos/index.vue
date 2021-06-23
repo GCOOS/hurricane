@@ -18,7 +18,7 @@
                 <b-row>
                   <b-col md="12">
                     <iframe 
-                      src="https://www.youtube.com/embed/s_LvvvO_60g" 
+                      src="https://www.youtube.com/embed/XKhHXLoVPN4" 
                       title="New Normal" 
                       frameborder="0" 
                       sframeborder="0"

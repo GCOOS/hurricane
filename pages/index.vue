@@ -8,7 +8,7 @@
         <b-col md="4" xs="12">
           <div id="newnormal">
             <iframe 
-              src="https://www.youtube.com/embed/s_LvvvO_60g" 
+              src="https://www.youtube.com/embed/XKhHXLoVPN4" 
               title="New Normal" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

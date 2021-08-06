@@ -34,13 +34,11 @@
 
                 <b-nav-item-dropdown text="GET ENGAGED" right class="gcoos_nav_item">
                     <b-dropdown-item href="https://gcoos.org/get-engaged/join/">Join</b-dropdown-item>
-                    <b-dropdown-item href="https://gcoos.org/get-engaged/members/">Members</b-dropdown-item>
-                    <b-dropdown-item href="https://gcoos.org/get-engaged/industry/">Industry</b-dropdown-item>
-                    <b-dropdown-item href="https://gcoos.org/get-engaged/data-partners/">Data Partners</b-dropdown-item>
-                    <b-dropdown-item href="https://gcoos.org/get-engaged/researchers/">Researchers</b-dropdown-item>
-                    <b-dropdown-item href="https://gcoos.org/get-engaged/educators/">Educators</b-dropdown-item>
+                    <b-dropdown-item href="https://gcoos.org/gcan/">GCAN</b-dropdown-item>
+                    <b-dropdown-item href="https://gcoos.org/get-engaged/data-partners/">Become a Data Partners</b-dropdown-item>
                     <b-dropdown-item href="https://gcoos.org/about-us/newsroom/">Media</b-dropdown-item>
                     <b-dropdown-item href="https://gcoos.org/get-engaged/newsletter/">Newsletter</b-dropdown-item>
+                    <b-dropdown-item href="https://gcoos.org/howard-scholarship-fund/">Howard Scholarship Fund</b-dropdown-item>
                 </b-nav-item-dropdown>
 
                 <b-nav-item-dropdown text="DATA PORTAL" right class="gcoos_nav_item">

@@ -8,6 +8,9 @@
           <b-nav-item href="/hurricane/">
             <i class="fas fa-home"></i>&nbsp;Home
           </b-nav-item>
+          <b-nav-item href="/hurricane/map/">
+            <i class="fas fa-map"></i>&nbsp;Map
+          </b-nav-item>
           <b-nav-item href="/hurricane/satellites/">
             <i class="fas fa-satellite"></i>&nbsp;Satellites
           </b-nav-item>

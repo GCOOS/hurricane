@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  layout: "map",
   mounted() {
     this.initMap();
   },
@@ -463,9 +464,48 @@ export default {
 </script>
 
 <style>
+.canvas {
+  margin: 0;
+  padding-top: 45px;
+  min-height: 80vh;
+}
+
+.menubar {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  display: inline-block;
+  position: fixed;
+  /*  margin-top: 106px; */
+  top: 0px;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 100%;
+  z-index: 1999;
+}
+
+@media only screen and (max-width: 1200px) {
+  .menubar {
+    top: 0px;
+    font-size: 16px;
+  }
+  .menubar .dropdown-toggle::after {
+    position: relative;
+    margin-left: 15px;
+    border-right-width: 8px;
+    border-left-width: 8px;
+    border-top-width: 4px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .menubar {
+    top: 0px;
+  }
+}
+
 #hurricaneLargeMap {
   min-height: 600px;
-  height: 850px;
+  height: 95vh;
 }
 #customize-script-container {
   width: 100%;

@@ -79,6 +79,64 @@
           <br />
         </b-col>
       </b-row>
+
+<b-row>
+        <b-col>
+          <b-card-group deck>
+            <b-card
+              sub-title="Atlantic & Gulf of Mexico - GeoColor"
+              img-src="https://geo.gcoos.org/data/hurricane/GOES16-GM-GEOCOLOR-250x250.gif"
+              img-top
+            >
+              <a
+                href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/GIFS/GOES16-GM-GEOCOLOR-1000x1000.gif"
+                target="_blank"
+              >
+                <i class="fas fa-download"></i>
+              </a>
+            </b-card>
+            <b-card
+              sub-title="Evolution GOES16-CONUS-02"
+              img-src="https://geo.gcoos.org/data/hurricane/GOES16-GM-02-250x250.gif"
+              img-top
+            >
+              <a
+                href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/GIFS/GOES16-GM-02-1000x1000.gif"
+                target="_blank"
+              >
+                <i class="fas fa-download"></i>
+              </a>
+            </b-card>
+            <!--                        <b-card sub-title="Temperature GOES16-CONUS-07" img-src="https://geo.gcoos.org/data/hurricane/GOES16-GM-07-250x250.gif" img-top><a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/GIFS/GOES16-GM-07-1000x1000.gif" target="_blank"><i class="fas fa-download"></i></a></b-card>
+            -->
+            <b-card
+              sub-title="Water Vapor GOES16-CONUS-08"
+              img-src="https://geo.gcoos.org/data/hurricane/GOES16-GM-08-250x250.gif"
+              img-top
+            >
+              <a
+                href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/GIFS/GOES16-GM-08-1000x1000.gif"
+                target="_blank"
+              >
+                <i class="fas fa-download"></i>
+              </a>
+            </b-card>
+            <b-card
+              sub-title="Top Height GOES16-CONUS-13"
+              img-src="https://geo.gcoos.org/data/hurricane/GOES16-GM-13-250x250.gif"
+              img-top
+            >
+              <a
+                href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/GIFS/GOES16-GM-13-1000x1000.gif"
+                target="_blank"
+              >
+                <i class="fas fa-download"></i>
+              </a>
+            </b-card>
+          </b-card-group>
+        </b-col>
+      </b-row>
+      <br>
       <b-row>
         <b-col>
           <div>
@@ -119,23 +177,23 @@ export default {
         zoom: 5,
         center: [25.7, -80.8],
         attributionControl: true, //should be true for goecoding
-        timeDimension: true,
-        timeDimensionOptions: {
-            timeInterval: moment(endDate).subtract(1, "days").format('YYYY-MM-DD') +
-                "/" +
-                moment(endDate).format('YYYY-MM-DD'),
-            period: "PT1H",
-            currentTime: endDate,
-        },
-        timeDimensionControl: true,
-        timeDimensionControlOptions: {
-            autoPlay: false,
-            playerOptions: {
-                buffer: 10,
-                transitionTime: 500,
-                loop: true,
-            },
-        },
+        // timeDimension: true,
+        // timeDimensionOptions: {
+        //     timeInterval: moment(endDate).subtract(1, "days").format('YYYY-MM-DD') +
+        //         "/" +
+        //         moment(endDate).format('YYYY-MM-DD'),
+        //     period: "PT1H",
+        //     currentTime: endDate,
+        // },
+        // timeDimensionControl: true,
+        // timeDimensionControlOptions: {
+        //     autoPlay: false,
+        //     playerOptions: {
+        //         buffer: 10,
+        //         transitionTime: 500,
+        //         loop: true,
+        //     },
+        // },
       });
 
       // ================================================================
@@ -155,7 +213,8 @@ export default {
       ]);
       const basemapLayers = {
           "Google Road": googleRoads,
-          "Google Hybrid": googleHybrid
+          "Google Hybrid": googleHybrid,
+          "ESRI Imagery": esriImage
       };
 
       // ================================================================
@@ -180,13 +239,78 @@ export default {
         url:"https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/5"
       });
 
-      var activeHurricane = L.featureGroup([forecastPosition, observedPosition, forecastTrack, observedTrack, forecastErrorCone, watchesWarnings]).addTo(map);     
+      // var activeHurricane = L.featureGroup([forecastPosition, observedPosition, forecastTrack, observedTrack, forecastErrorCone, watchesWarnings]).addTo(map);     
+      var activeHurricane = L.featureGroup([forecastPosition, observedPosition, forecastTrack, observedTrack, forecastErrorCone]).addTo(map);     
       activeHurricane.bindPopup(function(layer){
-        // console.log("layer:", layer);
-        return '<h3>'+layer.feature.properties.STORMNAME+'</h3><h4>Type: '+layer.feature.properties.STORMTYPE+'</h4>';
+        console.log("layer:", layer);
+        try {
+          if (layer.feature.properties.ADVDATE) {
+            console.log("predicted layer")
+            var tcdvlp = ''
+            var tau = ''
+            var fcdate = ''
+            var latlon = ''
+            var maxwind = ''
+            var gust = ''
+            if (layer.feature.properties.TCDVLP){
+              tcdvlp = '<h5>'+layer.feature.properties.TCDVLP+'</h5>'
+            } else {
+              tcdvlp = '<h5>Type: '+layer.feature.properties.STORMTYPE+'</h5>'
+            }
+            if (layer.feature.properties.TAU){
+              tau = layer.feature.properties.TAU+' hr Forecast<br>'
+            }
+            if (layer.feature.properties.FLDATELBL){
+              fcdate = 'Valid at: '+layer.feature.properties.FLDATELBL+'<br>'
+            } else {
+              fcdate = moment(layer.feature.properties.ADVDATE).format("YYYY-MM-DD HH:MM UTC")+'<br>';
+            }
+            if (layer.feature.properties.LAT && layer.feature.properties.LON) {
+              latlon = 'Latitude: '+layer.feature.properties.LAT+'<br>Longitude: '+layer.feature.properties.LON+"<br>"
+            }
+            if (layer.feature.properties.MAXWIND) {
+              maxwind = 'Maximum Wind: '+layer.feature.properties.MAXWIND+' knots ('+Math.round(layer.feature.properties.MAXWIND*1.151, 0)+' mph)<br>'
+            }
+            if (layer.feature.properties.GUST) {
+              gust = 'Wind Gust: '+layer.feature.properties.GUST+' knots ('+Math.round(layer.feature.properties.GUST*1.151, 0)+' mph)'
+            }
+            return '<h4>Forecast: '+layer.feature.properties.STORMNAME+'</h4>'
+            +tcdvlp
+            +'Advisory #'+layer.feature.properties.ADVISNUM+"<br>"
+            +'<hr>'
+            +'<p>Advisory Information<br>'
+            +tau
+            +fcdate
+            +latlon
+            +maxwind
+            +gust
+            +'</p>';
+          } else {
+            var mslp = ''
+            var storminfo = ''
+            if (layer.feature.properties.MSLP > 0) {
+              mslp = 'Minimum Pressure: '+layer.feature.properties.MSLP+' mb<br>'
+            }
+            if (layer.feature.properties.LAT && layer.feature.properties.LON) {
+              storminfo = 'Intensity: '+layer.feature.properties.INTENSITY+' knots ('+Math.round(layer.feature.properties.INTENSITY*1.151, 0)+' mph)<br>'
+              +'Latitude: '+layer.feature.properties.LAT+'<br>Longitude: '+layer.feature.properties.LON+"<br>"
+            }
+          return '<h3>'+layer.feature.properties.STORMNAME+'</h3>'
+          +'<h4>'+layer.feature.properties.STORMTYPE+'</h4>'
+          +'Storm ID: '+layer.feature.properties.STORMID+'<br>'
+          +moment(layer.feature.properties.DTG).format("YYYY-MM-DD HH:MM UTC")+"<br>"
+          +storminfo
+          +mslp
+          // +layer.feature.properties.MONTH+'/'+layer.feature.properties.DAY+'/'+layer.feature.properties.YEAR+' '
+          // +layer.feature.properties.HHMM+'<br>'
+          }
+        }
+        catch(err) {
+          console.log("error:", err);
+        }
       }).on("click", function(e){
           // console.log("e: ", e);
-          return '<h3>'+e.layer.feature.properties.STORMNAME+'</h3><h4>Type: '+e.layer.feature.properties.STORMTYPE+'</h4>';
+          // return '<h3>'+e.layer.feature.properties.STORMNAME+'</h3><h4>Type: '+e.layer.feature.properties.STORMTYPE+'</h4>';
 
       });
  
@@ -434,29 +558,29 @@ export default {
       });
 
       /* HF Radar 6km Hourly */
-      var proxy = "/hurricane/js/proxy.php";
-      var hf6kmWMS =
-          "https://hfrnet-tds.ucsd.edu/thredds/wms/HFR/USEGC/6km/hourly/RTV/HFRADAR_US_East_and_Gulf_Coast_6km_Resolution_Hourly_RTV_best.ncd";
-      var hfradar6kmLayer = L.tileLayer.wms(hf6kmWMS, {
-          layers: "surface_sea_water_velocity",
-          version: '1.3.0',
-          format: 'image/png',
-          transparent: true,
-          styles: 'prettyvec/rainbow',
-          markerscale: 15,
-          markerspacing: 10,
-          abovemaxcolor: "extend",
-          belowmincolor: "extend",
-      });
-      // hfradar6kmLayer.options.crs = L.CRS.EPSG3857;
-      var tdhfradar6kmLayer = L.timeDimension.layer.wms(hfradar6kmLayer, {
-              proxy: proxy,
-              cache: 25,
-              cacheBackward: 25,
-              cacheForward: 25,
-              updateTimeDimension: false,
-          })
-          .addTo(map);
+      // var proxy = "/hurricane/js/proxy.php";
+      // var hf6kmWMS =
+      //     "https://hfrnet-tds.ucsd.edu/thredds/wms/HFR/USEGC/6km/hourly/RTV/HFRADAR_US_East_and_Gulf_Coast_6km_Resolution_Hourly_RTV_best.ncd";
+      // var hfradar6kmLayer = L.tileLayer.wms(hf6kmWMS, {
+      //     layers: "surface_sea_water_velocity",
+      //     version: '1.3.0',
+      //     format: 'image/png',
+      //     transparent: true,
+      //     styles: 'prettyvec/rainbow',
+      //     markerscale: 15,
+      //     markerspacing: 10,
+      //     abovemaxcolor: "extend",
+      //     belowmincolor: "extend",
+      // });
+      // // hfradar6kmLayer.options.crs = L.CRS.EPSG3857;
+      // var tdhfradar6kmLayer = L.timeDimension.layer.wms(hfradar6kmLayer, {
+      //         proxy: proxy,
+      //         cache: 25,
+      //         cacheBackward: 25,
+      //         cacheForward: 25,
+      //         updateTimeDimension: false,
+      //     })
+      //     .addTo(map);
 
       // ================================================================
       /* grouping ancillayr data layers */
@@ -478,7 +602,7 @@ export default {
         "Category5 Storm Surge Inudation Estimate": cat5stormSurge,
         "Category4 Storm Surge Inundation Estimate": cat4stormSurge,
         "Category3 Storm Surge Inundation Estimate": cat3stormSurge,
-        'HF Radar (6km Hourly) <br><img src="https://hfrnet-tds.ucsd.edu/thredds/wms/HFR/USEGC/6km/hourly/RTV/HFRADAR_US_East_and_Gulf_Coast_6km_Resolution_Hourly_RTV_best.ncd?REQUEST=GetLegendGraphic&LAYER=surface_sea_water_velocity&PALETTE=rainbow&numcolorbands=10&colorscalerange=0,1.0">': tdhfradar6kmLayer
+        // 'HF Radar (6km Hourly) <br><img src="https://hfrnet-tds.ucsd.edu/thredds/wms/HFR/USEGC/6km/hourly/RTV/HFRADAR_US_East_and_Gulf_Coast_6km_Resolution_Hourly_RTV_best.ncd?REQUEST=GetLegendGraphic&LAYER=surface_sea_water_velocity&PALETTE=rainbow&numcolorbands=10&colorscalerange=0,1.0">': tdhfradar6kmLayer
       };
       var controlLayers = L.control
         .layers(basemapLayers, groupedOverlay, {
@@ -512,6 +636,11 @@ export default {
       }
       addHycom();
 
+      function reload_page() {
+        window.location.reload(true);
+      }
+      console.log("Set refresh page interval: 1 hour")
+      setInterval(function(){reload_page(); },60*60000);
     }
   }
 };

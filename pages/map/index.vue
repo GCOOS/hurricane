@@ -26,7 +26,7 @@ export default {
         zoomControl: true,
         scrollWheelZoom: true,
         gestureHandling: true,
-        zoom: 5,
+        zoom: 6,
         center: [25.7, -80.8],
         attributionControl: true, //should be true for goecoding
         timeDimension: true,
@@ -54,11 +54,11 @@ export default {
       const googleRoads = L.gridLayer
           .googleMutant({
           type: "roadmap" // valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
-          }).addTo(map);
+          });
       const googleHybrid = L.gridLayer
           .googleMutant({
           type: "hybrid"
-          });
+          }).addTo(map);
       const esriImage = L.layerGroup([
           L.esri.basemapLayer("Imagery"),
           L.esri.basemapLayer("ImageryLabels"),
@@ -71,6 +71,33 @@ export default {
       // ================================================================
       // Ancillary Data Layers - Top Corner Layers Group
       // ================================================================
+      /* NWS Wathces Warnings */
+      var warningAreas = L.esri.featureLayer({
+          url:
+            'https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/NWS_Watches_Warnings_v1/FeatureServer/6',
+        }).addTo(map);
+      warningAreas.bindPopup(function (layer) {
+        var updateTime = moment(layer.feature.properties.Updated);
+        var startTime = moment(layer.feature.properties.Start);
+        // console.log("UpdateTime", updateTime._d);
+        return L.Util.template(
+          '<h4>{Event}: {Severity}</h4><hr>{Summary}<br><br><a href="{Link}" target="_blank">More info</a><br>Urgency: {Urgency}<br>Certainty: {Certainty}<br>Updated: ' + updateTime._d + '<br>Start: ' + startTime._d,
+          layer.feature.properties
+        )
+      });
+      
+      // Weather Radar
+      var nexrad = L.tileLayer.wms(
+        'https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi',
+        {
+          layers: 'nexrad-n0r-900913',
+          format: 'image/png',
+          transparent: true,
+          attribution: 'Weather data © 2012 IEM Nexrad'
+        }
+      ).addTo(map)
+
+      // active hurricane information
       const forecastPosition = L.esri.featureLayer({
         url:"https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/0"
       });
@@ -130,17 +157,8 @@ export default {
           // return '<h3>'+e.layer.feature.properties.STORMNAME+'</h3><h4>Type: '+e.layer.feature.properties.STORMTYPE+'</h4>';
 
       });
- 
-      // Weather Radar
-      var nexrad = L.tileLayer.wms(
-        'https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi',
-        {
-          layers: 'nexrad-n0r-900913',
-          format: 'image/png',
-          transparent: true,
-          attribution: 'Weather data © 2012 IEM Nexrad'
-        }
-      ).addTo(map)
+
+
 
       var recentHurricaneESRI = L.esri.featureLayer({
         url:
@@ -270,20 +288,6 @@ export default {
         )
       });
 
-      /* NWS Wathces Warnings */
-      var warningAreas = L.esri.featureLayer({
-          url:
-            'https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/NWS_Watches_Warnings_v1/FeatureServer/6',
-        }).addTo(map);
-      warningAreas.bindPopup(function (layer) {
-        var updateTime = moment(layer.feature.properties.Updated);
-        var startTime = moment(layer.feature.properties.Start);
-        // console.log("UpdateTime", updateTime._d);
-        return L.Util.template(
-          '<h4>{Event}: {Severity}</h4><hr>{Summary}<br><br><a href="{Link}" target="_blank">More info</a><br>Urgency: {Urgency}<br>Certainty: {Certainty}<br>Updated: ' + updateTime._d + '<br>Start: ' + startTime._d,
-          layer.feature.properties
-        )
-      });
 
       /* NWS Warning Report */
       var tornadoReport = L.esri.featureLayer({
@@ -429,7 +433,7 @@ export default {
         .addTo(map);
 
       // Full screen control
-      map.addControl(new L.Control.Fullscreen());
+      // map.addControl(new L.Control.Fullscreen());
 
       // Hycom Ocean Current
       function addHycom() {
@@ -444,7 +448,7 @@ export default {
               },
               data: data,
               maxVelocity: 2.5,
-              velocityScale: 0.3, // arbitrary default 0.005
+              velocityScale: 0.2, // arbitrary default 0.005
             }).addTo(map);
             controlLayers.addOverlay(velocityLayer, "HYCOM Ocean Current");
           }

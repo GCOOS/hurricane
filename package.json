@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "is-svg": "^4.3.1",
+    "jest": "^27.2.0",
     "jquery": "^3.6.0",
     "nodemon": "^2.0.12",
     "postcss": "^7.0.36",

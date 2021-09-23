@@ -2,9 +2,26 @@
   <div class="canvas">
     <b-container fluid>
       <b-row>
-        <b-col>
+        <b-col md="12" xs="12">
           <div id="hurricaneLargeMap"></div>
         </b-col>
+        <!-- <b-col md="2" xs="12">
+          <div id="tweet_timeline">
+            <a
+              class="twitter-timeline"
+              data-dnt="true"
+              data-height="500"
+              href='https://twitter.com/gisp_shin/lists/hurricane?ref_src=twsrc%5Etfw'
+              data-chrome="noheader nofooter"
+              >Hurricane</a
+            >
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </div>
+        </b-col> -->
       </b-row>
     </b-container>
   </div>
@@ -125,28 +142,28 @@ export default {
             console.log("predicted layer")
             return '<h4>Forecast: '+layer.feature.properties.STORMNAME+'</h4>'
             +'<h5>'+layer.feature.properties.TCDVLP+'</h5>'
-            +'Advisory #'+layer.feature.properties.ADVISNUM+"<br>"
+            +'Advisory #'+layer.feature.properties.ADVISNUM
             +'<hr>'
             +'<p>Advisory Information<br>'
             +layer.feature.properties.TAU+' hr Forecast<br>'
             +'Valid at: '+layer.feature.properties.FLDATELBL+'<br>'
             +'Latitude: '+layer.feature.properties.LAT+'<br>Longitude: '+layer.feature.properties.LON+"<br>"
-            +'Maximum Wind: '+layer.feature.properties.MAXWIND+' knots ('+Math.round(layer.feature.properties.MAXWIND*1.151, 0)+' mph)<br>'
-            +'Wind Gust: '+layer.feature.properties.GUST+' knots ('+Math.round(layer.feature.properties.GUST*1.151, 0)+' mph)</p>';
+            +'Maximum Wind: <b>'+layer.feature.properties.MAXWIND+'</b> knots ('+Math.round(layer.feature.properties.MAXWIND*1.151, 0)+' mph)<br>'
+            +'Wind Gust: <b>'+layer.feature.properties.GUST+'</b> knots ('+Math.round(layer.feature.properties.GUST*1.151, 0)+' mph)</p>';
           } else {
             var mslp = ''
             if (layer.feature.properties.MSLP > 0) {
-              mslp = 'Minimum Pressure: '+layer.feature.properties.MSLP+' mb<br>'
+              mslp = 'Minimum Pressure: <b>'+layer.feature.properties.MSLP+'</b> mb<br>'
             }
           return '<h3>'+layer.feature.properties.STORMNAME+'</h3>'
           +'<h4>'+layer.feature.properties.STORMTYPE+'</h4>'
           +'Storm ID: '+layer.feature.properties.STORMID+'<br>'
-          +'Intensity: '+layer.feature.properties.INTENSITY+' knots ('+Math.round(layer.feature.properties.INTENSITY*1.151, 0)+' mph)<br>'
+          +moment(layer.feature.properties.DTG).format("YYYY-MM-DD HH:MM UTC")+'<br>'
           +'Latitude: '+layer.feature.properties.LAT+'<br>Longitude: '+layer.feature.properties.LON+"<br>"
+          +'Intensity: <b>'+layer.feature.properties.INTENSITY+'</b> knots ('+Math.round(layer.feature.properties.INTENSITY*1.151, 0)+' mph)<br>'
           + mslp
           // +layer.feature.properties.MONTH+'/'+layer.feature.properties.DAY+'/'+layer.feature.properties.YEAR+' '
-          // +layer.feature.properties.HHMM+'<br>'
-          +moment(layer.feature.properties.DTG).format("YYYY-MM-DD HH:MM UTC");
+          // +layer.feature.properties.HHMM+'<br>';
           }
         }
         catch(err) {
@@ -457,6 +474,55 @@ export default {
       }
       addHycom();
 
+      function addLatestObs(d){
+        // console.log(d);
+        var atmp, wtmp, dewp, wspd, gst, wdir, pres, vis, tide, apd, dpd, mwd, wvht;
+        (d.ATMP) ? atmp = "Air Temperature: <b>"+d.ATMP+"</b> &degC  ("+((d.ATMP*9/5)+32).toFixed(2)+"&degF)<br>" : atmp = "";
+        (d.WTMP) ? wtmp = "Water Temperature: <b>"+d.WTMP+"</b> &degC  ("+((d.WTMP*9/5)+32)+"&degF)<br>" : wtmp = "";
+        (d.DEWP) ? dewp = "Dew Point: <b>"+d.DEWP+"</b> &degC  ("+((d.DEWP*9/5)+32)+"&degF)<br>" : dewp = "";
+        (d.WSPD) ? wspd = "Wind Speed: <b>"+d.WSPD+"</b> m/s  ("+(d.WSPD*2.237).toFixed(1)+" mph)<br>" : wspd = "";
+        (d.WDIR) ? wdir = "Wind Direction: <b>"+d.WDIR+"</b>&deg<br>" : wdir = "";
+        (d.GST) ? gst = "Gust Speed: <b>"+d.GST+"</b> m/s  ("+(d.GST*2.237).toFixed(1)+" mph)<br>" : gst = "";
+        (d.PRES) ? pres = "Pressure: <b>"+d.PRES+"</b> mb<br>" : pres = "";
+        (d.VIS) ? vis = "Visibility: <b>"+d.VIS+"</b> nmi<br>" : vis = "";
+        (d.TIDE) ? tide = "Tide: <b>"+d.TIDE+"</b> ft<br>" : tide = "";
+        (d.WVHT) ? wvht = "Wave Height: <b>"+d.WVHT+"</b> m  ("+(d.WVHT*3.281).toFixed(1)+" ft)<br>" : wvht = "";
+        (d.APD) ? apd = "Average Period: <b>"+d.APD+"</b> s<br>" : apd = "";
+        (d.DPD) ? dpd = "Dominant Wave Period: <b>"+d.DPD+"</b> s<br>" : dpd = "";
+        (d.MWD) ? mwd = "Mean Wave Direction: <b>"+d.MWD+"</b>&deg<br>" : mwd = "";
+        L.marker([+d.LAT, +d.LON], {
+            icon: stationIcon,
+            riseOnHover: true,
+          })
+          .bindPopup(
+          "<h4>"+d["#STN"]+"</h4>"+"  <a href='https://www.ndbc.noaa.gov/station_page.php?station="+d["#STN"]+"' target='_blank'>More detail</a><br>"
+          +d.MM+"/"+d.DD+"/"+d.YYYY+" "+d.hh+":"+d.mm+" GMT<br>"
+          +atmp
+          +wtmp
+          +dewp
+          +wspd
+          +wdir
+          +gst
+          +pres
+          +vis
+          +tide
+          +wvht
+          +apd
+          +dpd
+          +mwd
+          )
+          .addTo(map);        
+      }      
+      function loadLatestObs() {
+        d3.csv("https://geo.gcoos.org/data/latest_obs/latest_obs_gulfofmexico.csv")
+          .then(function(csv){
+            csv.forEach(function(station) {
+              addLatestObs(station);   
+            })
+          });
+      }
+      loadLatestObs();
+
       function reload_page() {
         window.location.reload(true);
       }
@@ -515,9 +581,12 @@ export default {
   width: 100%;
   height: 100%;
 }
-.tweet_timeline {
-  min-height: 500px;
-  height: 600px;
+#tweet_timeline {
+  height: 45vh;
+}
+.twitter_timeline {
+  min-height: 200px;
+  height: 100%;
 }
 .leaflet-control-velocity.leaflet-control {
   color: white;
